@@ -1,0 +1,32 @@
+* text=auto
+
+# 明确声明始终要规范化并在检出时转换为本机行尾的文本文件。
+*.cs text diff=csharp
+*.cginc text
+*.shader text
+
+# 声明在检出时始终具有 CRLF 行尾的文件。
+*.sln text eol=crlf
+
+*.txt utf-8
+*.cs utf-8
+
+# 标明所有真正的二进制文件，不应修改。
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.tga binary
+*.psd binary
+*.bmp binary
+*.fbx binary
+*.ogg binary
+*.aif binary
+*.wav binary
+*.a binary
+*.pdf binary
+*.zip binary
+*.dll binary
+*.so binary
+*.a binary
+*.dylib binary
+*.unitypackage binary
