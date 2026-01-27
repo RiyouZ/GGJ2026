@@ -1,0 +1,16 @@
+{
+  "name": "Frame.Audio",
+  "rootNamespace": "Frame.Audio",
+  "references": [
+    "AK.Wwise.Unity.API"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

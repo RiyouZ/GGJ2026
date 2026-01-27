@@ -71,3 +71,12 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 /.idea/
+
+# MCP
+mcp.json
+
+# MCP for Unity 本地配置
+mcp.local.json
+mcp.*.local.json
+MCPForUnity.LocalConfig/
+MCPForUnity.EditorConfig/
