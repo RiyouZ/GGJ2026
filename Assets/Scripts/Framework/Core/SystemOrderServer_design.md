@@ -49,16 +49,16 @@
 
 ### GetSystemAsync<T>(out system)
 
-- **描述**：异步获取系统，使用 `IEnumerator` 协程回调方式实现。
-  暂不支持超时处理。
-- **参数**：
-  - `system`：获取到的引用
+**描述**：异步获取系统，使用 `IEnumerator` 协程+callback（回调）方式实现。
+注意：暂不支持超时处理。
+**参数**：
+  - `callback`：获取到的系统对象后回调，参数为系统实例
 
 ### WaitUtilGetSystem<T>(out system)
 
-- **描述**：等待获取系统，是一个 `IEnumerator` 协程。
-- **参数**：
-  - `system`：获取到的引用
+**描述**：等待获取系统，是一个 `IEnumerator` 协程+callback（回调）方式实现。
+**参数**：
+  - `callback`：获取到的系统对象后回调，参数为系统实例
 
 ### UpdateSystemServer()
 
