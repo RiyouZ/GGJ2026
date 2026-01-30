@@ -166,6 +166,19 @@ namespace Frame.Core
             InvokeUpdates(LateUpdateOrders, system => system.LateUpdate(delta));
         }
 
+        public static void Dispose()
+        {
+            foreach (var system in Systems.Values)
+            {
+                system.Dispose();
+            }
+
+            Systems.Clear();
+            UpdateOrders.Clear();
+            FixUpdateOrders.Clear();
+            LateUpdateOrders.Clear();
+        }
+
         private static void InvokeUpdates(SortedDictionary<int, List<ISystemServer>> table, Action<ISystemServer> update)
         {
             foreach (var pair in table)

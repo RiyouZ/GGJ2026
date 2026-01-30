@@ -4,34 +4,9 @@ namespace Frame.Audio
 {
 	public static class WwiseAudio
 	{
-		private static readonly string[] PreloadBanks =
-		{
-			"Init"
-		};
-
 		public static bool IsInitialized => AkUnitySoundEngine.IsInitialized();
 
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-		private static void PreloadBanksOnStart()
-		{
-			if (PreloadBanks == null || PreloadBanks.Length == 0)
-			{
-				return;
-			}
-
-			if (!EnsureInitialized())
-			{
-				LogWarning("PreloadBanks skipped: Wwise not initialized.");
-				return;
-			}
-
-			for (var i = 0; i < PreloadBanks.Length; i++)
-			{
-				LoadBank(PreloadBanks[i]);
-			}
-		}
-
-		public static uint PlayEvent(string eventName, GameObject gameObject = null)
+		public static uint PlayEvent(string eventName, GameObject gameObject)
 		{
 			if (string.IsNullOrWhiteSpace(eventName))
 			{
@@ -54,7 +29,7 @@ namespace Frame.Audio
 			return AkUnitySoundEngine.PostEvent(eventName, gameObject);
 		}
 
-		public static float GetRTPC(string rtpcName, GameObject gameObject = null)
+		public static float GetRTPC(string rtpcName, GameObject gameObject)
 		{
 			if (string.IsNullOrWhiteSpace(rtpcName))
 			{
@@ -85,7 +60,7 @@ namespace Frame.Audio
 			return value;
 		}
 
-		public static void SetRTPC(string rtpcName, float value, GameObject gameObject = null)
+		public static void SetRTPC(string rtpcName, float value, GameObject gameObject)
 		{
 			if (string.IsNullOrWhiteSpace(rtpcName))
 			{

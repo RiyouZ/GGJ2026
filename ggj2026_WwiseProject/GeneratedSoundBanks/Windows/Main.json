@@ -1,0 +1,85 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{2417395A-1AF3-41F7-8041-7FE73BE2F6A3}",
+    "Language": "SFX",
+    "Hash": "{2989A654-0A6C-FE8D-DE82-C137499CC134}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "Media": [
+     {
+      "Id": "653687740",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "HIT_Kick_Heavy_04.wav",
+      "CachePath": "24/{24E529FE-0F75-1134-8DA8-045AA18A14AC}.wem"
+     },
+     {
+      "Id": "705290400",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "AMBPubl_Big Hall Men Cheer Motivated 01_B00M_ONE.wav",
+      "CachePath": "BE/{BE082BCF-6874-B5C1-5F46-13F95895C711}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "711699424",
+      "Name": "Play_Kick",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Kick",
+      "GUID": "{755A0D4C-12BD-40D2-9952-1FB96C44928B}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.41567707",
+      "DurationMax": "0.41567707",
+      "MediaRefs": [
+       {
+        "Id": "653687740"
+       }
+      ]
+     },
+     {
+      "Id": "1932796752",
+      "Name": "Play_Noise",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Noise",
+      "GUID": "{F7791719-7765-437C-A6D6-D306822DCBE2}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "705290400"
+       }
+      ]
+     },
+     {
+      "Id": "3620426301",
+      "Name": "Seek_Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Seek_Music",
+      "GUID": "{DD31B346-8B82-49FE-8BB1-2D1F439BD5A1}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "487587012",
+      "Name": "Player_Distance",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Player_Distance",
+      "GUID": "{F325C523-DA20-459E-80FB-1BB81361C56D}"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{C1BC2CE0-15FF-B9BD-5D58-BFC8212BD4FC}"
+ }
+}

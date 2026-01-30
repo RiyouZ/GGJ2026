@@ -1,6 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}" SchemaVersion="133">
 	<Containers>
-		<WorkUnit Name="Default Work Unit" ID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Kick" ID="{2F865CBF-70BF-4822-A97A-C97E70C24ABA}" ShortID="952464549">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="HIT_Kick_Heavy_04" ID="{BA68019E-DAF9-449F-8512-AE710DBCB146}">
+							<Language>SFX</Language>
+							<AudioFile>HIT_Kick_Heavy_04.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="653687740"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="HIT_Kick_Heavy_04" ID="{BA68019E-DAF9-449F-8512-AE710DBCB146}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Noise" ID="{1A10C864-7593-46C4-BDBE-C65A0DC5A17E}" ShortID="304683668">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="AMBPubl_Big Hall Men Cheer Motivated 01_B00M_ONE" ID="{D63B6877-04F7-4610-B310-682F94E4B1B6}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>AMBPubl_Big Hall Men Cheer Motivated 01_B00M_ONE.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="705290400"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<RTPC Name="" ID="{68A1B851-47FF-4DC1-BE9E-BC7A4391B375}" ShortID="652285576">
+								<PropertyList>
+									<Property Name="PropertyName" Type="string" Value="Volume"/>
+								</PropertyList>
+								<ReferenceList>
+									<Reference Name="ControlInput">
+										<ObjectRef Name="Player_Distance" ID="{F325C523-DA20-459E-80FB-1BB81361C56D}" WorkUnitID="{4D497234-4D7C-4F80-B2EC-3B30F2FAA234}"/>
+									</Reference>
+									<Reference Name="Curve">
+										<Custom>
+											<Curve Name="" ID="{A897EE3C-2B2B-417E-8DFB-E3CD6F7B837A}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>-0.08433</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</RTPC>
+							<RTPC Name="" ID="{5A4EC80A-BAD9-4D16-A698-258C3E75EC05}" ShortID="69770423">
+								<PropertyList>
+									<Property Name="PropertyName" Type="string" Value="Lowpass"/>
+								</PropertyList>
+								<ReferenceList>
+									<Reference Name="ControlInput">
+										<ObjectRef Name="Player_Distance" ID="{F325C523-DA20-459E-80FB-1BB81361C56D}" WorkUnitID="{4D497234-4D7C-4F80-B2EC-3B30F2FAA234}"/>
+									</Reference>
+									<Reference Name="Curve">
+										<Custom>
+											<Curve Name="" ID="{7EF78908-378D-4D2C-9258-921528AE6631}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>-100</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</RTPC>
+						</ObjectList>
+					</ObjectLists>
+					<ActiveSourceList>
+						<ActiveSource Name="AMBPubl_Big Hall Men Cheer Motivated 01_B00M_ONE" ID="{D63B6877-04F7-4610-B310-682F94E4B1B6}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Music" ID="{F05FF5E6-4B62-42D3-8AAB-58FF8DB8CCA0}" ShortID="1061565031">
+					<PropertyList>
+						<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="塞壬唱片-MSR _ Erik Castro _ Elvin Shen _ David Lin _ 左乙 - Misty Memory (Day Version)" ID="{C75601FC-2CEA-4BB7-B9E7-47846ADD1EB2}">
+							<PropertyList>
+								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>塞壬唱片-MSR _ Erik Castro _ Elvin Shen _ David Lin _ 左乙 - Misty Memory (Day Version).wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="467966028"/>
+							</MediaIDList>
+							<ObjectLists>
+								<ObjectList Name="Markers">
+									<Marker Name="" ID="{95B55045-E91E-469E-8D11-DED05DB9044D}">
+										<PropertyList>
+											<Property Name="Label" Type="string" Value="1"/>
+											<Property Name="Time" Type="Real64" Value="217.003890745229"/>
+										</PropertyList>
+									</Marker>
+								</ObjectList>
+							</ObjectLists>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="塞壬唱片-MSR _ Erik Castro _ Elvin Shen _ David Lin _ 左乙 - Misty Memory (Day Version)" ID="{C75601FC-2CEA-4BB7-B9E7-47846ADD1EB2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</Containers>
 </WwiseDocument>

@@ -1,0 +1,12 @@
+Event	ID	Name			Wwise Object Path	Notes
+	711699424	Play_Kick			\Default Work Unit\Play_Kick	
+	1932796752	Play_Noise			\Default Work Unit\Play_Noise	
+	3620426301	Seek_Music			\Default Work Unit\Seek_Music	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	487587012	Player_Distance			\Default Work Unit\Player_Distance	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	653687740	Kick	.cache\24\{24E529FE-0F75-1134-8DA8-045AA18A14AC}.wem		\Containers\Default Work Unit\Kick		79904
+	705290400	Noise	.cache\BE\{BE082BCF-6874-B5C1-5F46-13F95895C711}.wem		\Containers\Default Work Unit\Noise		10924772
+

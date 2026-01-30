@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{AAA35155-522E-4406-8038-438F8B96333A}" SchemaVersion="133">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{AAA35155-522E-4406-8038-438F8B96333A}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{AAA35155-522E-4406-8038-438F8B96333A}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Kick" ID="{755A0D4C-12BD-40D2-9952-1FB96C44928B}">
+					<ChildrenList>
+						<Action Name="" ID="{D915D2CF-BFF8-4A9E-AE13-127577677B98}" ShortID="691849857">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Kick" ID="{2F865CBF-70BF-4822-A97A-C97E70C24ABA}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Seek_Music" ID="{DD31B346-8B82-49FE-8BB1-2D1F439BD5A1}">
+					<ChildrenList>
+						<Action Name="" ID="{D5BC5772-C69B-4163-AC85-34200EA577B4}" ShortID="922616470">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="36"/>
+								<Property Name="SeekPercent" Type="Real64" Value="80"/>
+								<Property Name="SeekTime" Type="Real64" Value="217.004">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{D567C82D-CFC9-428B-A99F-568B22C26EC8}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="SeekType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{F05FF5E6-4B62-42D3-8AAB-58FF8DB8CCA0}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Noise" ID="{F7791719-7765-437C-A6D6-D306822DCBE2}">
+					<ChildrenList>
+						<Action Name="" ID="{EF7C0720-8A35-43B8-91E2-0DBEEEAD164A}" ShortID="646648214">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Noise" ID="{1A10C864-7593-46C4-BDBE-C65A0DC5A17E}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

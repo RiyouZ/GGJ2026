@@ -2,7 +2,7 @@
 <WwiseSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <CopySoundBanksAsPreBuildStep>true</CopySoundBanksAsPreBuildStep>
   <GenerateSoundBanksAsPreBuildStep>false</GenerateSoundBanksAsPreBuildStep>
-  <WwiseStreamingAssetsPath>Audio\GeneratedSoundBanks</WwiseStreamingAssetsPath>
+  <WwiseStreamingAssetsPath>Audio/GeneratedSoundBanks</WwiseStreamingAssetsPath>
   <RootOutputPath>../ggj2026_WwiseProject/GeneratedSoundBanks/</RootOutputPath>
   <CreatedPicker>true</CreatedPicker>
   <CreateWwiseGlobal>true</CreateWwiseGlobal>
