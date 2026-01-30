@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{2417395A-1AF3-41F7-8041-7FE73BE2F6A3}",
     "Language": "SFX",
-    "Hash": "{2989A654-0A6C-FE8D-DE82-C137499CC134}",
+    "Hash": "{778C885C-261B-CADC-D7DA-52446FF6BFAA}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
     "Media": [
+     {
+      "Id": "454044404",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FX_Whoosh_Wind_Shine_05.wav",
+      "CachePath": "F4/{F40B2193-7981-B31F-39F0-1FF48DDE6E54}.wem"
+     },
      {
       "Id": "653687740",
       "Language": "SFX",
@@ -60,6 +68,20 @@
       ]
      },
      {
+      "Id": "148817996",
+      "Name": "Play_whoosh",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_whoosh",
+      "GUID": "{178A37BD-87F7-47DA-95CF-C03F9C245A4C}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.0630057",
+      "DurationMax": "1.0630057",
+      "MediaRefs": [
+       {
+        "Id": "454044404"
+       }
+      ]
+     },
+     {
       "Id": "3620426301",
       "Name": "Seek_Music",
       "ObjectPath": "\\Events\\Default Work Unit\\Seek_Music",
@@ -80,6 +102,6 @@
     ]
    }
   ],
-  "FileHash": "{06525F7C-2BA5-FCFE-6581-035D44B96D10}"
+  "FileHash": "{7A5B76AF-AC8E-CA4C-74D9-61123F7D7BA5}"
  }
 }

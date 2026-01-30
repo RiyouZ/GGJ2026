@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID PLAY_KICK = 711699424U;
         static const AkUniqueID PLAY_NOISE = 1932796752U;
+        static const AkUniqueID PLAY_WHOOSH = 148817996U;
         static const AkUniqueID SEEK_MUSIC = 3620426301U;
     } // namespace EVENTS
 
