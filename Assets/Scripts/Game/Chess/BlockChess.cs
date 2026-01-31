@@ -16,6 +16,16 @@ namespace Game.GameChess
 			Water
 		}
 
+		public BlockType blockType;
+
+		public override void Initialize() 
+		{
+			// 网格坐标
+			currentPos = GameScene.GetWorldCellPos(this.transform.position.x, this.transform.position.y);
+
+			this.transform.position = GameScene.GetCellWorld(currentPos.x, currentPos.y);
+		}
+
 	}
 
 

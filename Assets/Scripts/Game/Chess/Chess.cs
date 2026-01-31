@@ -2,6 +2,9 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using RuGameFramework.Event;
+using Spine.Unity;
+using RuGameFramework.AnimeStateMachine;
+using Frame.Audio;
 
 namespace Game.GameChess {
 	public enum MoveResult 
@@ -23,14 +26,47 @@ namespace Game.GameChess {
 		private int _moveStepIndex = 0;
 		
 		[Header("当前格子位置（逻辑坐标）")]
-		private Vector2Int _currentPos;
+		protected Vector2Int currentPos;
+
+		public const string ANIME_IDLE = "idle";
+		public const string ANIME_MOVE = "move";
+
+		public const string ANIME_SELECT = "select";
+		public const string ANIME_SWITCH = "switch";
+
+		private static readonly Dictionary<int, string> _maskMap = new Dictionary<int, string>()
+		{
+			{0, "mouse"},
+			{1, "fox"}
+		};	
+
+
+		private SkeletonAnimation _skeletonAnimation;
+		private SkeletonStateMachine  _skeletonMachine;
 		
 		// 属性访问器
 		public virtual Faction Faction => _chessMask?.Faction ?? Faction.Neutral;
-		public int Level => _chessMask?.Level ?? 0;
+		public int Level
+		{
+			get
+			{
+				if (_chessMask.IsKing)
+				{
+					return _chessMask.Level + 4;
+				}
+				else
+				{
+					return _chessMask.Level;
+				}
+			}
+		}
 		public ChessMask ChessMask => _chessMask;
 		public int MoveStepIndex => _moveStepIndex;
-		public Vector2Int CurrentPos => _currentPos;
+		public Vector2Int CurrentPos => currentPos;
+
+		public Vector2Int NextPos { private set; get; }
+
+		
 		
 		/// <summary>
 		/// 设置面具
@@ -40,6 +76,11 @@ namespace Game.GameChess {
 			_chessMask = mask;
 		}
 
+		public void SkillGold()
+		{
+			
+		}
+
 		// 替换面具
 		public void SwapMask(Chess newChess) 
 		{
@@ -47,7 +88,8 @@ namespace Game.GameChess {
 			this._chessMask = newChess._chessMask;
 			newChess._chessMask = tempMask;
 
-			// TODO 刷新皮肤
+			OnSwapMask();
+			newChess.OnSwapMask();
 		}
 
 		public void OnTurnStart()
@@ -66,7 +108,12 @@ namespace Game.GameChess {
 		
 		// 为True时 后续不能移动
 		private bool _isMoveSuccessful = false;
+		// 是否正在播放移动动画
+		private bool _isMoving = false;
+		public bool IsMoving => _isMoving;	
 
+		private bool _isSelected = false;
+	
 		/// <summary>
 		/// 移动主流程
 		/// 根据 mask 的规则移动，每次只移动一个单位格
@@ -88,7 +135,7 @@ namespace Game.GameChess {
 
 			// 获取下一步移动方向
 			Vector2Int dir = _chessMask.GetMoveDir(_moveStepIndex);
-			Vector2Int nextPos = _currentPos + dir;
+			Vector2Int nextPos = currentPos + dir;
 
 			// 检查越界
 			if (IsOutOfBounds(nextPos)) 
@@ -114,12 +161,17 @@ namespace Game.GameChess {
 				}
 				
 				// 比较 level
-				Debug.Log($"[Chess] {name} 尝试攻击 {target.name} 等级 {target.Level}");
 				if (ChessMask.CanAttack(target.ChessMask)) 
 				{
 					// 消灭对方，移动到目标格子
 					Debug.Log($"[Chess] {name} 吃掉 {target.name}");
 					target.Die();
+
+					if (_chessMask.IsKing)
+					{
+						EventManager.InvokeEvent(MouseInteractSystem.EVENT_SKLL_SUCCESS, null);
+					}
+
 					// 消灭停止移动
 					MoveToPosition(nextPos);
 					// 吃掉后停止
@@ -170,12 +222,10 @@ namespace Game.GameChess {
 		/// </summary>
 		private void MoveToPosition(Vector2Int newPos) 
 		{
-			EventManager.InvokeEvent(GameScene.EVENT_CHESS_MOVE, new ChessMoveArgs(this, _currentPos, newPos));
-			_currentPos = newPos;
-
-			// 更新世界坐标
-			Vector2 worldPos = GameScene.GetCellWorld(newPos.x, newPos.y);
-			transform.position = worldPos;
+			_isMoving = true;
+			NextPos = newPos;
+			_skeletonMachine.InvokeTrigger(ANIME_MOVE);
+			EventManager.InvokeEvent(GameScene.EVENT_CHESS_MOVE, new ChessMoveArgs(this, currentPos, newPos));
 		}
 		
 		/// <summary>
@@ -183,11 +233,6 @@ namespace Game.GameChess {
 		/// </summary>
 		public void Die() 
 		{
-			Debug.Log($"[Chess] {name} 死亡");
-			
-			// TODO: 播放死亡动画
-			// TODO: 从 GridSystem 移除
-			
 			// 暂时直接销毁
 			Destroy(gameObject);
 		}
@@ -205,7 +250,7 @@ namespace Game.GameChess {
 				return path;
 			}
 			
-			Vector2Int simulatedPos = _currentPos;
+			Vector2Int simulatedPos = currentPos;
 			int maxSteps = _chessMask.GetMoveMaxCount();
 			
 			// 从当前 moveStepIndex 开始模拟移动
@@ -246,15 +291,138 @@ namespace Game.GameChess {
 		/// <summary>
 		/// 初始化棋子位置
 		/// </summary>
-		public void Initialize() 
+		public virtual void Initialize() 
 		{
 			ResetMove();
 			// 网格坐标
-			_currentPos = GameScene.GetWorldCellPos(this.transform.position.x, this.transform.position.y);
+			currentPos = GameScene.GetWorldCellPos(this.transform.position.x, this.transform.position.y);
 
-			this.transform.position = GameScene.GetCellWorld(_currentPos.x, _currentPos.y);
+			this.transform.position = GameScene.GetCellWorld(currentPos.x, currentPos.y);
 
-			Debug.Log("[Chess] " + name + " initialized at " + _currentPos);
+			_skeletonAnimation = GetComponentInChildren<SkeletonAnimation>();
+
+			_skeletonMachine = new SkeletonStateMachine(_skeletonAnimation);
+
+			_skeletonMachine.RegisterState(0, ANIME_IDLE, true);
+			_skeletonMachine.RegisterState(0, ANIME_MOVE, false)
+			.AddAnoAnimationEvent("move", (track, e) =>
+			{
+				this.transform.position = GameScene.GetCellWorld(NextPos.x, NextPos.y);
+				
+			})
+			.OnAnimationComplate((st, track) => 
+			{
+				_isMoving = false;
+			})
+			.AddAnoAnimationEvent("move_SFX", (track, e) =>
+			{
+				Debug.Log("[Chess] 播放移动音效");
+				// WwiseAudio.PlayEvent("Doll_Move_Prepare_Quick_SFX", this.gameObject);
+			})
+			.AddAnoAnimationEvent("stop_SFX", (track, e) =>
+			{
+				WwiseAudio.PlayEvent("Doll_Move_Land_SFX", this.gameObject);
+				var nextCell = GameScene.GetCell(NextPos.x, NextPos.y);
+				if (nextCell != null && nextCell.CellType == CellType.Block)
+				{
+					Debug.Log("[Chess] 播放撞击音效");
+					// WwiseAudio.PlayEvent("Table_Chair_Bump_SFX", this.gameObject);
+				}
+				else if(nextCell != null && nextCell.CellType == CellType.Flag)
+				{
+					// WwiseAudio.PlayEvent("SFX_CapturePoint_Trigger", this.gameObject);
+				}
+				else
+				{
+					// WwiseAudio.PlayEvent("Doll_Position_Arrive_Landing_SFX", this.gameObject);
+				}
+				currentPos = NextPos;
+			});
+			
+			_skeletonMachine.RegisterState(0, ANIME_SELECT, false)
+			.AddAnoAnimationEvent("select_SFX", (track, e) => 
+			{	
+				Debug.Log("[Chess] 播放选中音效");
+				// WwiseAudio.PlayEvent("Doll_Select_Highlight_SFX", this.gameObject);
+			});
+
+			_skeletonMachine.RegisterState(0, ANIME_SWITCH, false)
+			.AddAnoAnimationEvent("switch", (track, e) => 
+			{
+				UpdateMaskSkin();
+			})
+			.AddAnoAnimationEvent("switch_SFX", (track, e) => 
+			{
+				// var sfxIndex = Random.Range(0, 2);
+				// switch (sfxIndex)
+				// {
+				// 	case 0:
+				// 		WwiseAudio.PlayEvent("Mask_Special_SFX", this.gameObject);
+				// 		break;
+				// }
+
+				// WwiseAudio.PlayEvent("Doll_Mask_Switch_Effect_SFX", this.gameObject);
+			});
+
+
+			_skeletonMachine.AddTransition(ANIME_IDLE, ANIME_MOVE, () => _skeletonMachine.Trigger(ANIME_MOVE));
+			_skeletonMachine.AddTransition(ANIME_MOVE, ANIME_IDLE, () => !_skeletonMachine.Trigger(ANIME_MOVE));
+
+			_skeletonMachine.AddTransition(ANIME_IDLE, ANIME_SELECT, () => _isSelected);
+			_skeletonMachine.AddTransition(ANIME_SELECT, ANIME_IDLE, () => !_isSelected);
+
+			_skeletonMachine.AddTransition(ANIME_IDLE, ANIME_SWITCH, () => _skeletonMachine.Trigger(ANIME_SWITCH));
+			_skeletonMachine.AddTransition(ANIME_SWITCH, ANIME_IDLE, () => !_skeletonMachine.Trigger(ANIME_SWITCH));
+			
+			_skeletonMachine.SetDefault(ANIME_IDLE);
+			_skeletonMachine.StartMachine();
+			UpdateMaskSkin();
+		}
+
+		public void OnSelectedStart()
+		{
+			_isSelected = true;
+		}
+
+		public void OnSelectedEnd()
+		{
+			_isSelected = false;
+		}
+
+        void Update()
+        {
+            if(_skeletonMachine != null)
+			{
+				_skeletonMachine.UpdateMachine();
+			}
+        }
+
+		public void OnSwapMask()
+		{
+			_skeletonMachine.InvokeTrigger(ANIME_SWITCH);
+		}
+        public void UpdateMaskSkin()
+		{
+			if (_skeletonAnimation == null)
+			{
+				Debug.LogWarning($"[Chess] {name} SkeletonAnimation 组件未找到，无法更新皮肤");
+				return;
+			}
+
+			if (_chessMask == null)
+			{
+				Debug.LogWarning($"[Chess] {name} ChessMask 未设置，无法更新皮肤");
+				return;
+			}
+
+			if (_maskMap.TryGetValue(this.Level, out string skinName))
+			{
+				_skeletonAnimation.Skeleton.SetSkin(skinName);
+				_skeletonAnimation.Skeleton.SetSlotsToSetupPose();
+				_skeletonAnimation.AnimationState.Apply(_skeletonAnimation.Skeleton);
+				_skeletonAnimation.Update(0);
+			}
 		}
 	}
+	
 }

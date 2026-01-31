@@ -581,7 +581,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -600,7 +600,7 @@ Transform:
   m_GameObject: {fileID: 1097619687}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.57, y: -0.47, z: 0}
+  m_LocalPosition: {x: 5.58, y: -0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -623,6 +623,7 @@ MonoBehaviour:
     _faction: 2
     moveRules: []
     _dirIndex: 0
+  blockType: 0
 --- !u!1001 &1180486921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -775,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2669213458380237992, guid: b28db26d7bc937c41a00c41ac380a41e, type: 3}
       propertyPath: _chessMask._level
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2669213458380237992, guid: b28db26d7bc937c41a00c41ac380a41e, type: 3}
       propertyPath: _chessMask._faction
@@ -793,6 +794,10 @@ PrefabInstance:
       propertyPath: _chessMask.moveRules.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 15f3bd6b4bc93c14f8b2ff7028ff2e87, type: 2}
+    - target: {fileID: 5161503728586686280, guid: b28db26d7bc937c41a00c41ac380a41e, type: 3}
+      propertyPath: _animationName
+      value: idle
+      objectReference: {fileID: 0}
     - target: {fileID: 5202850534367389056, guid: b28db26d7bc937c41a00c41ac380a41e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.66

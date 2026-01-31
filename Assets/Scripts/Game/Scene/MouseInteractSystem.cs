@@ -1,7 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using Frame.Audio;
 using Game.GameChess;
 using Game.Scene;
+using JetBrains.Annotations;
+using RuGameFramework.Event;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -12,6 +17,7 @@ namespace Game
 	/// </summary>
 	public class MouseInteractSystem
 	{
+		public const string EVENT_SKLL_SUCCESS = "SkillSuccess";
 		private Camera _camera;
 		private GridSystem _gridSystem;
 		private TurnSystem _turnSystem;
@@ -24,6 +30,12 @@ namespace Game
 		
 		// 当前高亮的格子列表
 		private List<Vector2Int> _currentHighlightedCells = new List<Vector2Int>();
+		
+		// 技能状态
+		private bool _isSkillActive = false;
+		public bool IsSkillActive => _isSkillActive;
+
+		private int _skillCount = 1;
 
 		/// <summary>
 		/// 构造函数
@@ -44,9 +56,8 @@ namespace Game
 		/// </summary>
 		public void Initialize()
 		{
-#if UNITY_EDITOR
-			Debug.Log("MouseInteractSystem initialized");
-#endif
+			EventManager.AddListener(GameScene.EVENT_SCENE_PLAYER_SKILL, (args) => ToggleSkill());
+			EventManager.AddListener(EVENT_SKLL_SUCCESS, (args) => OnSkillSuccesss());
 		}
 
 		/// <summary>
@@ -60,9 +71,17 @@ namespace Game
 				return;
 			}
 
+			// TODO : 热键测试
+
 			if(Input.GetKeyDown(KeyCode.Space))
 			{
 				GameScene.TurnSystem.PlayerActionComplete();
+			}
+			
+			// Q键：给选中的棋子赋予/取消技能
+			if(Input.GetKeyDown(KeyCode.Q))
+			{
+				ToggleSkill();
 			}
 
 			HandleMouseHover();
@@ -221,6 +240,7 @@ namespace Game
 		private void SelectChess(Chess chess)
 		{
 			_selectedChess = chess;
+			_selectedChess.OnSelectedStart();
 		}
 
 		/// <summary>
@@ -228,6 +248,11 @@ namespace Game
 		/// </summary>
 		private void DeselectChess()
 		{
+			if(_selectedChess != null)
+			{
+				_selectedChess.OnSelectedEnd();
+			}
+
 			_selectedChess = null;
 		}
 
@@ -282,6 +307,54 @@ namespace Game
 				GameScene.CancelHighlightCells(_currentHighlightedCells);
 				_currentHighlightedCells.Clear();
 			}
+		}
+		
+		/// <summary>
+		/// 切换技能状态
+		/// </summary>
+		private void ToggleSkill()
+		{
+			if (_selectedChess == null) return;
+
+			_isSkillActive = !_isSkillActive;
+			
+			if (_isSkillActive)
+			{
+				ApplySkillToChess(_selectedChess);
+			}
+			else
+			{
+				CancelSkillToChess(_selectedChess);
+			}
+		}
+		
+		/// <summary>
+		/// 对棋子应用技能（增加 level）
+		/// </summary>
+		private void ApplySkillToChess(Chess chess)
+		{
+			if (chess == null || chess.ChessMask == null) return;
+			
+			chess.ChessMask.IsKing = true;
+			chess.UpdateMaskSkin(); // 更新皮肤显示
+			
+			// WwiseAudio.PlayEvent("Doll_Skill_Cast_SFX", chess.gameObject);
+		}
+
+		private void CancelSkillToChess(Chess chess)
+		{
+			if (chess == null || chess.ChessMask == null) return;
+			
+			chess.ChessMask.IsKing = false;
+			chess.UpdateMaskSkin(); // 更新皮肤显示
+
+		}
+
+		private void OnSkillSuccesss()
+		{
+			Debug.Log("[MouseInteractSystem] 技能成功触发");
+			_skillCount--;
+			_isSkillActive = false;
 		}
 
 		/// <summary>

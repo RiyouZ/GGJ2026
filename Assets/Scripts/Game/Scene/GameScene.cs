@@ -14,6 +14,9 @@ namespace Game
 	public class GameScene : MonoBehaviour
 	{
 		public const string EVENT_CHESS_MOVE = "EventChessMove";
+
+		public const string EVENT_SCENE_PLAYER_SKILL = "ScenePlayerSkill";
+		
 		public Tilemap tilemap;
 		public Vector2Int cellSize = new Vector2Int(9, 6);
 

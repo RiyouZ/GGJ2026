@@ -17,6 +17,8 @@ namespace Game.GameChess {
 
 		public List<MoveRuleSO> moveRules = new List<MoveRuleSO>();
 		public int _dirIndex= 0;
+
+		public bool IsKing {set; get; } = false;
 		
 		/// <summary>
 		/// 判断是否可以攻击目标面具
