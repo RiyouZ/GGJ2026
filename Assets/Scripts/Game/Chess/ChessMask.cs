@@ -1,12 +1,11 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Game.GameChess {
 	[CreateAssetMenu(fileName = "ChessMask", menuName = "Custom/ChessMask", order = 1)]
 	public class ChessMask : ScriptableObject 
 	{
-		[Header("移动规则")]
-		[SerializeField] private MoveRuleSO _moveRule;
-		
 		[Header("等级")]
 		[SerializeField] private int _level;
 		
@@ -15,7 +14,9 @@ namespace Game.GameChess {
 		
 		public int Level => _level;
 		public Faction Faction => _faction;
-		public MoveRuleSO MoveRule => _moveRule;
+
+		public List<MoveRuleSO> moveRules = new List<MoveRuleSO>();
+		public int _dirIndex= 0;
 		
 		/// <summary>
 		/// 判断是否可以攻击目标面具
@@ -40,12 +41,37 @@ namespace Game.GameChess {
 		/// </summary>
 		public Vector2Int GetMoveDir(int moveStepIndex) 
 		{
-			if (_moveRule == null) {
+			if (moveRules == null || moveRules.Count == 0) {
 				Debug.LogWarning($"[ChessMask] {name} 的 MoveRule 未设置！");
 				return Vector2Int.zero;
 			}
-			
-			return _moveRule.GetMoveDirection(moveStepIndex);
+
+			if(_dirIndex < 0 || _dirIndex >= moveRules.Count)
+			{
+				return Vector2Int.zero;
+			}
+
+			return moveRules[_dirIndex].GetMoveDirection(moveStepIndex);
+		}
+
+		public void ChangeMoveDir()
+		{
+			_dirIndex = (_dirIndex + 1) % moveRules.Count;
+		}
+
+		public int GetMoveMaxCount()
+		{
+			if (moveRules == null || moveRules.Count == 0) {
+				Debug.LogWarning($"[ChessMask] {name} 的 MoveRule 未设置！");
+				return 0;
+			}
+
+			if(_dirIndex < 0 || _dirIndex >= moveRules.Count)
+			{
+				return 0;
+			}
+
+			return moveRules[_dirIndex].GetMoveMaxCount();
 		}
 	}
 }

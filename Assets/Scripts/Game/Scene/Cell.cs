@@ -14,6 +14,8 @@ namespace Game
 		[SerializeField]
 		private CellType _cellType = CellType.Normal;
 
+		private SpriteRenderer _spriteRenderer;
+
 		/// <summary>
 		/// 当前格子的棋子
 		/// </summary>
@@ -49,6 +51,10 @@ namespace Game
 		[System.NonSerialized]
 		public int Y;
 
+		public void Initialize()
+		{
+			_spriteRenderer = GetComponent<SpriteRenderer>();
+		}
 
 
 		/// <summary>
@@ -58,6 +64,10 @@ namespace Game
 		public void SetChess(Chess chess)
 		{
 			Chess = chess;
+			if (chess.Faction == Faction.Enemy)
+			{
+				_cellType = CellType.Flag;
+			}
 		}
 
 		/// <summary>
@@ -66,10 +76,7 @@ namespace Game
 
 		public void Highlight()
 		{
-			// TODO: 可通过Tilemap.SetColor等方式高亮
-	#if UNITY_EDITOR
-			Debug.Log($"Cell ({X}, {Y}) highlighted");
-	#endif
+			_spriteRenderer.color = new Color(1f, 1f, 1f, 0.2f);
 		}
 
 		/// <summary>
@@ -78,10 +85,7 @@ namespace Game
 
 		public void CancelHighlight()
 		{
-			// TODO: 可通过Tilemap.SetColor等方式取消高亮
-	#if UNITY_EDITOR
-			Debug.Log($"Cell ({X}, {Y}) highlight cancelled");
-	#endif
+			_spriteRenderer.color = Color.white;
 		}
 
 		/// <summary>

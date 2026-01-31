@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Game.GameChess;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -14,6 +16,10 @@ namespace Game
 		private Cell[,] _cells;
 		private Vector2Int _cellSize;
 		private Vector3Int _offset; // TileMap坐标偏移量，用于映射到正整数
+		
+		private List<Vector2Int> _flagPositions = new List<Vector2Int>();
+
+
 
 		/// <summary>
 		/// 构造函数，建立与修正格子的逻辑索引(左下到右上)，并将tilemap坐标映射到正整数区间
@@ -77,36 +83,41 @@ namespace Game
 						// 设置 cell 的逻辑坐标
 						cell.X = logicalX;
 						cell.Y = logicalY;
-						
+
+						cell.gameObject.name = $"Cell_({cell.X}, {cell.Y})";
+						cell.Initialize();
 						// 存储到对应的逻辑坐标数组位置
 						_cells[logicalX, logicalY] = cell;
-						
-#if UNITY_EDITOR
-						Debug.Log($"Cell at World({worldPos.x:F2}, {worldPos.y:F2}) -> TileMap({tilemapPos.x}, {tilemapPos.y}) -> Logical({logicalX}, {logicalY})");
-#endif
 					}
-#if UNITY_EDITOR
-					else
-					{
-						Debug.LogWarning($"Cell at World({worldPos.x:F2}, {worldPos.y:F2}) -> TileMap({tilemapPos.x}, {tilemapPos.y}) maps to out-of-bounds logical position ({logicalX}, {logicalY})");
-					}
-#endif
 				}
 			}
-			
-#if UNITY_EDITOR
-			Debug.Log($"GridSystem constructed with {cellList?.Count ?? 0} cells from provided list");
-#endif
 		}
 
 		/// <summary>
 		/// 初始化方法
 		/// </summary>
-		public void Initialize()
+		public void Initialize(Chess[] chesses)
 		{
-#if UNITY_EDITOR
-			Debug.Log($"GridSystem initialized with size ({_cellSize.x}, {_cellSize.y})");
-#endif
+			// 将棋子放置到对应的格子中
+			foreach (var chess in chesses)
+			{
+				if (chess == null)
+					continue;
+
+				chess.Initialize();
+
+				Vector2Int pos = chess.CurrentPos;
+				Cell cell = GetLocalCell(pos.x, pos.y);
+				if (cell != null)
+				{
+					cell.SetChess(chess);
+					
+					if (cell.CellType == CellType.Flag)
+					{
+						_flagPositions.Add(pos);
+					}
+				}
+			}
 		}
 
 		/// <summary>
@@ -125,8 +136,6 @@ namespace Game
 				return null;
 			}
 
-			Debug.Log($"GetLocalCell: Returning cell at ({x}, {y})");
-			
 			return _cells[x, y];
 		}
 
@@ -140,8 +149,6 @@ namespace Game
 		{
 			Vector2 worldPos = new Vector2(worldX, worldY);
 			Vector2Int cellPos = GetWorldCellPos(worldPos.x, worldPos.y);
-
-			Debug.Log($"GetWorldCell: World({worldX:F2}, {worldY:F2}) -> Logical({cellPos.x}, {cellPos.y})");
 			
 			return GetLocalCell(cellPos.x, cellPos.y);
 		}
@@ -178,8 +185,6 @@ namespace Game
 			// 将TileMap坐标映射到逻辑坐标
 			int logicalX = cellPos.x - _offset.x;
 			int logicalY = cellPos.y - _offset.y;
-
-			Debug.Log($"GetWorldCellPos: World({worldX:F2}, {worldY:F2}) -> TileMap({cellPos.x}, {cellPos.y}) -> Logical({logicalX}, {logicalY})");
 			
 			return new Vector2Int(logicalX, logicalY);
 		}
@@ -282,10 +287,26 @@ namespace Game
 			
 			_cells = null;
 			_tilemap = null;
-			
-#if UNITY_EDITOR
-			Debug.Log("GridSystem disposed");
-#endif
+		}
+
+		public bool IsVictory()
+		{
+			foreach (var pos in _flagPositions)
+			{
+				Cell cell = GetLocalCell(pos.x, pos.y);
+				if (cell == null || cell.Chess == null)
+				{
+					return false;
+				}
+
+				// 没有完全占领
+				if(cell.Chess.Faction != Faction.Friend)
+				{
+					return false;
+				}
+			}
+
+			return true;
 		}
 	}
 }

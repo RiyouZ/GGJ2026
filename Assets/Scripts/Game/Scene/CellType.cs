@@ -5,6 +5,8 @@ namespace Game
     /// </summary>
     public enum CellType
     {
-        Normal
+        Normal,
+        Flag,
+        Block
     }
 }

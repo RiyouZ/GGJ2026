@@ -1,0 +1,16 @@
+{
+    "name": "RuGameFramework.Event",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b5c8afeaed6a08d43919d0b620707bc7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -23,11 +23,11 @@ namespace Game
 		/// <summary>
 		/// 回合系统（具体接口和职责后续补充，详见回合系统相关文档）
 		/// </summary>
-
-		/// <summary>
-		/// 鼠标交互系统（具体接口和职责后续补充）
+		public static Scene.TurnSystem TurnSystem { get; private set; }
 		/// </summary>
 		public static MouseInteractSystem MouseInteractSystem { get; private set; }
+
+		private List<Chess> _friendChesses = new List<Chess>(4);
 
 
 		// Start is called before the first frame update
@@ -71,28 +71,31 @@ namespace Game
 		/// </summary>
 		private void InitializeSystems()
 		{
+			var allChess = FindObjectsByType<Chess>(FindObjectsSortMode.None);
+
 			// 初始化GridSystem
 			if (tilemap != null)
 			{
 				GridSystem = new GridSystem(tilemap, cellSize, new List<Cell>(GetComponentsInChildren<Cell>()));
-				GridSystem.Initialize();
-				
-				// 初始化MouseInteractSystem
-				MouseInteractSystem = new MouseInteractSystem(tilemap, GridSystem);
-				MouseInteractSystem.Initialize();
+				GridSystem.Initialize(allChess);
 			}
-#if UNITY_EDITOR
-			else
+
+			_friendChesses.Clear();
+			foreach(var chess in allChess)
 			{
-				Debug.LogError("Tilemap is not assigned in GameScene!");
+				if(chess.Faction == Faction.Friend)
+				{
+					_friendChesses.Add(chess);
+				}
 			}
-#endif
 			
-			// TODO: 初始化TurnSystem
+			// 初始化TurnSystem
+			TurnSystem = new Scene.TurnSystem();
+			TurnSystem.Initialize(this, _friendChesses);
 			
-#if UNITY_EDITOR
-			Debug.Log("GameScene systems initialized");
-#endif
+			// 初始化MouseInteractSystem（传入TurnSystem用于权限检查）
+			MouseInteractSystem = new MouseInteractSystem(tilemap, GridSystem, TurnSystem);
+			MouseInteractSystem.Initialize();
 		}
 
 		/// <summary>
@@ -103,14 +106,11 @@ namespace Game
 			MouseInteractSystem?.Dispose();
 			MouseInteractSystem = null;
 			
+			TurnSystem = null;
+			
 			GridSystem?.Dispose();
 			GridSystem = null;
-			
-			// TODO: 销毁TurnSystem
-			
-#if UNITY_EDITOR
-			Debug.Log("GameScene systems disposed");
-#endif
+
 		}
 
 		#endregion
@@ -253,6 +253,11 @@ namespace Game
 			}
 
 			return GridSystem.GetWorldCellPos(worldX, worldY);
+		}
+
+		public static bool IsVectory()
+		{
+			return GridSystem.IsVictory();
 		}
 
 		#endregion

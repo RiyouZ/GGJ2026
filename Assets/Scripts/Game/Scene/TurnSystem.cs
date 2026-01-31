@@ -1,270 +1,206 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.GameChess;
 using UnityEngine;
 
 namespace Game.Scene
 {
-    /// <summary>
-    /// 回合系统 - 负责调度回合和触发胜利条件
-    /// </summary>
-    public class TurnSystem : MonoBehaviour
-    {
-        #region 状态枚举
-        public enum TurnState
-        {
-            PlayerAction,    // 等待玩家操作
-            ChessMoving,     // 棋子移动中
-            VictoryCheck,    // 胜利判定
-            TurnEnd          // 回合结束
-        }
-        #endregion
+	/// <summary>
+	/// 回合系统 - 负责调度回合和触发胜利条件
+	/// </summary>
+	public class TurnSystem
+	{
+		#region 状态枚举
+		public enum TurnState
+		{
+			PlayerAction,    // 等待玩家操作
+			ChessMoving,     // 棋子移动中
+			VictoryCheck,    // 胜利判定
+			TurnEnd          // 回合结束
+		}
+		#endregion
 
-        #region 事件定义
-        /// <summary>回合开始事件</summary>
-        public event Action OnTurnStart;
-        
-        /// <summary>回合结束事件</summary>
-        public event Action OnTurnEnd;
-        
-        /// <summary>玩家操作结束事件</summary>
-        public event Action OnPlayerActionEnd;
-        
-        /// <summary>所有棋子移动完毕事件</summary>
-        public event Action OnAllChessMoved;
-        
-        /// <summary>游戏胜利事件</summary>
-        public event Action OnGameVictory;
-        #endregion
+		#region 事件定义
+		/// <summary>回合开始事件</summary>
+		public event Action OnTurnStart;
+		
+		/// <summary>回合结束事件</summary>
+		public event Action OnTurnEnd;
+		
+		/// <summary>玩家操作结束事件</summary>
+		public event Action OnPlayerActionEnd;
+		
+		/// <summary>所有棋子移动完毕事件</summary>
+		public event Action OnAllChessMoved;
+		
+		/// <summary>游戏胜利事件</summary>
+		public event Action OnGameVictory;
+		#endregion
 
-        #region 字段
-        [Header("当前回合状态")]
-        [SerializeField] private TurnState currentState = TurnState.PlayerAction;
-        
-        [Header("回合计数")]
-        [SerializeField] private int turnCount = 0;
-        
-        [Header("游戏是否结束")]
-        private bool isGameOver = false;
-        
-        // 棋子移动相关
-        private List<GameObject> movingChessList = new List<GameObject>();
-        private int movedChessCount = 0;
-        #endregion
+		#region 字段
+		[Header("当前回合状态")]
+		[SerializeField] private TurnState _currentState = TurnState.PlayerAction;
+		
+		[Header("回合计数")]
+		[SerializeField] private int _turnCount = 0;
+		
+		[Header("游戏是否结束")]
+		private bool _isGameOver = false;
+		
+		// 棋子移动相关
+		private List<Chess> _movingChessList;
 
-        #region Unity生命周期
-        private void Start()
-        {
-            StartTurn();
-        }
+		// 当前移动的棋子
+		private int _movedChessCount = 0;
 
-        private void Update()
-        {
-            if (isGameOver) return;
-            
-            // 状态机流转
-            switch (currentState)
-            {
-                case TurnState.PlayerAction:
-                    // 等待玩家点击结束回合按钮
-                    break;
-                    
-                case TurnState.ChessMoving:
-                    // 棋子移动由协程处理，这里只等待
-                    break;
-                    
-                case TurnState.VictoryCheck:
-                    CheckVictory();
-                    break;
-                    
-                case TurnState.TurnEnd:
-                    EndTurn();
-                    break;
-            }
-        }
-        #endregion
+		// 移动完的棋子数量
+		private int _completeChessCount = 0;
+		
+		// 阶段完成信号量
+		private bool _isPlayerActionComplete = false;
+		private bool _isChessMoveComplete = false;
 
-        #region 公共方法
-        /// <summary>
-        /// 开始新回合
-        /// </summary>
-        public void StartTurn()
-        {
-            turnCount++;
-            Debug.Log($"回合 {turnCount} 开始");
-            
-            // 触发回合开始事件
-            OnTurnStart?.Invoke();
-            
-            // 进入玩家操作阶段
-            currentState = TurnState.PlayerAction;
-        }
+		public bool CanPlayerAct => _currentState == TurnState.PlayerAction;
+		
+		// 协程宿主（用于启动协程）
+		private MonoBehaviour _coroutineHost;
 
-        /// <summary>
-        /// 玩家点击"结束回合"按钮时调用
-        /// </summary>
-        public void OnPlayerClickEndTurn()
-        {
-            if (currentState != TurnState.PlayerAction) return;
-            
-            Debug.Log("玩家结束操作，开始棋子移动");
-            
-            // 触发玩家操作结束事件
-            OnPlayerActionEnd?.Invoke();
-            
-            // 进入棋子移动阶段
-            currentState = TurnState.ChessMoving;
-            StartCoroutine(MoveAllChess());
-        }
+		#endregion
 
-        /// <summary>
-        /// 结束当前回合
-        /// </summary>
-        private void EndTurn()
-        {
-            Debug.Log($"回合 {turnCount} 结束");
-            
-            // 触发回合结束事件
-            OnTurnEnd?.Invoke();
-            
-            // 开始下一回合
-            StartTurn();
-        }
+		#region 公共方法
+		/// <summary>
+		/// 初始化回合系统并开始运行
+		/// </summary>
+		/// <param name="host">协程宿主（通常是GameScene）</param>
+		public void Initialize(MonoBehaviour host, List<Chess> allChess)
+		{
+			_coroutineHost = host;
+			_movingChessList = allChess;
+			_coroutineHost.StartCoroutine(TurnLoopCoroutine());
+		}
+		#endregion
 
-        /// <summary>
-        /// 检查胜利条件
-        /// </summary>
-        private void CheckVictory()
-        {
-            // TODO: 需要从外部获取我方棋子列表和胜利格子列表
-            // 这里使用标签来查找，实际项目中可以通过依赖注入或单例获取
-            GameObject[] myChessList = GameObject.FindGameObjectsWithTag("MyChess");
-            GameObject[] victoryTiles = GameObject.FindGameObjectsWithTag("VictoryTile");
-            
-            if (myChessList.Length == 0 || victoryTiles.Length == 0)
-            {
-                Debug.LogWarning("未找到棋子或胜利格子，跳过胜利判定");
-                currentState = TurnState.TurnEnd;
-                return;
-            }
-            
-            // 判断所有我方棋子是否都站在胜利格子上
-            bool allOnVictoryTile = true;
-            foreach (var chess in myChessList)
-            {
-                bool isOnVictoryTile = false;
-                foreach (var tile in victoryTiles)
-                {
-                    // 简单的位置判断，实际项目中可能需要更精确的判定
-                    if (Vector3.Distance(chess.transform.position, tile.transform.position) < 0.5f)
-                    {
-                        isOnVictoryTile = true;
-                        break;
-                    }
-                }
-                
-                if (!isOnVictoryTile)
-                {
-                    allOnVictoryTile = false;
-                    break;
-                }
-            }
-            
-            if (allOnVictoryTile)
-            {
-                // 游戏胜利
-                Debug.Log("游戏胜利！所有棋子都在胜利格子上！");
-                isGameOver = true;
-                OnGameVictory?.Invoke();
-            }
-            else
-            {
-                // 未胜利，进入回合结束阶段
-                currentState = TurnState.TurnEnd;
-            }
-        }
-        #endregion
+		#region 核心协程
+		/// <summary>
+		/// 回合循环协程 - 驱动整个回合流转
+		/// </summary>
+		private IEnumerator TurnLoopCoroutine()
+		{
+			while (!_isGameOver)
+			{
+				// 阶段1: 回合开始
+				StartTurn();
+				
+				// 阶段2: 等待玩家操作完成
+				_currentState = TurnState.PlayerAction;
+				_isPlayerActionComplete = false;
+				yield return new WaitUntil(() => _isPlayerActionComplete);
+				
+				// 阶段3: 棋子移动
+				_currentState = TurnState.ChessMoving;
+				yield return MoveAllChess();
+				
+				// 阶段4: 胜利判定
+				_currentState = TurnState.VictoryCheck;
+				bool isVictory = CheckVictory();
+				if (isVictory)
+				{
+					// 游戏胜利，退出循环
+					yield break;
+				}
+				
+				// 阶段5: 回合结束
+				_currentState = TurnState.TurnEnd;
+				EndTurn();
+				
+				yield return null;
+			}
+		}
+		#endregion
 
-        #region 私有方法
-        /// <summary>
-        /// 移动所有棋子
-        /// </summary>
-        private IEnumerator MoveAllChess()
-        {
-            // TODO: 获取所有需要移动的棋子
-            // 这里使用标签查找，实际项目中建议通过管理器获取
-            GameObject[] allChess = GameObject.FindGameObjectsWithTag("Chess");
-            movingChessList.Clear();
-            movedChessCount = 0;
-            
-            Debug.Log($"开始移动 {allChess.Length} 个棋子");
-            
-            // 遍历每个棋子，触发移动
-            foreach (var chess in allChess)
-            {
-                movingChessList.Add(chess);
-                
-                // TODO: 调用棋子的移动方法
-                // 假设棋子有一个 IChessMovement 接口
-                var movement = chess.GetComponent<IChessMovement>();
-                if (movement != null)
-                {
-                    movement.StartMove(OnChessMoveComplete);
-                }
-                else
-                {
-                    // 如果没有移动组件，直接标记为完成
-                    OnChessMoveComplete();
-                }
-            }
-            
-            // 等待所有棋子移动完毕
-            while (movedChessCount < movingChessList.Count)
-            {
-                yield return null;
-            }
-            
-            Debug.Log("所有棋子移动完毕");
-            
-            // 触发所有棋子移动完毕事件
-            OnAllChessMoved?.Invoke();
-            
-            // 进入胜利判定阶段
-            currentState = TurnState.VictoryCheck;
-        }
+		public void PlayerActionComplete()
+		{
+			if (_currentState == TurnState.PlayerAction)
+			{
+				_isPlayerActionComplete = true;
+			}
+		}
 
-        /// <summary>
-        /// 单个棋子移动完成回调
-        /// </summary>
-        private void OnChessMoveComplete()
-        {
-            movedChessCount++;
-        }
-        #endregion
+		/// <summary>
+		/// 开始新回合
+		/// </summary>
+		private void StartTurn()
+		{
+			_turnCount++;
+			Debug.Log($"回合 {_turnCount} 开始");
+			
+			// 触发回合开始事件
+			OnTurnStart?.Invoke();
+		}
 
-        #region 辅助方法
-        /// <summary>
-        /// 获取当前回合数
-        /// </summary>
-        public int GetTurnCount() => turnCount;
+		/// <summary>
+		/// 结束当前回合
+		/// </summary>
+		private void EndTurn()
+		{	
+			// 触发回合结束事件
+			OnTurnEnd?.Invoke();
+		}
 
-        /// <summary>
-        /// 获取当前状态
-        /// </summary>
-        public TurnState GetCurrentState() => currentState;
+		/// <summary>
+		/// 检查胜利条件
+		/// </summary>
+		/// <returns>是否胜利</returns>
+		private bool CheckVictory()
+		{
+			if(GameScene.IsVectory())
+			{
+				_isGameOver = true;
+				OnGameVictory?.Invoke();
+				return true;
+			}
 
-        /// <summary>
-        /// 游戏是否结束
-        /// </summary>
-        public bool IsGameOver() => isGameOver;
-        #endregion
-    }
+			return false;
+		}
 
-    /// <summary>
-    /// 棋子移动接口（示例）
-    /// </summary>
-    public interface IChessMovement
-    {
-        void StartMove(Action onComplete);
-    }
+		/// <summary>
+		/// 移动所有棋子
+		/// </summary>
+		private IEnumerator MoveAllChess()
+		{
+			_completeChessCount = 0;
+			
+			while (_completeChessCount < _movingChessList.Count)
+			{
+				_movedChessCount = 0;
+
+				// 遍历每个棋子，触发移动
+				foreach (var chess in _movingChessList)
+				{   
+					var moveResult =  chess.Move();
+
+					if(moveResult == MoveResult.Complete)
+					{
+						OnChessMoveComplete();
+					}
+				}
+
+				// 等待所有棋子动画移动完毕
+				yield return new WaitUntil(() => _completeChessCount >= _movingChessList.Count);
+			}
+			
+			// 触发所有棋子移动完毕事件
+			OnAllChessMoved?.Invoke();
+
+		}
+
+		/// <summary>
+		/// 单个棋子移动完成回调
+		/// </summary>
+		private void OnChessMoveComplete()
+		{
+			_completeChessCount++;
+		}
+	}
 }

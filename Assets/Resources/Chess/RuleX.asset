@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af13221fa44d5cb4dbff1c8c8aad36af, type: 3}
-  m_Name: AMask
+  m_Script: {fileID: 11500000, guid: 948bf44101d56864f9b519f846862965, type: 3}
+  m_Name: RuleX
   m_EditorClassIdentifier: 
-  _moveRule: {fileID: 11400000, guid: 1842fef83591efc4ca2b9d58ccfe1025, type: 2}
-  _level: 0
-  _faction: 0
+  moveDirections:
+  - {x: 1, y: 0}
