@@ -3,6 +3,19 @@
 - 引擎：Unity 2022.3.62f2c1
 - 渲染管线：URP 14
 
+## 基本玩法
+- 俯视角2D游戏
+- 类自走棋
+
+## 游戏架构
+- GameScene 游戏场景
+	- GridSystem 网格系统
+		- Cell 场景单位格子
+			- Chess 棋子 由单位格子管理
+				- Mask 棋子的面具
+	- TurnSystem 回合制管理系统
+	- MouseInteractSystem 鼠标交互系统
+	
 ## 目标平台
 - 目标平台：Windows
 - 构建支持：暂未设置（开发优先）
@@ -13,6 +26,7 @@
 - 私有成员变量：下划线 + 小驼峰（_myField）
 - 事件/回调：`On` + 事件名（例如 `OnPlayerDeath`）
 - 静态常量：全部大写
+- 大括号换行
 
 ## 渲染
 - 使用 URP 14
@@ -30,7 +44,7 @@
 - 使用 UGUI
 
 ## 场景
-- 启动场景：`Start`（Start.unity）
+- 启动场景：`GameScene`（GameScene.unity）
 
 ## 测试
 - 测试框架：Unity Test FrameWork

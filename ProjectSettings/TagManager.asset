@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor
+    uniqueID: 777275931
+    locked: 0
+  - name: Chess
+    uniqueID: 3047629579
+    locked: 0
