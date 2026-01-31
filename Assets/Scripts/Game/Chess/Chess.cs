@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
+using RuGameFramework.Event;
 
 namespace Game.GameChess {
 	public enum MoveResult 
@@ -9,7 +10,6 @@ namespace Game.GameChess {
 		Blocked,
 		OutOfBounds,
 		CannotAttack,
-
 		Complete,
 		End
 	}
@@ -26,7 +26,7 @@ namespace Game.GameChess {
 		private Vector2Int _currentPos;
 		
 		// 属性访问器
-		public Faction Faction => _chessMask?.Faction ?? Faction.Neutral;
+		public virtual Faction Faction => _chessMask?.Faction ?? Faction.Neutral;
 		public int Level => _chessMask?.Level ?? 0;
 		public ChessMask ChessMask => _chessMask;
 		public int MoveStepIndex => _moveStepIndex;
@@ -49,15 +49,24 @@ namespace Game.GameChess {
 
 			// TODO 刷新皮肤
 		}
+
+		public void OnTurnStart()
+		{
+			ResetMove();
+		}
 		
 		/// <summary>
 		/// 重置移动标记索引
 		/// </summary>
-		public void ResetMove() 
+		private void ResetMove() 
 		{
 			_moveStepIndex = 0;
+			_isMoveSuccessful = false;
 		}
 		
+		// 为True时 后续不能移动
+		private bool _isMoveSuccessful = false;
+
 		/// <summary>
 		/// 移动主流程
 		/// 根据 mask 的规则移动，每次只移动一个单位格
@@ -68,30 +77,29 @@ namespace Game.GameChess {
 			if (_chessMask == null) 
 			{
 				Debug.LogWarning($"[Chess] {name} 没有设置 ChessMask！");
-				return MoveResult.OutOfBounds;
+				return MoveResult.Complete;
 			}
-
 
 			if (IsMoveComplete())
 			{
+				// 防止回合计数
 				return MoveResult.End;
 			}
 
 			// 获取下一步移动方向
 			Vector2Int dir = _chessMask.GetMoveDir(_moveStepIndex);
 			Vector2Int nextPos = _currentPos + dir;
+
 			// 检查越界
 			if (IsOutOfBounds(nextPos)) 
 			{
-				Debug.Log($"[Chess] {name} 移动越界，原地不动");
-				return MoveResult.OutOfBounds;
+				return MoveResult.Complete;
 			}
 			
 			// 检查 CanWalk
 			if (!GameScene.GridSystem.CanWalk(nextPos)) 
 			{
-				Debug.Log($"[Chess] {name} 目标格子不可行走，原地不动");
-				return MoveResult.Blocked;
+				return MoveResult.Complete;
 			}
 			
 			// 检查目标格子是否有棋子
@@ -101,19 +109,19 @@ namespace Game.GameChess {
 				// 友方不可移动
 				if (target.Faction == this.Faction) 
 				{
-					Debug.Log($"[Chess] {name} 目标格子有友方棋子，不可移动");
-					return MoveResult.CannotAttack;
+					_isMoveSuccessful = true;
+					return MoveResult.Complete;
 				}
 				
 				// 比较 level
+				Debug.Log($"[Chess] {name} 尝试攻击 {target.name} 等级 {target.Level}");
 				if (ChessMask.CanAttack(target.ChessMask)) 
 				{
 					// 消灭对方，移动到目标格子
 					Debug.Log($"[Chess] {name} 吃掉 {target.name}");
 					target.Die();
+					// 消灭停止移动
 					MoveToPosition(nextPos);
-					_moveStepIndex++; // 移动成功后递增索引
-
 					// 吃掉后停止
 					return MoveResult.Complete;
 				} 
@@ -121,25 +129,32 @@ namespace Game.GameChess {
 				{
 					// level >= 当前棋子，不可移动
 					Debug.Log($"[Chess] {name} 目标棋子 level 更高或相等，不可移动");
-					return MoveResult.CannotAttack;
+					return MoveResult.Complete;
 				}
 			} 
 			else 
 			{
-				// 无棋子，直接移动
+				// 没有任何障碍时，正常移动
 				MoveToPosition(nextPos);
-				_moveStepIndex++; // 移动成功后递增索引
-
+				_moveStepIndex ++;
 				if (IsMoveComplete()) 
 				{
 					return MoveResult.Complete;
 				}
 
-				return MoveResult.Success;
+				return MoveResult.Complete;
 			}
 		}
 		
-		private bool IsMoveComplete() => _moveStepIndex >= _chessMask.GetMoveMaxCount();
+		private bool IsMoveComplete() 
+		{
+			if (_moveStepIndex >= _chessMask.GetMoveMaxCount() || _isMoveSuccessful)
+			{
+				return true;
+			}
+
+			return false;
+		}
 		
 		/// <summary>s
 		/// 判断位置是否越界
@@ -155,8 +170,9 @@ namespace Game.GameChess {
 		/// </summary>
 		private void MoveToPosition(Vector2Int newPos) 
 		{
+			EventManager.InvokeEvent(GameScene.EVENT_CHESS_MOVE, new ChessMoveArgs(this, _currentPos, newPos));
 			_currentPos = newPos;
-			
+
 			// 更新世界坐标
 			Vector2 worldPos = GameScene.GetCellWorld(newPos.x, newPos.y);
 			transform.position = worldPos;

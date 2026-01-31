@@ -30,7 +30,7 @@ namespace Game
 			get
 			{
 				// 根据CellType判断是否可行走
-				return _cellType == CellType.Normal;
+				return _cellType == CellType.Normal || _cellType == CellType.Flag;
 			}
 		}
 
@@ -68,6 +68,16 @@ namespace Game
 			{
 				_cellType = CellType.Flag;
 			}
+
+			if (chess.Faction == Faction.Neutral)
+			{
+				_cellType = CellType.Block;
+			}
+		}
+
+		public void RemoveChess()
+		{
+			Chess = null;
 		}
 
 		/// <summary>

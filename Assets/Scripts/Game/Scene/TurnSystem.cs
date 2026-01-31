@@ -107,6 +107,7 @@ namespace Game.Scene
 				if (isVictory)
 				{
 					// 游戏胜利，退出循环
+					Debug.Log("[TurnSystem] 游戏胜利！");
 					yield break;
 				}
 				
@@ -133,7 +134,11 @@ namespace Game.Scene
 		private void StartTurn()
 		{
 			_turnCount++;
-			Debug.Log($"回合 {_turnCount} 开始");
+
+			foreach(var chess in _movingChessList)
+			{
+				chess.OnTurnStart();
+			}
 			
 			// 触发回合开始事件
 			OnTurnStart?.Invoke();
@@ -170,7 +175,12 @@ namespace Game.Scene
 		private IEnumerator MoveAllChess()
 		{
 			_completeChessCount = 0;
+
+			Debug.Log($"[TurnSystem] 开始移动所有棋子 {_movingChessList.Count}");
 			
+			// 根据level决定移动顺序
+			_movingChessList.Sort((a, b) => b.Level.CompareTo(a.Level));
+
 			while (_completeChessCount < _movingChessList.Count)
 			{
 				_movedChessCount = 0;
@@ -189,6 +199,8 @@ namespace Game.Scene
 				// 等待所有棋子动画移动完毕
 				yield return new WaitUntil(() => _completeChessCount >= _movingChessList.Count);
 			}
+
+			Debug.Log($"[TurnSystem] 所有棋子移动完成");
 			
 			// 触发所有棋子移动完毕事件
 			OnAllChessMoved?.Invoke();

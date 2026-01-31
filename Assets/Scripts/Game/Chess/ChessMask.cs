@@ -3,8 +3,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Game.GameChess {
-	[CreateAssetMenu(fileName = "ChessMask", menuName = "Custom/ChessMask", order = 1)]
-	public class ChessMask : ScriptableObject 
+	[System.Serializable]
+	public class ChessMask
 	{
 		[Header("等级")]
 		[SerializeField] private int _level;
@@ -42,7 +42,6 @@ namespace Game.GameChess {
 		public Vector2Int GetMoveDir(int moveStepIndex) 
 		{
 			if (moveRules == null || moveRules.Count == 0) {
-				Debug.LogWarning($"[ChessMask] {name} 的 MoveRule 未设置！");
 				return Vector2Int.zero;
 			}
 
@@ -62,7 +61,6 @@ namespace Game.GameChess {
 		public int GetMoveMaxCount()
 		{
 			if (moveRules == null || moveRules.Count == 0) {
-				Debug.LogWarning($"[ChessMask] {name} 的 MoveRule 未设置！");
 				return 0;
 			}
 

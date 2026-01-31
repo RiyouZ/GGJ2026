@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Frame.Audio;
 using Frame.Core;
 using Game.GameChess;
+using RuGameFramework.Event;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -12,6 +13,7 @@ namespace Game
 {
 	public class GameScene : MonoBehaviour
 	{
+		public const string EVENT_CHESS_MOVE = "EventChessMove";
 		public Tilemap tilemap;
 		public Vector2Int cellSize = new Vector2Int(9, 6);
 
@@ -37,6 +39,17 @@ namespace Game
 			
 			// 初始化各个系统（具体依赖关系详见project文档架构）
 			InitializeSystems();
+			InitializeListeners();
+
+		}
+
+		private void InitializeListeners()
+		{
+			EventManager.AddListener(EVENT_CHESS_MOVE, (args) =>
+			{
+				ChessMoveArgs moveArgs = args as ChessMoveArgs;
+				SetChess(moveArgs.Chess, moveArgs.From.x, moveArgs.From.y, moveArgs.To.x, moveArgs.To.y);
+			});
 		}
 
 		void Update()
@@ -145,6 +158,17 @@ namespace Game
 		public static Chess GetChess(Vector2Int pos)
 		{
 			return GetChess(pos.x, pos.y);
+		}
+
+		public static void SetChess(Chess chess, int ox, int oy, int x, int y)
+		{
+			if (GridSystem == null)
+			{
+				return;
+			}
+
+			GridSystem.GetLocalCell(ox, oy)?.RemoveChess();
+			GridSystem.GetLocalCell(x, y)?.SetChess(chess);
 		}
 
 		/// <summary>
@@ -262,5 +286,26 @@ namespace Game
 
 		#endregion
 	}
+
+	public class ChessMoveArgs : IGameEventArgs
+	{
+		public Chess Chess;
+		public Vector2Int From;
+		public Vector2Int To;
+
+		public ChessMoveArgs(Chess chess, Vector2Int from, Vector2Int to)
+		{
+			Chess = chess;
+			From = from;
+			To = to;
+		}
+		
+        public void Dispose()
+        {
+			Chess = null;
+			From = Vector2Int.zero;
+			To = Vector2Int.zero;
+        }
+    }
 
 }
