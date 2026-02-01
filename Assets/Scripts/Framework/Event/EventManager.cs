@@ -182,7 +182,7 @@ namespace RuGameFramework.Event
 				actionList[i]?.Invoke(args);
 			}
 
-			args.Dispose();
+			args?.Dispose();
 		}
 
 		public static int GetAutoId ()

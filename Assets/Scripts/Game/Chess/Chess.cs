@@ -37,7 +37,9 @@ namespace Game.GameChess {
 		private static readonly Dictionary<int, string> _maskMap = new Dictionary<int, string>()
 		{
 			{0, "mouse"},
-			{1, "fox"}
+			{1, "cat"},
+			{2, "fox"},
+			{3, "lion"}
 		};	
 
 
@@ -66,6 +68,7 @@ namespace Game.GameChess {
 
 		public Vector2Int NextPos { private set; get; }
 
+		public Transform guidePoint;
 		
 		
 		/// <summary>
@@ -222,6 +225,9 @@ namespace Game.GameChess {
 			_isMoving = true;
 			NextPos = newPos;
 			_skeletonMachine.InvokeTrigger(ANIME_MOVE);
+
+			EventManager.InvokeEvent(GameScene.EVENT_CHESS_MOVE, new ChessMoveArgs(this, currentPos, NextPos));
+			currentPos = NextPos;
 		}
 		
 		/// <summary>
@@ -302,9 +308,7 @@ namespace Game.GameChess {
 			_skeletonMachine.RegisterState(0, ANIME_MOVE, false)
 			.AddAnoAnimationEvent("move", (track, e) =>
 			{
-				this.transform.position = GameScene.GetCellWorld(NextPos.x, NextPos.y);
-				EventManager.InvokeEvent(GameScene.EVENT_CHESS_MOVE, new ChessMoveArgs(this, currentPos, NextPos));
-				currentPos = NextPos;
+				this.transform.position = GameScene.GetCellWorld(currentPos.x, currentPos.y);
 			})
 			.OnAnimationComplate((st, track) => 
 			{
@@ -386,6 +390,22 @@ namespace Game.GameChess {
             if(_skeletonMachine != null)
 			{
 				_skeletonMachine.UpdateMachine();
+			}
+
+			if (_chessMask != null)
+			{
+				var dirX = _isMoving
+					? (NextPos.x - currentPos.x)
+					: _chessMask.GetMoveDir(_moveStepIndex).x;
+
+				if (dirX > 0)
+				{
+					transform.localScale = new Vector3(1, 1, 1);
+				}
+				else if (dirX < 0)
+				{
+					transform.localScale = new Vector3(-1, 1, 1);
+				}
 			}
         }
 

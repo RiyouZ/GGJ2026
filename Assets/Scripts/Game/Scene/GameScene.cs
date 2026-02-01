@@ -34,16 +34,18 @@ namespace Game
 
 		private List<Chess> _friendChesses = new List<Chess>(4);
 
+		public static LineRenderScript guideLine;
 
 		// Start is called before the first frame update
 		void Start()
 		{
 			WwiseAudio.LoadBank("Main");
 			
-			// 初始化各个系统（具体依赖关系详见project文档架构）
 			InitializeSystems();
 			InitializeListeners();
 
+			guideLine = FindObjectOfType<LineRenderScript>();
+			guideLine.ClearLine();
 		}
 
 		private void InitializeListeners()

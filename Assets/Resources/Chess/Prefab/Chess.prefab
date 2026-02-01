@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2100961335043494773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2408003769946523541}
+  m_Layer: 0
+  m_Name: GuidPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2408003769946523541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100961335043494773}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.913, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5202850534367389056}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5385818289624143578
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,6 +120,7 @@ GameObject:
   - component: {fileID: 2962581914028415802}
   - component: {fileID: 5161503728586686280}
   - component: {fileID: 1853954389139073399}
+  - component: {fileID: 782625574692711806}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -204,6 +236,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8739272000252677208}
   m_Mesh: {fileID: 0}
+--- !u!114 &782625574692711806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8739272000252677208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700a33401285fd54c834223d44238812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sortLayerName: Chess
 --- !u!1 &8922698454417675872
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +282,7 @@ Transform:
   m_Children:
   - {fileID: 1186569303045039028}
   - {fileID: 9027938813973770122}
+  - {fileID: 2408003769946523541}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2669213458380237992
@@ -251,7 +297,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3cd16e1843b55349b7f69f6772b6253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chessMask: {fileID: 11400000, guid: f99b58d29b28f9e459221b806c28a27e, type: 2}
+  _chessMask:
+    _level: 0
+    _faction: 2
+    moveRules: []
+    _dirIndex: 0
+  guidePoint: {fileID: 2408003769946523541}
 --- !u!50 &7936122105551723978
 Rigidbody2D:
   serializedVersion: 4

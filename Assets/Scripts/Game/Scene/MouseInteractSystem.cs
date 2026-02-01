@@ -293,6 +293,8 @@ namespace Game
 			if (previewCells != null && previewCells.Count > 0)
 			{
 				_currentHighlightedCells = previewCells;
+				var endCell = _gridSystem.GetLocalCell(previewCells[previewCells.Count - 1].x, previewCells[previewCells.Count - 1].y);
+				GameScene.guideLine.DrawLine(chess.guidePoint, endCell.transform);
 				GameScene.HighlightCells(previewCells);
 			}
 		}
@@ -304,6 +306,7 @@ namespace Game
 		{
 			if (_currentHighlightedCells.Count > 0)
 			{
+				GameScene.guideLine.ClearLine();
 				GameScene.CancelHighlightCells(_currentHighlightedCells);
 				_currentHighlightedCells.Clear();
 			}

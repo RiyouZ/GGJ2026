@@ -1,5 +1,6 @@
 
 using Game.GameChess;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -50,6 +51,7 @@ namespace Game
 		/// </summary>
 		[System.NonSerialized]
 		public int Y;
+		public GameObject flag;
 
 		public void Initialize()
 		{
@@ -86,7 +88,7 @@ namespace Game
 
 		public void Highlight()
 		{
-			_spriteRenderer.color = new Color(1f, 1f, 1f, 0.2f);
+			_spriteRenderer.enabled = true;
 		}
 
 		/// <summary>
@@ -95,7 +97,7 @@ namespace Game
 
 		public void CancelHighlight()
 		{
-			_spriteRenderer.color = Color.white;
+			_spriteRenderer.enabled = false;
 		}
 
 		/// <summary>

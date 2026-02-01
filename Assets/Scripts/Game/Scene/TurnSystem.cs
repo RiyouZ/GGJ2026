@@ -40,7 +40,7 @@ namespace Game.Scene
 		public event Action OnGameVictory;
 		#endregion
 
-		private const string EVENT_PLAYER_ACTION_COMPLETE = "PlayerActionComplete";
+		private const string EVENT_PLAYER_ACTION_COMPLETE = "TurnPlayerActionComplete";
 
 		#region 字段
 		[Header("当前回合状态")]

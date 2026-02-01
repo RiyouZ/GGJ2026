@@ -1,0 +1,16 @@
+{
+    "name": "RuGameFramework.SortLayer2D",
+    "rootNamespace": "",
+    "references": [
+        "GUID:58bbe3d9e6a9dd44d92bcb78f1ba1f55"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -25,6 +26,18 @@ public class LineRenderScript : MonoBehaviour
 
     private LineRenderer lineRenderer;
     private Material dashMaterial;
+
+    public void DrawLine(Transform start, Transform end)
+    {
+        this.gameObject.SetActive(true);
+        startPoint = start;
+        endPoint = end;
+    }
+
+    public void ClearLine()
+    {
+        this.gameObject.SetActive(false);
+    }
 
     void Start()
     {
@@ -103,7 +116,7 @@ public class LineRenderScript : MonoBehaviour
     void DrawCurve()
     {
         Vector3 p0 = startPoint.position;
-        Vector3 p2 = endPoint.position;
+        Vector3 p2 = endPoint.position + new Vector3(0f, 0.5f);
 
         p0.z = zOffset;
         p2.z = zOffset;
