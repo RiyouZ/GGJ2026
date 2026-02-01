@@ -10,76 +10,574 @@
     "Type": "User",
     "GUID": "{2417395A-1AF3-41F7-8041-7FE73BE2F6A3}",
     "Language": "SFX",
-    "Hash": "{2989A654-0A6C-FE8D-DE82-C137499CC134}",
+    "Hash": "{71071874-0F79-9AEE-015A-9434F3CD9EDB}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
     "Media": [
      {
-      "Id": "653687740",
+      "Id": "14073882",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "HIT_Kick_Heavy_04.wav",
-      "CachePath": "24/{24E529FE-0F75-1134-8DA8-045AA18A14AC}.wem"
+      "ShortName": "FoxMask_Fit_SFX.wav",
+      "CachePath": "1F/{1F74067D-6BFE-9DE2-1E51-836AA0E00475}.wem"
      },
      {
-      "Id": "705290400",
+      "Id": "29310804",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "AMBPubl_Big Hall Men Cheer Motivated 01_B00M_ONE.wav",
-      "CachePath": "BE/{BE082BCF-6874-B5C1-5F46-13F95895C711}.wem"
+      "ShortName": "Doll_Select_Highlight_SFX.wav",
+      "CachePath": "B5/{B5A569BF-395E-5ED8-E0DA-BA319E91D92F}.wem"
+     },
+     {
+      "Id": "104268119",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mask_Doll_A_Clear_Dream_4.wav",
+      "CachePath": "6B/{6B7290A7-84F6-2921-E712-9E200D5B0F91}.wem"
+     },
+     {
+      "Id": "117300668",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FoxMask_Fit_SFX.wav",
+      "CachePath": "CA/{CA231D7D-0BD7-CDDF-57DD-7CC4DA77F59C}.wem"
+     },
+     {
+      "Id": "146246296",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "LionMask_Fit_SFX.wav",
+      "CachePath": "19/{19FE8B43-98A0-579D-0698-5913B3C39884}.wem"
+     },
+     {
+      "Id": "164882528",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "CatMask_Fit_SFX.wav",
+      "CachePath": "43/{43173D50-FB38-123A-1F77-0CBF31EF85C1}.wem"
+     },
+     {
+      "Id": "171007355",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Scene_Transition.wav",
+      "CachePath": "E2/{E2CDCCC5-C591-6882-5942-BDA821B0FFF0}.wem"
+     },
+     {
+      "Id": "194973527",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mask_Doll_A_Clear_Dream_3.wav",
+      "CachePath": "6F/{6FDD3284-41FE-8F66-4C4D-71F022E6A1AD}.wem"
+     },
+     {
+      "Id": "225301153",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mask_Doll_A_Clear_Dream_5.wav",
+      "CachePath": "7C/{7C56F5E4-95F0-75BF-29E1-A94376171CB9}.wem"
+     },
+     {
+      "Id": "431965189",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mask_Doll_A_Clear_Dream_1.wav",
+      "CachePath": "D7/{D7D8F597-A9EF-FA4C-EDF0-09D1AD4C879F}.wem"
+     },
+     {
+      "Id": "504314832",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "LionMask_Fit_SFX.wav",
+      "CachePath": "B0/{B046C52E-0440-D08E-8D39-D5CD73AB2DE2}.wem"
+     },
+     {
+      "Id": "523821878",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Doll_Move_Prepare_Quick_SFX.wav",
+      "CachePath": "65/{65F21295-F8FA-7874-0091-2D775CDD88B4}.wem"
+     },
+     {
+      "Id": "542803814",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FoxMask_Fit_SFX.wav",
+      "CachePath": "DE/{DEC192DC-EE30-20FF-3AC7-6D99CE69E9C1}.wem"
+     },
+     {
+      "Id": "578473524",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MouseMask_Fit_SFX.wav",
+      "CachePath": "8A/{8A7986C7-762A-4431-8BE3-A88235C46A74}.wem"
+     },
+     {
+      "Id": "598852464",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MouseMask_Fit_SFX.wav",
+      "CachePath": "7A/{7A0955AF-30AA-2762-6C04-98780B44E3D5}.wem"
+     },
+     {
+      "Id": "622724053",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mask_Doll_A_Clear_Dream_Loop.wav",
+      "CachePath": "20/{205E9ECC-1016-7C90-925C-2DD258B15C84}.wem"
+     },
+     {
+      "Id": "627370399",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "LionMask_Fit_SFX.wav",
+      "CachePath": "3E/{3E4AA3A5-E599-A225-92B7-9D44BB5CDDC2}.wem"
+     },
+     {
+      "Id": "689448774",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Doll_Skill_Cast_SFX.wav",
+      "CachePath": "EC/{EC136D63-BD26-64AC-1B5E-8E0224AC21F1}.wem"
+     },
+     {
+      "Id": "691230451",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Crown_Glow_SFX.wav",
+      "CachePath": "54/{545C81B5-E76C-9EED-D684-0BBDD2D16E09}.wem"
+     },
+     {
+      "Id": "693602815",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "CatMask_Fit_SFX.wav",
+      "CachePath": "49/{49E95F88-1B85-0BBB-B8E9-635F2B77BEE4}.wem"
+     },
+     {
+      "Id": "713369890",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mask_Doll_A_Clear_Dream_2.wav",
+      "CachePath": "3F/{3F37566E-59C6-401E-E5B9-9DCA35012A81}.wem"
+     },
+     {
+      "Id": "714396357",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Doll_Mask_Switch_Effect_SFX.wav",
+      "CachePath": "2C/{2C59A7FE-7DC3-1B44-CC9F-BF26C5252402}.wem"
+     },
+     {
+      "Id": "736329114",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MouseMask_Fit_SFX.wav",
+      "CachePath": "02/{021220C8-6762-293C-966B-F8FE052E462C}.wem"
+     },
+     {
+      "Id": "802017264",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mask_Special_SFX.wav",
+      "CachePath": "90/{90C40522-9813-0DFE-8C36-4156CE32E4DD}.wem"
+     },
+     {
+      "Id": "840203186",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mask_Doll_A_Clear_Dream_Loop.wav",
+      "CachePath": "AA/{AA69B3A2-3C15-89B7-356E-6FC0F8050B1C}.wem"
+     },
+     {
+      "Id": "859764553",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Scene_Transition.wav",
+      "CachePath": "1B/{1BD3A2F5-85A2-ACE8-D45D-990FA1B4E6FC}.wem"
+     },
+     {
+      "Id": "903092708",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "CatMask_Fit_SFX.wav",
+      "CachePath": "3E/{3E5064AA-2D72-B023-024A-7DC7516FD1F8}.wem"
+     },
+     {
+      "Id": "1055231980",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Victory.wav",
+      "CachePath": "A3/{A38D9E51-C415-1460-2EC7-949B33D608B3}.wem"
      }
     ],
     "Events": [
      {
-      "Id": "711699424",
-      "Name": "Play_Kick",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Kick",
-      "GUID": "{755A0D4C-12BD-40D2-9952-1FB96C44928B}",
+      "Id": "2794729210",
+      "Name": "Play_CatMask_Fit_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_CatMask_Fit_SFX",
+      "GUID": "{7B17472A-615D-4F83-9614-7076832DB324}",
       "DurationType": "OneShot",
-      "DurationMin": "0.41567707",
-      "DurationMax": "0.41567707",
+      "DurationMin": "0.5077036",
+      "DurationMax": "0.8806512",
       "MediaRefs": [
        {
-        "Id": "653687740"
+        "Id": "164882528"
+       },
+       {
+        "Id": "693602815"
+       },
+       {
+        "Id": "903092708"
        }
       ]
      },
      {
-      "Id": "1932796752",
-      "Name": "Play_Noise",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Noise",
-      "GUID": "{F7791719-7765-437C-A6D6-D306822DCBE2}",
+      "Id": "1120323365",
+      "Name": "Play_Crown_Glow_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Crown_Glow_SFX",
+      "GUID": "{00BADD45-FB2C-4707-B407-3A13CC468097}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.0031295",
+      "DurationMax": "6.0031295",
+      "MediaRefs": [
+       {
+        "Id": "691230451"
+       }
+      ]
+     },
+     {
+      "Id": "1010511585",
+      "Name": "Play_Doll_Mask_Switch_Effect_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Doll_Mask_Switch_Effect_SFX",
+      "GUID": "{C89A7492-A725-4B6C-B522-810B4D48BA0E}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.0031295",
+      "DurationMax": "6.0031295",
+      "MediaRefs": [
+       {
+        "Id": "714396357"
+       }
+      ]
+     },
+     {
+      "Id": "756317691",
+      "Name": "Play_Doll_Move_Prepare_Quick_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Doll_Move_Prepare_Quick_SFX",
+      "GUID": "{DD9CA1B0-A644-4E2A-8B2C-5387838523FA}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.0031295",
+      "DurationMax": "6.0031295",
+      "MediaRefs": [
+       {
+        "Id": "523821878"
+       }
+      ]
+     },
+     {
+      "Id": "3522410409",
+      "Name": "Play_Doll_Select_Highlight_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Doll_Select_Highlight_SFX",
+      "GUID": "{BADBBE5F-CA8C-4B9D-838B-0A552C5D7C40}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.0031295",
+      "DurationMax": "6.0031295",
+      "MediaRefs": [
+       {
+        "Id": "29310804"
+       }
+      ]
+     },
+     {
+      "Id": "736602215",
+      "Name": "Play_Doll_Skill_Cast_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Doll_Skill_Cast_SFX",
+      "GUID": "{F145FBB2-7E0F-4AAA-93C3-F40517ADBB6F}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.0031295",
+      "DurationMax": "6.0031295",
+      "MediaRefs": [
+       {
+        "Id": "689448774"
+       }
+      ]
+     },
+     {
+      "Id": "4227241441",
+      "Name": "Play_FoxMask_Fit_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_FoxMask_Fit_SFX",
+      "GUID": "{2E4D0B1A-C92C-4113-A2A9-4E3584043152}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.55873865",
+      "DurationMax": "0.63266534",
+      "MediaRefs": [
+       {
+        "Id": "14073882"
+       },
+       {
+        "Id": "117300668"
+       },
+       {
+        "Id": "542803814"
+       }
+      ]
+     },
+     {
+      "Id": "2119739952",
+      "Name": "Play_LionMask_Fit_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_LionMask_Fit_SFX",
+      "GUID": "{EEFF378A-E6F3-4561-AFD0-F77391B0C1A2}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.9520272",
+      "DurationMax": "1.5088232",
+      "MediaRefs": [
+       {
+        "Id": "146246296"
+       },
+       {
+        "Id": "504314832"
+       },
+       {
+        "Id": "627370399"
+       }
+      ]
+     },
+     {
+      "Id": "2929091772",
+      "Name": "Play_Mask_Doll_A_Clear_Dream_1",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music_Event\\Play_Mask_Doll_A_Clear_Dream_1",
+      "GUID": "{18248D71-BB58-4AD2-86E9-8E896323790E}",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "705290400"
+        "Id": "431965189"
+       },
+       {
+        "Id": "840203186"
        }
       ]
      },
      {
-      "Id": "3620426301",
-      "Name": "Seek_Music",
-      "ObjectPath": "\\Events\\Default Work Unit\\Seek_Music",
-      "GUID": "{DD31B346-8B82-49FE-8BB1-2D1F439BD5A1}",
+      "Id": "2929091775",
+      "Name": "Play_Mask_Doll_A_Clear_Dream_2",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music_Event\\Play_Mask_Doll_A_Clear_Dream_2",
+      "GUID": "{2A53B962-BD90-47F9-9506-3282EA162BC5}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "713369890"
+       },
+       {
+        "Id": "840203186"
+       }
+      ]
+     },
+     {
+      "Id": "2929091774",
+      "Name": "Play_Mask_Doll_A_Clear_Dream_3",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music_Event\\Play_Mask_Doll_A_Clear_Dream_3",
+      "GUID": "{BCB57E31-2D98-40B7-88D7-7D6D43464AB9}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "194973527"
+       },
+       {
+        "Id": "840203186"
+       }
+      ]
+     },
+     {
+      "Id": "2929091769",
+      "Name": "Play_Mask_Doll_A_Clear_Dream_4",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music_Event\\Play_Mask_Doll_A_Clear_Dream_4",
+      "GUID": "{84A28A61-DC2F-4343-84AC-018452DB7A33}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "104268119"
+       },
+       {
+        "Id": "840203186"
+       }
+      ]
+     },
+     {
+      "Id": "2929091768",
+      "Name": "Play_Mask_Doll_A_Clear_Dream_5",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music_Event\\Play_Mask_Doll_A_Clear_Dream_5",
+      "GUID": "{FFC41011-766E-49EC-A101-5850C610C322}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "225301153"
+       },
+       {
+        "Id": "840203186"
+       }
+      ]
+     },
+     {
+      "Id": "2708270198",
+      "Name": "Play_Mask_Special_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Mask_Special_SFX",
+      "GUID": "{3D19FDAA-06AF-49B2-973B-2368C13325A9}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.0031295",
+      "DurationMax": "6.0031295",
+      "MediaRefs": [
+       {
+        "Id": "802017264"
+       }
+      ]
+     },
+     {
+      "Id": "3410823607",
+      "Name": "Play_MouseMask_Fit_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_MouseMask_Fit_SFX",
+      "GUID": "{0780419B-8E62-4403-ACD4-D5AE13131658}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.27227694",
+      "DurationMax": "0.6398547",
+      "MediaRefs": [
+       {
+        "Id": "578473524"
+       },
+       {
+        "Id": "598852464"
+       },
+       {
+        "Id": "736329114"
+       }
+      ]
+     },
+     {
+      "Id": "388703331",
+      "Name": "Play_SFX_Scene_Transition_Open",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_SFX_Scene_Transition_Open",
+      "GUID": "{C96A9799-F8D1-467C-8D5E-8AF3CB20BCAF}",
+      "DurationType": "OneShot",
+      "DurationMin": "115.384605",
+      "DurationMax": "115.384605",
+      "MediaRefs": [
+       {
+        "Id": "171007355"
+       },
+       {
+        "Id": "622724053"
+       }
+      ]
+     },
+     {
+      "Id": "2453267296",
+      "Name": "Play_Victory",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music_Event\\Play_Victory",
+      "GUID": "{8C328B7B-06A4-4F37-9D3D-EA313494AC96}",
+      "DurationType": "OneShot",
+      "DurationMin": "4.615397",
+      "DurationMax": "4.615397",
+      "MediaRefs": [
+       {
+        "Id": "1055231980"
+       }
+      ]
+     },
+     {
+      "Id": "1622381847",
+      "Name": "Seek_Doll_Position_Arrive_Landing_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Seek_Event\\Seek_Doll_Position_Arrive_Landing_SFX",
+      "GUID": "{CA6AC162-B3E0-4DC0-AE9F-1818E4CDDFBB}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
-     }
-    ],
-    "GameParameters": [
+     },
      {
-      "Id": "487587012",
-      "Name": "Player_Distance",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Player_Distance",
-      "GUID": "{F325C523-DA20-459E-80FB-1BB81361C56D}"
+      "Id": "2593556793",
+      "Name": "Seek_SFX_CapturePoint_Trigger",
+      "ObjectPath": "\\Events\\Default Work Unit\\Seek_Event\\Seek_SFX_CapturePoint_Trigger",
+      "GUID": "{CB7059E8-B087-49C7-84B8-2DCB4DF9D1FA}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "251901810",
+      "Name": "Seek_SFX_Scene_Transition",
+      "ObjectPath": "\\Events\\Default Work Unit\\Seek_Event\\Seek_SFX_Scene_Transition",
+      "GUID": "{C65077D0-2F6C-4C60-8BCD-9C01EE8E7643}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2352154637",
+      "Name": "Seek_SFX_Scene_Transition_Open",
+      "ObjectPath": "\\Events\\Default Work Unit\\Seek_Event\\Seek_SFX_Scene_Transition_Open",
+      "GUID": "{6F0E6690-6EC6-4AB4-B888-4B197B487DA0}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2259541625",
+      "Name": "Seek_Table_Chair_Bump_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Seek_Event\\Seek_Table_Chair_Bump_SFX",
+      "GUID": "{0ECE8BD1-A847-40DE-B22B-DA647B7C943A}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "524237271",
+      "Name": "Stop_SFX_Scene_Transition_Close",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Event\\Stop_SFX_Scene_Transition_Close",
+      "GUID": "{BD823EBE-DBF8-48B6-ADDC-BF7BC6F178FF}",
+      "DurationType": "OneShot",
+      "DurationMin": "3.2323873",
+      "DurationMax": "3.2323873",
+      "MediaRefs": [
+       {
+        "Id": "859764553"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{06525F7C-2BA5-FCFE-6581-035D44B96D10}"
+  "FileHash": "{AA6F095A-DED0-D042-4CDC-06207FCAFD15}"
  }
 }

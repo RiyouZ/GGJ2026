@@ -3,51 +3,360 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{AAA35155-522E-4406-8038-438F8B96333A}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Play_Kick" ID="{755A0D4C-12BD-40D2-9952-1FB96C44928B}">
+				<Folder Name="Play_Event" ID="{C5D77C2A-3F04-429A-A785-2BBC2AE0C630}" ShortID="761152057">
 					<ChildrenList>
-						<Action Name="" ID="{D915D2CF-BFF8-4A9E-AE13-127577677B98}" ShortID="691849857">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Kick" ID="{2F865CBF-70BF-4822-A97A-C97E70C24ABA}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="Play_Crown_Glow_SFX" ID="{00BADD45-FB2C-4707-B407-3A13CC468097}">
+							<ChildrenList>
+								<Action Name="" ID="{EFD9D1EE-45F7-4C29-91EC-48B4F9FF2B6A}" ShortID="158505244">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Crown_Glow_SFX" ID="{89856A29-B056-458D-B52A-0701C83BAEBC}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Doll_Mask_Switch_Effect_SFX" ID="{C89A7492-A725-4B6C-B522-810B4D48BA0E}">
+							<ChildrenList>
+								<Action Name="" ID="{6880BCCF-D48B-4767-B9D5-3634A78507B4}" ShortID="859902796">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Doll_Mask_Switch_Effect_SFX" ID="{22A9D8D6-9A81-470D-9C8A-103DD4E7FF80}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Doll_Move_Prepare_Quick_SFX" ID="{DD9CA1B0-A644-4E2A-8B2C-5387838523FA}">
+							<ChildrenList>
+								<Action Name="" ID="{376BE3D0-0361-407E-8D85-1297FB6D9405}" ShortID="96670173">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Doll_Move_Prepare_Quick_SFX" ID="{306792E1-5D45-4A87-8804-5F4F9B82D2F9}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Doll_Select_Highlight_SFX" ID="{BADBBE5F-CA8C-4B9D-838B-0A552C5D7C40}">
+							<ChildrenList>
+								<Action Name="" ID="{D28195EA-500D-459C-9965-A7D56413AB6C}" ShortID="269670415">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Doll_Select_Highlight_SFX" ID="{F8584DB8-3A44-4B68-B6C2-5FC24674E70E}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Mask_Special_SFX" ID="{3D19FDAA-06AF-49B2-973B-2368C13325A9}">
+							<ChildrenList>
+								<Action Name="" ID="{FE8364BD-72C3-46B9-B982-8D2C2D974D8C}" ShortID="45578725">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Special_SFX" ID="{4336AD73-0342-4DB2-981D-458EB5CE7484}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Doll_Skill_Cast_SFX" ID="{F145FBB2-7E0F-4AAA-93C3-F40517ADBB6F}">
+							<ChildrenList>
+								<Action Name="" ID="{7D1F8C43-549B-4F03-B6D7-684A035C9438}" ShortID="925973730">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Doll_Skill_Cast_SFX" ID="{88EEC999-B8AF-460F-ABE5-5FDD12DBE71E}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_MouseMask_Fit_SFX" ID="{0780419B-8E62-4403-ACD4-D5AE13131658}">
+							<ChildrenList>
+								<Action Name="" ID="{E566B6E2-A280-485F-8B5F-472F4BF6C2F9}" ShortID="464092374">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MouseMask_Fit_SFX" ID="{31640428-90D4-42CC-96A2-14D54D9CBFA1}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_CatMask_Fit_SFX" ID="{7B17472A-615D-4F83-9614-7076832DB324}">
+							<ChildrenList>
+								<Action Name="" ID="{453564E5-35C5-4657-9CDD-9ED8F460701B}" ShortID="471796748">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="CatMask_Fit_SFX" ID="{FC8462C2-76AD-4A99-9EE9-4DA5C1D29BFD}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_FoxMask_Fit_SFX" ID="{2E4D0B1A-C92C-4113-A2A9-4E3584043152}">
+							<ChildrenList>
+								<Action Name="" ID="{C9312F3C-F529-44E1-901B-B9673ABEA16C}" ShortID="655365876">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FoxMask_Fit_SFX" ID="{78885947-3BBF-4C84-80C2-AFE5D7320361}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_LionMask_Fit_SFX" ID="{EEFF378A-E6F3-4561-AFD0-F77391B0C1A2}">
+							<ChildrenList>
+								<Action Name="" ID="{32669B2E-6F42-4D05-B8B8-A428CD2FD3BA}" ShortID="1067449390">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LionMask_Fit_SFX" ID="{86D6E607-39E1-4899-87BE-EB7330302E98}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFX_Scene_Transition_Open" ID="{C96A9799-F8D1-467C-8D5E-8AF3CB20BCAF}">
+							<ChildrenList>
+								<Action Name="" ID="{28D9CBB4-1BBC-4EE9-BD7D-F27D04DD7CA2}" ShortID="287059154">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Scene_Transition_Open" ID="{9C4F62CD-778B-4194-AEBD-6616793DC8FD}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{8A081E99-E361-423E-AC3B-5FB76551F023}" ShortID="320744322">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream" ID="{CB3EE6F2-E734-45BF-B2CD-BA9794F736C4}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="Seek_Music" ID="{DD31B346-8B82-49FE-8BB1-2D1F439BD5A1}">
+				</Folder>
+				<Folder Name="Seek_Event" ID="{95FFDFE8-7D8E-494C-B34C-585FD11584B2}" ShortID="904823664">
 					<ChildrenList>
-						<Action Name="" ID="{D5BC5772-C69B-4163-AC85-34200EA577B4}" ShortID="922616470">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="36"/>
-								<Property Name="SeekPercent" Type="Real64" Value="80"/>
-								<Property Name="SeekTime" Type="Real64" Value="217.004">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{D567C82D-CFC9-428B-A99F-568B22C26EC8}"/>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-								<Property Name="SeekType" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Music" ID="{F05FF5E6-4B62-42D3-8AAB-58FF8DB8CCA0}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="Seek_Doll_Position_Arrive_Landing_SFX" ID="{CA6AC162-B3E0-4DC0-AE9F-1818E4CDDFBB}">
+							<ChildrenList>
+								<Action Name="" ID="{2EFAE3E2-2800-4634-9509-7C235C23EA6F}" ShortID="382082085">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="36"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Doll_Position_Arrive_Landing_SFX" ID="{7A39E2B2-6C6C-4B88-8CEE-60C69F627FD9}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Seek_Table_Chair_Bump_SFX" ID="{0ECE8BD1-A847-40DE-B22B-DA647B7C943A}">
+							<ChildrenList>
+								<Action Name="" ID="{5FA8A725-6A8E-4C82-8F3D-21B5FB80B95E}" ShortID="884312456">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="36"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Table_Chair_Bump_SFX" ID="{131D1A7A-A27E-4839-8928-09DC239975AA}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Seek_SFX_CapturePoint_Trigger" ID="{CB7059E8-B087-49C7-84B8-2DCB4DF9D1FA}">
+							<ChildrenList>
+								<Action Name="" ID="{680D0AE4-D4F7-4941-ADC2-1CF9F6012A1B}" ShortID="2046720">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="36"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_CapturePoint_Trigger" ID="{34863059-6F32-411F-BB00-23ED77950048}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Seek_SFX_Scene_Transition" ID="{C65077D0-2F6C-4C60-8BCD-9C01EE8E7643}">
+							<ChildrenList>
+								<Action Name="" ID="{2B887D2A-2FE8-4A4E-8256-E457CCB49B8C}" ShortID="281508091">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="36"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Scene_Transition_Close" ID="{1CF0AAA6-2107-4594-92EB-0CFDB082DD87}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Seek_SFX_Scene_Transition_Open" ID="{6F0E6690-6EC6-4AB4-B888-4B197B487DA0}">
+							<ChildrenList>
+								<Action Name="" ID="{64C9CDCB-10FA-4D7A-A8CE-C9CF2319FECF}" ShortID="940937434">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="36"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Scene_Transition_Open" ID="{9C4F62CD-778B-4194-AEBD-6616793DC8FD}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="Play_Noise" ID="{F7791719-7765-437C-A6D6-D306822DCBE2}">
+				</Folder>
+				<Folder Name="Stop_Event" ID="{26C058A1-28C4-4C8D-B1BE-B147B34C665A}" ShortID="855048107">
 					<ChildrenList>
-						<Action Name="" ID="{EF7C0720-8A35-43B8-91E2-0DBEEEAD164A}" ShortID="646648214">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Noise" ID="{1A10C864-7593-46C4-BDBE-C65A0DC5A17E}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="Stop_SFX_Scene_Transition_Close" ID="{BD823EBE-DBF8-48B6-ADDC-BF7BC6F178FF}">
+							<ChildrenList>
+								<Action Name="" ID="{52B4AC02-82BB-4AA2-A5D2-68FE5FDF39FB}" ShortID="650946108">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream" ID="{DB02C696-51B2-4599-A3F6-19E40F3B725B}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{617DFC6D-B609-49FC-B9BB-5E3E2AF4FFC6}" ShortID="536406914">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="1.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Scene_Transition_Close" ID="{1CF0AAA6-2107-4594-92EB-0CFDB082DD87}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
+				</Folder>
+				<Folder Name="Music_Event" ID="{38EB7920-BB0F-45CC-8929-B46E30214390}" ShortID="1060100795">
+					<ChildrenList>
+						<Event Name="Play_Mask_Doll_A_Clear_Dream_5" ID="{FFC41011-766E-49EC-A101-5850C610C322}">
+							<ChildrenList>
+								<Action Name="" ID="{05873F5D-CE60-4118-A452-5D489A37E0D2}" ShortID="434155442">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream_5" ID="{0E8A9476-D400-40C3-9F56-99C1CF626D8E}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{9C9A7804-ADAD-4C0C-9827-CADC1C5445BF}" ShortID="1029563587">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="18.462"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream_Loop" ID="{A57DDAEF-1AAF-4F09-BE37-9C71D20C6C73}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Mask_Doll_A_Clear_Dream_1" ID="{18248D71-BB58-4AD2-86E9-8E896323790E}">
+							<ChildrenList>
+								<Action Name="" ID="{A9CF4360-19EC-43C0-8C6F-18C252D3B971}" ShortID="512090344">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream_1" ID="{5948FDEE-43C3-4FB0-960A-33B3B265C54A}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{4E4D7979-FEC0-41FE-AE19-C644BAF0D78C}" ShortID="1059274056">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="18.462"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream_Loop" ID="{A57DDAEF-1AAF-4F09-BE37-9C71D20C6C73}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Mask_Doll_A_Clear_Dream_2" ID="{2A53B962-BD90-47F9-9506-3282EA162BC5}">
+							<ChildrenList>
+								<Action Name="" ID="{143B9337-7C7B-4208-BD5A-CF0939A019E0}" ShortID="1029736525">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream_2" ID="{ADAB645D-90D3-496D-874D-63A3B4F66C9F}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{01A18932-0808-4752-8354-4DF77A6A235A}" ShortID="523441688">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="18.462"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream_Loop" ID="{A57DDAEF-1AAF-4F09-BE37-9C71D20C6C73}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Mask_Doll_A_Clear_Dream_3" ID="{BCB57E31-2D98-40B7-88D7-7D6D43464AB9}">
+							<ChildrenList>
+								<Action Name="" ID="{B32C7089-1897-4E4F-90CA-BAC508596CDB}" ShortID="124496128">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream_3" ID="{482BD481-7E9E-477B-83E8-A3AC28C6AEC0}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{97DA0068-EF68-4F88-B78E-DE89A7004D89}" ShortID="591383072">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="18.462"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream_Loop" ID="{A57DDAEF-1AAF-4F09-BE37-9C71D20C6C73}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Mask_Doll_A_Clear_Dream_4" ID="{84A28A61-DC2F-4343-84AC-018452DB7A33}">
+							<ChildrenList>
+								<Action Name="" ID="{8E6446B4-3425-4732-B68A-FA4F1DE799F8}" ShortID="1071383379">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream_4" ID="{69D743CC-AF93-439D-AC88-7B7C95638F2D}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{E770C007-C812-4538-A0D6-9ECC69AABB3E}" ShortID="415927102">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="18.462"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream_Loop" ID="{A57DDAEF-1AAF-4F09-BE37-9C71D20C6C73}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Victory" ID="{8C328B7B-06A4-4F37-9D3D-EA313494AC96}">
+							<ChildrenList>
+								<Action Name="" ID="{CA55C29D-16A8-400B-A984-BB616663775A}" ShortID="611170280">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Victory" ID="{58362CDF-68D6-44B2-BC4F-565ABE5D0761}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{F5A71B4B-A750-FBE8-E4B4-217D3FF9DB78}",
+    "Hash": "{005D794A-C148-5F97-C6D3-ED881BB05F5F}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -36,22 +36,28 @@
     },
     "Busses": [
      {
+      "Id": "393239870",
+      "Name": "SFX",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\SFX",
+      "GUID": "{49550D50-2FA2-4D89-B32C-B6D3F977460D}",
+      "Color": "19"
+     },
+     {
       "Id": "2246998526",
       "Name": "Main Audio Bus",
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus",
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
-     }
-    ],
-    "GameParameters": [
+     },
      {
-      "Id": "487587012",
-      "Name": "Player_Distance",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Player_Distance",
-      "GUID": "{F325C523-DA20-459E-80FB-1BB81361C56D}"
+      "Id": "3991942870",
+      "Name": "Music",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Music",
+      "GUID": "{6DCD0AFD-4F80-4821-AA78-E401AC661A02}",
+      "Color": "17"
      }
     ]
    }
   ],
-  "FileHash": "{7273FD87-86F0-49BD-04CE-732F8CDBC7D7}"
+  "FileHash": "{FFE19A04-517E-A949-2B16-CDA8CEF70310}"
  }
 }

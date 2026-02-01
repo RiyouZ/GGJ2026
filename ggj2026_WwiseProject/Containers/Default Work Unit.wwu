@@ -3,170 +3,1178 @@
 	<Containers>
 		<WorkUnit Name="Default Work Unit" ID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="Kick" ID="{2F865CBF-70BF-4822-A97A-C97E70C24ABA}" ShortID="952464549">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="HIT_Kick_Heavy_04" ID="{BA68019E-DAF9-449F-8512-AE710DBCB146}">
-							<Language>SFX</Language>
-							<AudioFile>HIT_Kick_Heavy_04.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="653687740"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="HIT_Kick_Heavy_04" ID="{BA68019E-DAF9-449F-8512-AE710DBCB146}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Noise" ID="{1A10C864-7593-46C4-BDBE-C65A0DC5A17E}" ShortID="304683668">
+				<Folder Name="SFX" ID="{64FD4CE7-4FED-42AC-A594-58415270D947}" ShortID="503986148">
 					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Color" Type="int16" Value="10"/>
 					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
-						</Reference>
-					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="AMBPubl_Big Hall Men Cheer Motivated 01_B00M_ONE" ID="{D63B6877-04F7-4610-B310-682F94E4B1B6}">
+						<RandomSequenceContainer Name="Bump_SFX" ID="{82FDDE89-F89F-4749-89A2-25C2847D7E95}" ShortID="179451264">
 							<PropertyList>
-								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+								<Property Name="Color" Type="int16" Value="13"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>AMBPubl_Big Hall Men Cheer Motivated 01_B00M_ONE.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="705290400"/>
-							</MediaIDList>
-						</AudioFileSource>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Table_Chair_Bump_SFX" ID="{131D1A7A-A27E-4839-8928-09DC239975AA}" ShortID="341685655">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Table_Chair_Bump_SFX" ID="{4381628B-6014-466A-BD4C-2F946AA51A8F}">
+											<Language>SFX</Language>
+											<AudioFile>Table_Chair_Bump_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="419700630"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Table_Chair_Bump_SFX" ID="{4381628B-6014-466A-BD4C-2F946AA51A8F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Doll_SFX" ID="{78505DC9-4720-4A70-9AD7-4917BE08E939}" ShortID="999388836">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Doll_Move_Prepare_Quick_SFX" ID="{306792E1-5D45-4A87-8804-5F4F9B82D2F9}" ShortID="714053699">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Doll_Move_Prepare_Quick_SFX" ID="{0D508F85-8BEE-40BF-B60B-51F6BB14B465}">
+											<Language>SFX</Language>
+											<AudioFile>Doll_Move_Prepare_Quick_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="523821878"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Doll_Move_Prepare_Quick_SFX" ID="{0D508F85-8BEE-40BF-B60B-51F6BB14B465}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Doll_Position_Arrive_Landing_SFX" ID="{7A39E2B2-6C6C-4B88-8CEE-60C69F627FD9}" ShortID="296613568">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Doll_Position_Arrive_Landing_SFX" ID="{054BB8FB-4EBC-4708-973E-8C5C70987581}">
+											<Language>SFX</Language>
+											<AudioFile>Doll_Position_Arrive_Landing_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="685211774"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Doll_Position_Arrive_Landing_SFX" ID="{054BB8FB-4EBC-4708-973E-8C5C70987581}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Doll_Select_Highlight_SFX" ID="{F8584DB8-3A44-4B68-B6C2-5FC24674E70E}" ShortID="1012479905">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Doll_Select_Highlight_SFX" ID="{7BC8C3AF-60CE-4078-ADDB-6EB9A1541CDB}">
+											<Language>SFX</Language>
+											<AudioFile>Doll_Select_Highlight_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="29310804"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Doll_Select_Highlight_SFX" ID="{7BC8C3AF-60CE-4078-ADDB-6EB9A1541CDB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Doll_Mask_Switch_Effect_SFX" ID="{22A9D8D6-9A81-470D-9C8A-103DD4E7FF80}" ShortID="780245652">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Doll_Mask_Switch_Effect_SFX" ID="{5EB71E46-B9AF-42C9-8EE7-D9DE42AE4D0E}">
+											<Language>SFX</Language>
+											<AudioFile>Doll_Mask_Switch_Effect_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="714396357"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Doll_Mask_Switch_Effect_SFX" ID="{5EB71E46-B9AF-42C9-8EE7-D9DE42AE4D0E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Mask_SFX" ID="{D4D4DAE8-7C6B-45F0-BC15-70B52A6A309B}" ShortID="636790807">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="4"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="CatMask_Fit_SFX" ID="{FC8462C2-76AD-4A99-9EE9-4DA5C1D29BFD}" ShortID="652582940">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="CatMask_Fit_SFX" ID="{3501F743-83ED-48F1-9B1D-16224B6C0287}" ShortID="426219277">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CatMask_Fit_SFX" ID="{EAC62422-740E-4A6A-9D20-8CF3DBC7E5CC}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.507703587851169"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CatMask_Fit_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="164882528"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CatMask_Fit_SFX" ID="{EAC62422-740E-4A6A-9D20-8CF3DBC7E5CC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CatMask_Fit_SFX_01" ID="{38A42239-6600-4935-95C2-EC9158EE85D6}" ShortID="1071246768">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CatMask_Fit_SFX" ID="{88847AB2-5556-489D-A597-7208EDA95B90}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.01034553589687"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.89099670878016"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CatMask_Fit_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="903092708"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CatMask_Fit_SFX" ID="{88847AB2-5556-489D-A597-7208EDA95B90}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CatMask_Fit_SFX_02" ID="{5050BB0B-C16C-410E-9451-2E52E9726338}" ShortID="658355036">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CatMask_Fit_SFX" ID="{81D65A69-ECAE-4E77-BB4E-6702A496420E}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.33186719081849"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.14031753841046"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CatMask_Fit_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="693602815"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CatMask_Fit_SFX" ID="{81D65A69-ECAE-4E77-BB4E-6702A496420E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="FoxMask_Fit_SFX" ID="{78885947-3BBF-4C84-80C2-AFE5D7320361}" ShortID="434440135">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="FoxMask_Fit_SFX" ID="{CA244FFC-247A-478C-AE3B-63960FB89CAA}" ShortID="977053351">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="FoxMask_Fit_SFX" ID="{3F35942C-510D-4014-9B82-1D930325ED4E}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.558738629827385"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>FoxMask_Fit_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="542803814"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="FoxMask_Fit_SFX" ID="{3F35942C-510D-4014-9B82-1D930325ED4E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="FoxMask_Fit_SFX_01" ID="{42FAAAD0-685F-4A6C-AD10-B709BACB70AA}" ShortID="245897260">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="FoxMask_Fit_SFX" ID="{204B2A29-039A-49FD-B2CE-C702173E41DE}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.00852437185804"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.64118971091465"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>FoxMask_Fit_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="117300668"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="FoxMask_Fit_SFX" ID="{204B2A29-039A-49FD-B2CE-C702173E41DE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="FoxMask_Fit_SFX_02" ID="{BCCEE87F-CC23-4AA8-8C85-716317E3DB29}" ShortID="801499309">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="FoxMask_Fit_SFX" ID="{D2F79A1C-7828-4933-A6A7-AAC3DD4D33AD}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.18595144094425"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.80251214395412"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>FoxMask_Fit_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="14073882"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="FoxMask_Fit_SFX" ID="{D2F79A1C-7828-4933-A6A7-AAC3DD4D33AD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="LionMask_Fit_SFX" ID="{86D6E607-39E1-4899-87BE-EB7330302E98}" ShortID="522376834">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="LionMask_Fit_SFX" ID="{08228D56-7EE2-416F-B5B8-D1373A6CED15}" ShortID="171952188">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="LionMask_Fit_SFX" ID="{A51922A0-FBAB-4E87-8E6D-59CE6AE1E671}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.103300027245346"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.61212313622326"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>LionMask_Fit_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="146246296"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="LionMask_Fit_SFX" ID="{A51922A0-FBAB-4E87-8E6D-59CE6AE1E671}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="LionMask_Fit_SFX_01" ID="{8169A1A5-B39D-48D2-9EE8-3C40D4FDA2A1}" ShortID="345563170">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="LionMask_Fit_SFX" ID="{B8E5DF7D-B995-4DD7-9F5B-C65D03AC1BF7}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.30415266673231"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.25617986398605"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>LionMask_Fit_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="504314832"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="LionMask_Fit_SFX" ID="{B8E5DF7D-B995-4DD7-9F5B-C65D03AC1BF7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="LionMask_Fit_SFX_02" ID="{4F0B4FEA-F36F-4DBA-8280-F933CACECF66}" ShortID="128267620">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="LionMask_Fit_SFX" ID="{5D3C6BA3-7BE1-4B77-A15A-F762E4891A49}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.40047062553716"/>
+														<Property Name="TrimEnd" Type="Real64" Value="5.59333481659933"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>LionMask_Fit_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="627370399"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="LionMask_Fit_SFX" ID="{5D3C6BA3-7BE1-4B77-A15A-F762E4891A49}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="MouseMask_Fit_SFX" ID="{31640428-90D4-42CC-96A2-14D54D9CBFA1}" ShortID="832448392">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="MouseMask_Fit_SFX" ID="{18502B79-51FE-4C29-A78D-62351AD3BCD5}" ShortID="136200223">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MouseMask_Fit_SFX" ID="{E01BD38A-AD7C-4A94-A08C-6325CB1B9C27}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0811643071213436"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.401280801958303"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>MouseMask_Fit_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="736329114"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MouseMask_Fit_SFX" ID="{E01BD38A-AD7C-4A94-A08C-6325CB1B9C27}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MouseMask_Fit_SFX_01" ID="{1CF67349-04EF-4E8F-98BD-78BEF860385E}" ShortID="457487389">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MouseMask_Fit_SFX" ID="{2A342358-4B47-46CA-B4B8-665F9CE8182C}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.34020423316811"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.61248116351023"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>MouseMask_Fit_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="578473524"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MouseMask_Fit_SFX" ID="{2A342358-4B47-46CA-B4B8-665F9CE8182C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MouseMask_Fit_SFX_02" ID="{7CA8D3A4-51DD-4B93-B525-27B8E389304C}" ShortID="970881178">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MouseMask_Fit_SFX" ID="{C9C852E1-6A0C-45A3-9B6B-E474363CEBF5}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.37968347400962"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.01953818912064"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>MouseMask_Fit_SFX.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="598852464"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MouseMask_Fit_SFX" ID="{C9C852E1-6A0C-45A3-9B6B-E474363CEBF5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Skill_SFX" ID="{C3C363AA-8B19-497B-A3BD-BD8B42FAE192}" ShortID="755360725">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="19"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Mask_Special_SFX" ID="{4336AD73-0342-4DB2-981D-458EB5CE7484}" ShortID="575025535">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Mask_Special_SFX" ID="{C9E49505-719F-40FB-A542-B8DB1A944BE5}">
+											<Language>SFX</Language>
+											<AudioFile>Mask_Special_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="802017264"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Mask_Special_SFX" ID="{C9E49505-719F-40FB-A542-B8DB1A944BE5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Doll_Skill_Cast_SFX" ID="{88EEC999-B8AF-460F-ABE5-5FDD12DBE71E}" ShortID="585358753">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Doll_Skill_Cast_SFX" ID="{CBA3F8F6-221F-4A88-A56E-16743D39E042}">
+											<Language>SFX</Language>
+											<AudioFile>Doll_Skill_Cast_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="689448774"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Doll_Skill_Cast_SFX" ID="{CBA3F8F6-221F-4A88-A56E-16743D39E042}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Crown_Glow_SFX" ID="{89856A29-B056-458D-B52A-0701C83BAEBC}" ShortID="53609115">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Crown_Glow_SFX" ID="{5CF2F9E6-DC39-46FD-99CC-F7752D9DC6AF}">
+											<Language>SFX</Language>
+											<AudioFile>Crown_Glow_SFX.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="691230451"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Crown_Glow_SFX" ID="{5CF2F9E6-DC39-46FD-99CC-F7752D9DC6AF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Scene_SFX" ID="{280C1712-A6A1-4F1C-A05B-0FDD12829417}" ShortID="285609097">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="22"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="SFX_CapturePoint_Trigger" ID="{34863059-6F32-411F-BB00-23ED77950048}" ShortID="887807716">
+									<PropertyList>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_CapturePoint_Trigger" ID="{C10B762C-9765-49B2-9769-CF4BA2203D1E}" ShortID="23330535">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_CapturePoint_Trigger" ID="{19AD5FF5-D11C-4C8A-A781-BE7F24EF848A}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.25815994434112"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>SFX_CapturePoint_Trigger.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="658065189"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_CapturePoint_Trigger" ID="{19AD5FF5-D11C-4C8A-A781-BE7F24EF848A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_CapturePoint_Trigger_01" ID="{E7F7CACB-F566-40B3-BB4A-0B1F4706BA07}" ShortID="675438557">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_CapturePoint_Trigger" ID="{03256536-B4DC-4455-A58C-54D2F025C83A}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="5.03822859993862"/>
+														<Property Name="TrimEnd" Type="Real64" Value="8.26460161304986"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>SFX_CapturePoint_Trigger.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="171610600"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_CapturePoint_Trigger" ID="{03256536-B4DC-4455-A58C-54D2F025C83A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_CapturePoint_Trigger_02" ID="{9169515A-09F7-4630-8F38-C0DFABF10D36}" ShortID="101362374">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_CapturePoint_Trigger" ID="{E5AD8D78-C9C0-4574-9BDC-4CAE01F00A3A}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="10.5373677027107"/>
+														<Property Name="TrimEnd" Type="Real64" Value="13.6206995252875"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>SFX_CapturePoint_Trigger.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="434314217"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_CapturePoint_Trigger" ID="{E5AD8D78-C9C0-4574-9BDC-4CAE01F00A3A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_CapturePoint_Trigger_03" ID="{61EDC048-CC74-498E-A956-F4AF168E6ECA}" ShortID="232899824">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_CapturePoint_Trigger" ID="{062D7DE5-5364-4C31-BB34-861D7D45FBD1}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="15.2577269903504"/>
+														<Property Name="TrimEnd" Type="Real64" Value="18.8019693157606"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>SFX_CapturePoint_Trigger.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="753170298"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_CapturePoint_Trigger" ID="{062D7DE5-5364-4C31-BB34-861D7D45FBD1}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="SFX_Scene_Transition" ID="{D24B690F-3590-4F8D-AAEB-CFECE2193EA6}" ShortID="839823356">
+									<PropertyList>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{49550D50-2FA2-4D89-B32C-B6D3F977460D}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_Scene_Transition_Close" ID="{1CF0AAA6-2107-4594-92EB-0CFDB082DD87}" ShortID="355840186">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Scene_Transition" ID="{C997C83B-A321-4786-97C0-0B31D366B511}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.73238724530609"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>SFX_Scene_Transition.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="859764553"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Scene_Transition" ID="{C997C83B-A321-4786-97C0-0B31D366B511}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Scene_Transition_Open" ID="{9C4F62CD-778B-4194-AEBD-6616793DC8FD}" ShortID="787851686">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Scene_Transition" ID="{EF337FE7-78FA-4D5A-9B1D-7C0B53EEE581}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.84493034507575"/>
+														<Property Name="TrimEnd" Type="Real64" Value="4.73625224653132"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>SFX_Scene_Transition.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="171007355"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Scene_Transition" ID="{EF337FE7-78FA-4D5A-9B1D-7C0B53EEE581}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
-					<ObjectLists>
-						<ObjectList Name="RTPC">
-							<RTPC Name="" ID="{68A1B851-47FF-4DC1-BE9E-BC7A4391B375}" ShortID="652285576">
-								<PropertyList>
-									<Property Name="PropertyName" Type="string" Value="Volume"/>
-								</PropertyList>
-								<ReferenceList>
-									<Reference Name="ControlInput">
-										<ObjectRef Name="Player_Distance" ID="{F325C523-DA20-459E-80FB-1BB81361C56D}" WorkUnitID="{4D497234-4D7C-4F80-B2EC-3B30F2FAA234}"/>
-									</Reference>
-									<Reference Name="Curve">
-										<Custom>
-											<Curve Name="" ID="{A897EE3C-2B2B-417E-8DFB-E3CD6F7B837A}">
-												<PropertyList>
-													<Property Name="Flags" Type="int32" Value="3"/>
-												</PropertyList>
-												<PointList>
-													<Point>
-														<XPos>0</XPos>
-														<YPos>-200</YPos>
-														<Flags>5</Flags>
-													</Point>
-													<Point>
-														<XPos>100</XPos>
-														<YPos>-0.08433</YPos>
-														<Flags>37</Flags>
-													</Point>
-												</PointList>
-											</Curve>
-										</Custom>
-									</Reference>
-								</ReferenceList>
-							</RTPC>
-							<RTPC Name="" ID="{5A4EC80A-BAD9-4D16-A698-258C3E75EC05}" ShortID="69770423">
-								<PropertyList>
-									<Property Name="PropertyName" Type="string" Value="Lowpass"/>
-								</PropertyList>
-								<ReferenceList>
-									<Reference Name="ControlInput">
-										<ObjectRef Name="Player_Distance" ID="{F325C523-DA20-459E-80FB-1BB81361C56D}" WorkUnitID="{4D497234-4D7C-4F80-B2EC-3B30F2FAA234}"/>
-									</Reference>
-									<Reference Name="Curve">
-										<Custom>
-											<Curve Name="" ID="{7EF78908-378D-4D2C-9258-921528AE6631}">
-												<PropertyList>
-													<Property Name="Flags" Type="int32" Value="65537"/>
-												</PropertyList>
-												<PointList>
-													<Point>
-														<XPos>0</XPos>
-														<YPos>0</YPos>
-														<Flags>5</Flags>
-													</Point>
-													<Point>
-														<XPos>100</XPos>
-														<YPos>-100</YPos>
-														<Flags>37</Flags>
-													</Point>
-												</PointList>
-											</Curve>
-										</Custom>
-									</Reference>
-								</ReferenceList>
-							</RTPC>
-						</ObjectList>
-					</ObjectLists>
-					<ActiveSourceList>
-						<ActiveSource Name="AMBPubl_Big Hall Men Cheer Motivated 01_B00M_ONE" ID="{D63B6877-04F7-4610-B310-682F94E4B1B6}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Music" ID="{F05FF5E6-4B62-42D3-8AAB-58FF8DB8CCA0}" ShortID="1061565031">
-					<PropertyList>
-						<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
-						<Property Name="UseMaxSoundPerInstance" Type="bool">
-							<ValueList>
-								<Value>True</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-7</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
-						</Reference>
-					</ReferenceList>
+				</Folder>
+				<Folder Name="Music" ID="{5EFA533A-F30B-42AE-9523-E1E1F89971BE}" ShortID="449266881">
 					<ChildrenList>
-						<AudioFileSource Name="塞壬唱片-MSR _ Erik Castro _ Elvin Shen _ David Lin _ 左乙 - Misty Memory (Day Version)" ID="{C75601FC-2CEA-4BB7-B9E7-47846ADD1EB2}">
+						<Sound Name="Victory" ID="{58362CDF-68D6-44B2-BC4F-565ABE5D0761}" ShortID="658641211">
 							<PropertyList>
-								<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+								<Property Name="Color" Type="int16" Value="2"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>塞壬唱片-MSR _ Erik Castro _ Elvin Shen _ David Lin _ 左乙 - Misty Memory (Day Version).wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="467966028"/>
-							</MediaIDList>
-							<ObjectLists>
-								<ObjectList Name="Markers">
-									<Marker Name="" ID="{95B55045-E91E-469E-8D11-DED05DB9044D}">
-										<PropertyList>
-											<Property Name="Label" Type="string" Value="1"/>
-											<Property Name="Time" Type="Real64" Value="217.003890745229"/>
-										</PropertyList>
-									</Marker>
-								</ObjectList>
-							</ObjectLists>
-						</AudioFileSource>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music" ID="{6DCD0AFD-4F80-4821-AA78-E401AC661A02}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Victory" ID="{5A9A7FD6-39B1-47DA-83DB-AC60E9CCC086}">
+									<Language>SFX</Language>
+									<AudioFile>Victory.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1055231980"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Victory" ID="{5A9A7FD6-39B1-47DA-83DB-AC60E9CCC086}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="Mask_Doll_A_Clear_Dream" ID="{DB02C696-51B2-4599-A3F6-19E40F3B725B}" ShortID="126915653">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music" ID="{6DCD0AFD-4F80-4821-AA78-E401AC661A02}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Mask_Doll_A_Clear_Dream_1" ID="{5948FDEE-43C3-4FB0-960A-33B3B265C54A}" ShortID="999499716">
+									<PropertyList>
+										<Property Name="InitialDelay" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{34B1BC91-A2A4-413B-BA18-8DA9F46C8745}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+										<Property Name="LoopCount" Type="int32" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{6DCD0AFD-4F80-4821-AA78-E401AC661A02}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_1" ID="{0B3CF167-0E53-47C1-9B44-510E576A5EC7}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.59688528209486"/>
+												<Property Name="TrimEnd" Type="Real64" Value="24.2303705155799"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Mask_Doll_A_Clear_Dream_1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="431965189"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Mask_Doll_A_Clear_Dream_1" ID="{0B3CF167-0E53-47C1-9B44-510E576A5EC7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Mask_Doll_A_Clear_Dream_2" ID="{ADAB645D-90D3-496D-874D-63A3B4F66C9F}" ShortID="907574291">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+										<Property Name="LoopCount" Type="int32" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{6DCD0AFD-4F80-4821-AA78-E401AC661A02}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_2" ID="{C3DF9A7F-3651-4E1D-BF0D-F65656877BC9}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.59477298338589"/>
+												<Property Name="TrimEnd" Type="Real64" Value="24.1561260151235"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Mask_Doll_A_Clear_Dream_2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="713369890"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Mask_Doll_A_Clear_Dream_2" ID="{C3DF9A7F-3651-4E1D-BF0D-F65656877BC9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Mask_Doll_A_Clear_Dream_3" ID="{482BD481-7E9E-477B-83E8-A3AC28C6AEC0}" ShortID="807848749">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+										<Property Name="LoopCount" Type="int32" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{6DCD0AFD-4F80-4821-AA78-E401AC661A02}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_3" ID="{14B19983-922A-4BB8-BF71-5AEFE6E739BE}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.60602595509123"/>
+												<Property Name="TrimEnd" Type="Real64" Value="24.2066103206132"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Mask_Doll_A_Clear_Dream_3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="194973527"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Mask_Doll_A_Clear_Dream_3" ID="{14B19983-922A-4BB8-BF71-5AEFE6E739BE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Mask_Doll_A_Clear_Dream_4" ID="{69D743CC-AF93-439D-AC88-7B7C95638F2D}" ShortID="1003597751">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+										<Property Name="LoopCount" Type="int32" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{6DCD0AFD-4F80-4821-AA78-E401AC661A02}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_4" ID="{DECA0D75-09AD-49EC-9B45-DFEA0C566CA5}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.60002011690975"/>
+												<Property Name="TrimEnd" Type="Real64" Value="24.0877739001363"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Mask_Doll_A_Clear_Dream_4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="104268119"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Mask_Doll_A_Clear_Dream_4" ID="{DECA0D75-09AD-49EC-9B45-DFEA0C566CA5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Mask_Doll_A_Clear_Dream_5" ID="{0E8A9476-D400-40C3-9F56-99C1CF626D8E}" ShortID="447478257">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+										<Property Name="LoopCount" Type="int32" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{6DCD0AFD-4F80-4821-AA78-E401AC661A02}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_5" ID="{99CE6560-EAF0-4F35-B3F9-7596549C90C1}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.60373370579139"/>
+												<Property Name="TrimEnd" Type="Real64" Value="25.8684559562333"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Mask_Doll_A_Clear_Dream_5.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="225301153"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Mask_Doll_A_Clear_Dream_5" ID="{99CE6560-EAF0-4F35-B3F9-7596549C90C1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Mask_Doll_A_Clear_Dream_Loop" ID="{A57DDAEF-1AAF-4F09-BE37-9C71D20C6C73}" ShortID="1036076248">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{6DCD0AFD-4F80-4821-AA78-E401AC661A02}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_Loop" ID="{112329C2-D996-4AB6-A824-6504D4CC0BC0}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.59741152309629"/>
+												<Property Name="TrimEnd" Type="Real64" Value="96.8854432909768"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Mask_Doll_A_Clear_Dream_Loop.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="840203186"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Mask_Doll_A_Clear_Dream_Loop" ID="{112329C2-D996-4AB6-A824-6504D4CC0BC0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Mask_Doll_A_Clear_Dream" ID="{CB3EE6F2-E734-45BF-B2CD-BA9794F736C4}" ShortID="495021657">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{6DCD0AFD-4F80-4821-AA78-E401AC661A02}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Mask_Doll_Dream" ID="{E0DA87DF-2BD2-4CF4-8A95-79CFCAB9573C}">
+											<PropertyList>
+												<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Mask_Doll_Dream.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1031327703"/>
+											</MediaIDList>
+											<ObjectLists>
+												<ObjectList Name="Markers">
+													<Marker Name="" ID="{BC47D3B5-43E6-4D35-A883-8CBECECCDEAE}">
+														<PropertyList>
+															<Property Name="Label" Type="string" Value="Tempo: 156.0"/>
+														</PropertyList>
+													</Marker>
+													<Marker Name="" ID="{2542E76E-CE54-4E08-B55C-7C9E5E5B4EBE}">
+														<PropertyList>
+															<Property Name="Time" Type="Real64" Value="18.7128719669757"/>
+														</PropertyList>
+													</Marker>
+													<Marker Name="" ID="{AD3DED4F-22A0-4E2B-9E03-A056AB04A50F}">
+														<PropertyList>
+															<Property Name="Time" Type="Real64" Value="37.6547643313546"/>
+														</PropertyList>
+													</Marker>
+													<Marker Name="" ID="{2789A14C-0F44-4ECB-A3C9-2A7F731A0AD5}">
+														<PropertyList>
+															<Property Name="Time" Type="Real64" Value="56.1100993826748"/>
+														</PropertyList>
+													</Marker>
+													<Marker Name="" ID="{877BB903-0189-463B-A8E7-D2A1D5778EBA}">
+														<PropertyList>
+															<Property Name="Time" Type="Real64" Value="74.5669001077053"/>
+														</PropertyList>
+													</Marker>
+												</ObjectList>
+											</ObjectLists>
+										</AudioFileSource>
+										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_1" ID="{24FCE7D4-F13B-408B-A729-DBB382E14F0C}">
+											<Language>SFX</Language>
+											<AudioFile>Mask_Doll_A_Clear_Dream_1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="324353236"/>
+											</MediaIDList>
+										</AudioFileSource>
+										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_2" ID="{F91B2EFB-C3CF-42DA-BD95-25463B993421}">
+											<Language>SFX</Language>
+											<AudioFile>Mask_Doll_A_Clear_Dream_2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="440130789"/>
+											</MediaIDList>
+										</AudioFileSource>
+										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_3" ID="{4C63F565-B494-42EB-B134-755EA66CA6AA}">
+											<Language>SFX</Language>
+											<AudioFile>Mask_Doll_A_Clear_Dream_3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="540609055"/>
+											</MediaIDList>
+										</AudioFileSource>
+										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_4" ID="{95164639-8C5C-4DFA-AC49-2BB699F43400}">
+											<Language>SFX</Language>
+											<AudioFile>Mask_Doll_A_Clear_Dream_4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="819063338"/>
+											</MediaIDList>
+										</AudioFileSource>
+										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_5" ID="{E63E4F36-1288-4C9D-9F68-D32F70F09B5C}">
+											<Language>SFX</Language>
+											<AudioFile>Mask_Doll_A_Clear_Dream_5.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="338682174"/>
+											</MediaIDList>
+										</AudioFileSource>
+										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_Loop" ID="{E7060634-25DF-4E14-94DD-61037D3EE22A}">
+											<Language>SFX</Language>
+											<AudioFile>Mask_Doll_A_Clear_Dream_Loop.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="622724053"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Mask_Doll_A_Clear_Dream_Loop" ID="{E7060634-25DF-4E14-94DD-61037D3EE22A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="塞壬唱片-MSR _ Erik Castro _ Elvin Shen _ David Lin _ 左乙 - Misty Memory (Day Version)" ID="{C75601FC-2CEA-4BB7-B9E7-47846ADD1EB2}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>
