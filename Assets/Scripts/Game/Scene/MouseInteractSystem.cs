@@ -129,7 +129,10 @@ namespace Game
 			// 有选中棋子，尝试交换面具（仅友方）
 			if (IsFriendly(_selectedChess, clickedChess))
 			{
-				SwapMasks(_selectedChess, clickedChess);
+				if (!_selectedChess.ChessMask.IsKing)
+				{
+					SwapMasks(_selectedChess, clickedChess);
+				}
 
 				// 如果当前悬浮的棋子是交换的任意一方，刷新高亮
 				if (_hoveredChess == _selectedChess || _hoveredChess == clickedChess)
@@ -339,10 +342,8 @@ namespace Game
 			if (chess == null || chess.ChessMask == null) return;
 			
 			chess.ChessMask.IsKing = true;
-			chess.EquipHat();
+			chess.OnSkill();
 			chess.UpdateMaskSkin(); // 更新皮肤显示
-			
-			WwiseAudio.PlayEvent("Play_Doll_Skill_Cast_SFX", chess.gameObject);
 		}
 
 		private void CancelSkillToChess(Chess chess)

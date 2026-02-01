@@ -37,6 +37,8 @@ namespace Game.GameChess {
 		public const string ANIME_SELECT = "select";
 		public const string ANIME_SWITCH = "switch";
 
+		public const string ANIME_SKILL = "skill";
+
 		private static readonly Dictionary<int, string> _maskMap = new Dictionary<int, string>()
 		{
 			{0, "mouse"},
@@ -370,6 +372,17 @@ namespace Game.GameChess {
 			});
 
 
+			_skeletonMachine.RegisterState(0, ANIME_SKILL, false)
+			.AddAnoAnimationEvent("skill", (track, e) => 
+			{	
+				EquipHat();
+			})
+			.AddAnoAnimationEvent("skill_SFX", (track, e) => 
+			{	
+				WwiseAudio.PlayEvent("Play_Doll_Skill_Cast_SFX", this.gameObject);
+			});
+
+
 			_skeletonMachine.AddTransition(ANIME_IDLE, ANIME_MOVE, () => _skeletonMachine.Trigger(ANIME_MOVE));
 			_skeletonMachine.AddTransition(ANIME_MOVE, ANIME_IDLE, () => !_skeletonMachine.Trigger(ANIME_MOVE));
 
@@ -380,9 +393,13 @@ namespace Game.GameChess {
 
 			_skeletonMachine.AddTransition(ANIME_IDLE, ANIME_SWITCH, () => _skeletonMachine.Trigger(ANIME_SWITCH));
 			_skeletonMachine.AddTransition(ANIME_SWITCH, ANIME_IDLE, () => !_skeletonMachine.Trigger(ANIME_SWITCH));
+
+			_skeletonMachine.AddTransition(ANIME_SELECT, ANIME_SKILL, () => _skeletonMachine.Trigger(ANIME_SKILL));
+			_skeletonMachine.AddTransition(ANIME_SKILL, ANIME_SELECT, () => !_skeletonMachine.Trigger(ANIME_SKILL));
 			
 			_skeletonMachine.SetDefault(ANIME_IDLE);
 			_skeletonMachine.StartMachine();
+			
 			UpdateMaskSkin();
 		}
 
@@ -443,6 +460,11 @@ namespace Game.GameChess {
 				_skeletonAnimation.AnimationState.Apply(_skeletonAnimation.Skeleton);
 				_skeletonAnimation.Update(0);
 			}
+		}
+
+		public void OnSkill()
+		{
+			_skeletonMachine.InvokeTrigger(ANIME_SKILL);
 		}
 
 		public void EquipHat()
