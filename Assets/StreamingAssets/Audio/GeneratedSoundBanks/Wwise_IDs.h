@@ -30,7 +30,7 @@ namespace AK
         static const AkUniqueID PLAY_MASK_SPECIAL_SFX = 2708270198U;
         static const AkUniqueID PLAY_MOUSEMASK_FIT_SFX = 3410823607U;
         static const AkUniqueID PLAY_SFX_CAPTUREPOINT_TRIGGER = 1185070519U;
-        static const AkUniqueID PLAY_SFX_SCENE_TRANSITION = 3372406616U;
+        static const AkUniqueID PLAY_SFX_SCENE_TRANSITION_CLOSE = 3443543745U;
         static const AkUniqueID PLAY_SFX_SCENE_TRANSITION_OPEN = 388703331U;
         static const AkUniqueID PLAY_TABLE_CHAIR_BUMP_SFX = 322227667U;
         static const AkUniqueID PLAY_VICTORY = 2453267296U;

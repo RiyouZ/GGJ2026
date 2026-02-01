@@ -377,7 +377,7 @@
 												<AudioFileSource Name="LionMask_Fit_SFX" ID="{A51922A0-FBAB-4E87-8E6D-59CE6AE1E671}">
 													<PropertyList>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="0.103300027245346"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.400521061704041"/>
 														<Property Name="TrimEnd" Type="Real64" Value="1.61212313622326"/>
 													</PropertyList>
 													<Language>SFX</Language>
@@ -404,7 +404,7 @@
 												<AudioFileSource Name="LionMask_Fit_SFX" ID="{B8E5DF7D-B995-4DD7-9F5B-C65D03AC1BF7}">
 													<PropertyList>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="2.30415266673231"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.34090480811578"/>
 														<Property Name="TrimEnd" Type="Real64" Value="3.25617986398605"/>
 													</PropertyList>
 													<Language>SFX</Language>
@@ -431,7 +431,7 @@
 												<AudioFileSource Name="LionMask_Fit_SFX" ID="{5D3C6BA3-7BE1-4B77-A15A-F762E4891A49}">
 													<PropertyList>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="4.40047062553716"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.4188466962289"/>
 														<Property Name="TrimEnd" Type="Real64" Value="5.59333481659933"/>
 													</PropertyList>
 													<Language>SFX</Language>
@@ -788,7 +788,8 @@
 												<AudioFileSource Name="SFX_Scene_Transition" ID="{C997C83B-A321-4786-97C0-0B31D366B511}">
 													<PropertyList>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimEnd" Type="Real64" Value="1.73238724530609"/>
+														<Property Name="TrimBegin" Type="Real64" Value="5.79169379904881"/>
+														<Property Name="TrimEnd" Type="Real64" Value="10.3099590742771"/>
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>SFX_Scene_Transition.wav</AudioFile>
@@ -814,8 +815,7 @@
 												<AudioFileSource Name="SFX_Scene_Transition" ID="{EF337FE7-78FA-4D5A-9B1D-7C0B53EEE581}">
 													<PropertyList>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="2.84493034507575"/>
-														<Property Name="TrimEnd" Type="Real64" Value="4.73625224653132"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.04679421919441"/>
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>SFX_Scene_Transition.wav</AudioFile>
@@ -826,6 +826,28 @@
 											</ChildrenList>
 											<ActiveSourceList>
 												<ActiveSource Name="SFX_Scene_Transition" ID="{EF337FE7-78FA-4D5A-9B1D-7C0B53EEE581}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Scene_Transition" ID="{8D49DC89-1B89-43A4-94E2-EE371F3141C8}" ShortID="76687594">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC3C79D1-AA72-4D80-91DB-485AC42C0025}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Scene_Transition" ID="{188A0CE3-CFD5-494F-999D-BDC641DD92A3}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Scene_Transition.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="706397562"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Scene_Transition" ID="{188A0CE3-CFD5-494F-999D-BDC641DD92A3}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>

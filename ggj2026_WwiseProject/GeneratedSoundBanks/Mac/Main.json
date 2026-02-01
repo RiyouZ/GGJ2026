@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{2417395A-1AF3-41F7-8041-7FE73BE2F6A3}",
     "Language": "SFX",
-    "Hash": "{645F295A-4610-9DA8-8F47-EC07524C00F4}",
+    "Hash": "{6E079F35-D13D-C46A-DF2A-03E1E824F7E2}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -53,7 +53,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "LionMask_Fit_SFX.wav",
-      "CachePath": "19/{19FE8B43-98A0-579D-0698-5913B3C39884}.wem"
+      "CachePath": "01/{016D2837-8F10-04E1-0520-1B4E61731200}.wem"
      },
      {
       "Id": "164882528",
@@ -69,7 +69,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_Scene_Transition.wav",
-      "CachePath": "E2/{E2CDCCC5-C591-6882-5942-BDA821B0FFF0}.wem"
+      "CachePath": "CB/{CBCD44CC-52D2-8613-50A0-C8E23082345B}.wem"
      },
      {
       "Id": "171610600",
@@ -125,7 +125,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "LionMask_Fit_SFX.wav",
-      "CachePath": "B0/{B046C52E-0440-D08E-8D39-D5CD73AB2DE2}.wem"
+      "CachePath": "6A/{6A48EAC6-78B3-D74A-F26C-A89DD9E048B5}.wem"
      },
      {
       "Id": "523821878",
@@ -173,7 +173,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "LionMask_Fit_SFX.wav",
-      "CachePath": "3E/{3E4AA3A5-E599-A225-92B7-9D44BB5CDDC2}.wem"
+      "CachePath": "FF/{FF59CBDD-D452-FB94-9721-76DC259B450F}.wem"
      },
      {
       "Id": "658065189",
@@ -269,7 +269,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_Scene_Transition.wav",
-      "CachePath": "1B/{1BD3A2F5-85A2-ACE8-D45D-990FA1B4E6FC}.wem"
+      "CachePath": "06/{06DD2DF4-63D2-FE31-AF6C-2385CA27E61F}.wem"
      },
      {
       "Id": "903092708",
@@ -419,8 +419,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_LionMask_Fit_SFX",
       "GUID": "{EEFF378A-E6F3-4561-AFD0-F77391B0C1A2}",
       "DurationType": "OneShot",
-      "DurationMin": "0.9520272",
-      "DurationMax": "1.5088232",
+      "DurationMin": "0.91527504",
+      "DurationMax": "1.2116021",
       "MediaRefs": [
        {
         "Id": "146246296"
@@ -566,13 +566,13 @@
       ]
      },
      {
-      "Id": "3372406616",
-      "Name": "Play_SFX_Scene_Transition",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_SFX_Scene_Transition",
+      "Id": "3443543745",
+      "Name": "Play_SFX_Scene_Transition_Close",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_SFX_Scene_Transition_Close",
       "GUID": "{C65077D0-2F6C-4C60-8BCD-9C01EE8E7643}",
       "DurationType": "OneShot",
-      "DurationMin": "1.7323873",
-      "DurationMax": "1.7323873",
+      "DurationMin": "4.5182652",
+      "DurationMax": "4.5182652",
       "MediaRefs": [
        {
         "Id": "859764553"
@@ -630,8 +630,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Stop_Event\\Stop_SFX_Scene_Transition_Close",
       "GUID": "{BD823EBE-DBF8-48B6-ADDC-BF7BC6F178FF}",
       "DurationType": "OneShot",
-      "DurationMin": "3.2323873",
-      "DurationMax": "3.2323873",
+      "DurationMin": "6.0182652",
+      "DurationMax": "6.0182652",
       "MediaRefs": [
        {
         "Id": "859764553"
@@ -641,6 +641,6 @@
     ]
    }
   ],
-  "FileHash": "{DEE17CA5-DD81-0140-2612-85D6DA65782F}"
+  "FileHash": "{F6BF8674-F5E8-CFB5-3CC1-B378C9C4A800}"
  }
 }
