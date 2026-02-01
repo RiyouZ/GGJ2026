@@ -323,6 +323,7 @@ namespace Game
 			if (_selectedChess == null) return;
 
 			_isSkillActive = !_isSkillActive;
+			Debug.Log("1");
 			
 			if (_isSkillActive)
 			{

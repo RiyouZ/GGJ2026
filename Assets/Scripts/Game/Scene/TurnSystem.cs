@@ -182,23 +182,22 @@ namespace Game.Scene
 		/// </summary>
 		private IEnumerator MoveAllChess()
 		{
-			_completeChessCount = 0;
-
 			// 根据level决定移动顺序
 			_movingChessList.Sort((a, b) => b.Level.CompareTo(a.Level));
 
-			while (_completeChessCount < _movingChessList.Count)
+			while (true)
 			{
-				_movedChessCount = 0;
-
+				bool allCompleted = true;
+				
 				// 遍历每个棋子，触发移动
 				foreach (var chess in _movingChessList)
 				{   
-					var moveResult =  chess.Move();
-
-					if(moveResult == MoveResult.Complete)
+					var moveResult = chess.Move();
+					
+					// 只要有一个棋子未结束，就继续循环
+					if (moveResult != Chess.MoveState.MoveEnd)
 					{
-						OnChessMoveComplete();
+						allCompleted = false;
 					}
 				}
 
@@ -214,16 +213,14 @@ namespace Game.Scene
 					}
 					return true;
 				});
+				
+				// 如果所有棋子都已结束本回合移动，退出循环
+				if (allCompleted)
+				{
+					break;
+				}
 			}
 
-		}
-
-		/// <summary>
-		/// 单个棋子移动完成回调
-		/// </summary>
-		private void OnChessMoveComplete()
-		{
-			_completeChessCount++;
 		}
 	}
 }

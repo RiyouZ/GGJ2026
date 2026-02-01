@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using RuGameFramework.Event;
 using Spine.Unity;
 using RuGameFramework.AnimeStateMachine;
@@ -112,6 +111,7 @@ namespace Game.GameChess {
 		{
 			_moveStepIndex = 0;
 			_isMoveSuccessful = false;
+			_moveState = MoveState.Wait;
 		}
 		
 		// 为True时 后续不能移动
@@ -122,23 +122,33 @@ namespace Game.GameChess {
 
 		private bool _isSelected = false;
 	
+		public enum MoveState
+		{
+			Wait,
+			MoveComplete,
+			MoveEnd
+		}
+
+		private MoveState _moveState = MoveState.Wait;
+
+
 		/// <summary>
 		/// 移动主流程
 		/// 根据 mask 的规则移动，每次只移动一个单位格
 		/// </summary>
 		/// <returns>是否成功移动</returns>
-		public MoveResult Move() 
+		public MoveState Move() 
 		{
-			if (_chessMask == null) 
+			if (_moveState == MoveState.MoveEnd)
 			{
-				return MoveResult.Complete;
+				return _moveState;
 			}
 
-			if (IsMoveComplete())
+			if (_chessMask == null) 
 			{
-				// 防止回合计数
-				return MoveResult.End;
+				_moveState = MoveState.MoveComplete;
 			}
+
 
 			// 获取下一步移动方向
 			Vector2Int dir = _chessMask.GetMoveDir(_moveStepIndex);
@@ -147,13 +157,15 @@ namespace Game.GameChess {
 			// 检查越界
 			if (IsOutOfBounds(nextPos)) 
 			{
-				return MoveResult.Complete;
+				_moveState = MoveState.MoveEnd;
+				return _moveState;
 			}
 			
 			// 检查 CanWalk
 			if (!GameScene.GridSystem.CanWalk(nextPos)) 
 			{
-				return MoveResult.Complete;
+				_moveState = MoveState.MoveEnd;
+				return _moveState;
 			}
 			
 			// 检查目标格子是否有棋子
@@ -163,8 +175,8 @@ namespace Game.GameChess {
 				// 友方不可移动
 				if (target.Faction == this.Faction) 
 				{
-					_isMoveSuccessful = true;
-					return MoveResult.Complete;
+					_moveState = MoveState.MoveEnd;
+					return _moveState;
 				}
 				
 				// 比较 level
@@ -181,12 +193,14 @@ namespace Game.GameChess {
 					// 消灭停止移动
 					MoveToPosition(nextPos);
 					// 吃掉后停止
-					return MoveResult.Complete;
+					_moveState = MoveState.MoveEnd;
+					return _moveState;
 				} 
 				else 
 				{
 					// level >= 当前棋子，不可移动
-					return MoveResult.Complete;
+					_moveState = MoveState.MoveEnd;
+					return _moveState;
 				}
 			} 
 			else 
@@ -194,18 +208,21 @@ namespace Game.GameChess {
 				// 没有任何障碍时，正常移动
 				MoveToPosition(nextPos);
 				_moveStepIndex ++;
+
 				if (IsMoveComplete()) 
 				{
-					return MoveResult.Complete;
+					_moveState = MoveState.MoveEnd;
+					return _moveState;
 				}
 
-				return MoveResult.Complete;
+				_moveState = MoveState.MoveComplete;
+				return _moveState;
 			}
 		}
 		
 		private bool IsMoveComplete() 
 		{
-			if (_moveStepIndex >= _chessMask.GetMoveMaxCount() || _isMoveSuccessful)
+			if (_moveStepIndex >= _chessMask.GetMoveMaxCount())
 			{
 				return true;
 			}
@@ -230,7 +247,6 @@ namespace Game.GameChess {
 			_isMoving = true;
 			NextPos = newPos;
 			_skeletonMachine.InvokeTrigger(ANIME_MOVE);
-
 			EventManager.InvokeEvent(GameScene.EVENT_CHESS_MOVE, new ChessMoveArgs(this, currentPos, NextPos));
 			currentPos = NextPos;
 		}
@@ -321,10 +337,9 @@ namespace Game.GameChess {
 			{
 				this.transform.position = GameScene.GetCellWorld(currentPos.x, currentPos.y);
 			})
-			.OnAnimationComplate((st, track) => 
+			.OnAnimationEnd((st, track) => 
 			{
 				_isMoving = false;
-				
 			})
 			.AddAnoAnimationEvent("move_SFX", (track, e) =>
 			{
@@ -369,6 +384,24 @@ namespace Game.GameChess {
 				}
 
 				WwiseAudio.PlayEvent("Play_Doll_Mask_Switch_Effect_SFX", this.gameObject);
+			})
+			.AddAnimationEvent("mask_SFX", (track, e) => 
+			{
+				switch(_chessMask.Level)
+				{
+					case 0:
+						WwiseAudio.PlayEvent("Play_MouseMask_Fit_SFX", this.gameObject);
+						break;
+					case 1:
+						WwiseAudio.PlayEvent("Play_CatMask_Fit_SFX", this.gameObject);
+						break;
+					case 2:
+						WwiseAudio.PlayEvent("Play_FoxMask_Fit_SFX", this.gameObject);
+						break;
+					case 3:
+						WwiseAudio.PlayEvent("Play_LionMask_Fit_SFX", this.gameObject);
+						break;
+				}
 			});
 
 
