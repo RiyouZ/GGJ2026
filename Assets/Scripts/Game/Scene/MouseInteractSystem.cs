@@ -338,7 +338,7 @@ namespace Game
 			chess.ChessMask.IsKing = true;
 			chess.UpdateMaskSkin(); // 更新皮肤显示
 			
-			// WwiseAudio.PlayEvent("Doll_Skill_Cast_SFX", chess.gameObject);
+			WwiseAudio.PlayEvent("Play_Doll_Skill_Cast_SFX", chess.gameObject);
 		}
 
 		private void CancelSkillToChess(Chess chess)
@@ -352,7 +352,6 @@ namespace Game
 
 		private void OnSkillSuccesss()
 		{
-			Debug.Log("[MouseInteractSystem] 技能成功触发");
 			_skillCount--;
 			_isSkillActive = false;
 		}

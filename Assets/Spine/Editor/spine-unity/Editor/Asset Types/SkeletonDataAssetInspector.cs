@@ -1034,7 +1034,7 @@ namespace Spine.Unity.Editor {
 			if (skeletonData == null) return;
 
 			if (skeletonAnimation == null) {
-				//Debug.LogWarning("Animation was stopped but preview doesn't exist. It's possible that the Preview Panel is closed.");
+
 				return;
 			}
 

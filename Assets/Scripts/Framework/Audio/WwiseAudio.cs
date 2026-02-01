@@ -29,6 +29,17 @@ namespace Frame.Audio
 			return AkUnitySoundEngine.PostEvent(eventName, gameObject);
 		}
 
+
+		public static void SeekOnEvent(string eventName, GameObject gameObject, float position, uint id)
+		{
+			var result = AkUnitySoundEngine.SeekOnEvent(eventName, gameObject, position, false, id);
+			
+			if (result != AKRESULT.AK_Success)
+			{
+				LogWarning($"SeekOnEvent failed: eventName={eventName}, position={position}, id={id}, result={result}");
+			}
+		}
+
 		public static float GetRTPC(string rtpcName, GameObject gameObject)
 		{
 			if (string.IsNullOrWhiteSpace(rtpcName))

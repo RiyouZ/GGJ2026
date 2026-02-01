@@ -123,7 +123,6 @@ namespace Game.GameChess {
 		{
 			if (_chessMask == null) 
 			{
-				Debug.LogWarning($"[Chess] {name} 没有设置 ChessMask！");
 				return MoveResult.Complete;
 			}
 
@@ -164,7 +163,6 @@ namespace Game.GameChess {
 				if (ChessMask.CanAttack(target.ChessMask)) 
 				{
 					// 消灭对方，移动到目标格子
-					Debug.Log($"[Chess] {name} 吃掉 {target.name}");
 					target.Die();
 
 					if (_chessMask.IsKing)
@@ -180,7 +178,6 @@ namespace Game.GameChess {
 				else 
 				{
 					// level >= 当前棋子，不可移动
-					Debug.Log($"[Chess] {name} 目标棋子 level 更高或相等，不可移动");
 					return MoveResult.Complete;
 				}
 			} 
@@ -225,7 +222,6 @@ namespace Game.GameChess {
 			_isMoving = true;
 			NextPos = newPos;
 			_skeletonMachine.InvokeTrigger(ANIME_MOVE);
-			EventManager.InvokeEvent(GameScene.EVENT_CHESS_MOVE, new ChessMoveArgs(this, currentPos, newPos));
 		}
 		
 		/// <summary>
@@ -246,7 +242,6 @@ namespace Game.GameChess {
 			List<Vector2Int> path = new List<Vector2Int>();
 			
 			if (_chessMask == null || _chessMask.moveRules == null || _chessMask.moveRules.Count == 0) {
-				Debug.LogWarning($"[Chess] {name} 无法生成预览路径，ChessMask 或 MoveRule 为空");
 				return path;
 			}
 			
@@ -308,42 +303,39 @@ namespace Game.GameChess {
 			.AddAnoAnimationEvent("move", (track, e) =>
 			{
 				this.transform.position = GameScene.GetCellWorld(NextPos.x, NextPos.y);
-				
+				EventManager.InvokeEvent(GameScene.EVENT_CHESS_MOVE, new ChessMoveArgs(this, currentPos, NextPos));
+				currentPos = NextPos;
 			})
 			.OnAnimationComplate((st, track) => 
 			{
 				_isMoving = false;
+				
 			})
 			.AddAnoAnimationEvent("move_SFX", (track, e) =>
 			{
-				Debug.Log("[Chess] 播放移动音效");
-				// WwiseAudio.PlayEvent("Doll_Move_Prepare_Quick_SFX", this.gameObject);
+				WwiseAudio.PlayEvent("Play_Doll_Move_Prepare_Quick_SFX", this.gameObject);
 			})
 			.AddAnoAnimationEvent("stop_SFX", (track, e) =>
 			{
-				WwiseAudio.PlayEvent("Doll_Move_Land_SFX", this.gameObject);
-				var nextCell = GameScene.GetCell(NextPos.x, NextPos.y);
+				var nextCell = GameScene.GetCell(currentPos.x, currentPos.y);
 				if (nextCell != null && nextCell.CellType == CellType.Block)
 				{
-					Debug.Log("[Chess] 播放撞击音效");
-					// WwiseAudio.PlayEvent("Table_Chair_Bump_SFX", this.gameObject);
+					WwiseAudio.PlayEvent("Play_Table_Chair_Bump_SFX", this.gameObject);
 				}
 				else if(nextCell != null && nextCell.CellType == CellType.Flag)
 				{
-					// WwiseAudio.PlayEvent("SFX_CapturePoint_Trigger", this.gameObject);
+					WwiseAudio.PlayEvent("Play_SFX_CapturePoint_Trigger", this.gameObject);
 				}
-				else
+				else if(nextCell != null && nextCell.CellType == CellType.Normal)
 				{
-					// WwiseAudio.PlayEvent("Doll_Position_Arrive_Landing_SFX", this.gameObject);
+					WwiseAudio.PlayEvent("Play_Doll_Position_Arrive_Landing_SFX", this.gameObject);
 				}
-				currentPos = NextPos;
 			});
 			
 			_skeletonMachine.RegisterState(0, ANIME_SELECT, false)
 			.AddAnoAnimationEvent("select_SFX", (track, e) => 
 			{	
-				Debug.Log("[Chess] 播放选中音效");
-				// WwiseAudio.PlayEvent("Doll_Select_Highlight_SFX", this.gameObject);
+				WwiseAudio.PlayEvent("Play_Doll_Select_Highlight_SFX", this.gameObject);
 			});
 
 			_skeletonMachine.RegisterState(0, ANIME_SWITCH, false)
@@ -353,15 +345,15 @@ namespace Game.GameChess {
 			})
 			.AddAnoAnimationEvent("switch_SFX", (track, e) => 
 			{
-				// var sfxIndex = Random.Range(0, 2);
-				// switch (sfxIndex)
-				// {
-				// 	case 0:
-				// 		WwiseAudio.PlayEvent("Mask_Special_SFX", this.gameObject);
-				// 		break;
-				// }
+				var sfxIndex = Random.Range(0, 2);
+				switch (sfxIndex)
+				{
+					case 0:
+						WwiseAudio.PlayEvent("Play_Mask_Special_SFX", this.gameObject);
+						break;
+				}
 
-				// WwiseAudio.PlayEvent("Doll_Mask_Switch_Effect_SFX", this.gameObject);
+				WwiseAudio.PlayEvent("Play_Doll_Mask_Switch_Effect_SFX", this.gameObject);
 			});
 
 
@@ -405,13 +397,11 @@ namespace Game.GameChess {
 		{
 			if (_skeletonAnimation == null)
 			{
-				Debug.LogWarning($"[Chess] {name} SkeletonAnimation 组件未找到，无法更新皮肤");
 				return;
 			}
 
 			if (_chessMask == null)
 			{
-				Debug.LogWarning($"[Chess] {name} ChessMask 未设置，无法更新皮肤");
 				return;
 			}
 

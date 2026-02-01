@@ -105,7 +105,6 @@ namespace Game.Scene
 				
 				// 阶段3: 棋子移动
 				_currentState = TurnState.ChessMoving;
-				// WwiseAudio.PlayEvent("Doll_Move_Prepare_Quick_SFX", this._coroutineHost.gameObject);
 				yield return MoveAllChess();
 				
 				// 阶段4: 胜利判定
@@ -114,7 +113,6 @@ namespace Game.Scene
 				if (isVictory)
 				{
 					// 游戏胜利，退出循环
-					Debug.Log("[TurnSystem] 游戏胜利！");
 					yield break;
 				}
 				

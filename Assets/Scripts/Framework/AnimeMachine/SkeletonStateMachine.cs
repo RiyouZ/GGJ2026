@@ -371,7 +371,7 @@ namespace RuGameFramework.AnimeStateMachine
 			{
 				return;
 			}
-
+			
 			_currentState.OnEvent(track, e);
 		}
 
