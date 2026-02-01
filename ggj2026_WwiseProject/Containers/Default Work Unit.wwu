@@ -857,9 +857,16 @@
 										<MediaID ID="1055231980"/>
 									</MediaIDList>
 								</AudioFileSource>
+								<AudioFileSource Name="通关音乐 FV" ID="{4537B702-7F77-4557-82C0-CB6AC00367B3}">
+									<Language>SFX</Language>
+									<AudioFile>通关音乐 FV.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1003639679"/>
+									</MediaIDList>
+								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="Victory" ID="{5A9A7FD6-39B1-47DA-83DB-AC60E9CCC086}" Platform="Linked"/>
+								<ActiveSource Name="通关音乐 FV" ID="{4537B702-7F77-4557-82C0-CB6AC00367B3}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<RandomSequenceContainer Name="Mask_Doll_A_Clear_Dream" ID="{DB02C696-51B2-4599-A3F6-19E40F3B725B}" ShortID="126915653">

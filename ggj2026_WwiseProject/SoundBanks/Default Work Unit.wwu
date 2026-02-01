@@ -7,7 +7,6 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_Event" ID="{C5D77C2A-3F04-429A-A785-2BBC2AE0C630}" WorkUnitID="{AAA35155-522E-4406-8038-438F8B96333A}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Music_Event" ID="{38EB7920-BB0F-45CC-8929-B46E30214390}" WorkUnitID="{AAA35155-522E-4406-8038-438F8B96333A}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Seek_Event" ID="{95FFDFE8-7D8E-494C-B34C-585FD11584B2}" WorkUnitID="{AAA35155-522E-4406-8038-438F8B96333A}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Event" ID="{26C058A1-28C4-4C8D-B1BE-B147B34C665A}" WorkUnitID="{AAA35155-522E-4406-8038-438F8B96333A}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

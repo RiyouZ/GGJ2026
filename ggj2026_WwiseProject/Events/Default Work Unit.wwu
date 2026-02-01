@@ -133,30 +133,9 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-					</ChildrenList>
-				</Folder>
-				<Folder Name="Seek_Event" ID="{95FFDFE8-7D8E-494C-B34C-585FD11584B2}" ShortID="904823664">
-					<ChildrenList>
-						<Event Name="Seek_Doll_Position_Arrive_Landing_SFX" ID="{CA6AC162-B3E0-4DC0-AE9F-1818E4CDDFBB}">
-							<ChildrenList>
-								<Action Name="" ID="{2EFAE3E2-2800-4634-9509-7C235C23EA6F}" ShortID="382082085">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="36"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Doll_Position_Arrive_Landing_SFX" ID="{7A39E2B2-6C6C-4B88-8CEE-60C69F627FD9}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Seek_Table_Chair_Bump_SFX" ID="{0ECE8BD1-A847-40DE-B22B-DA647B7C943A}">
+						<Event Name="Play_Table_Chair_Bump_SFX" ID="{0ECE8BD1-A847-40DE-B22B-DA647B7C943A}">
 							<ChildrenList>
 								<Action Name="" ID="{5FA8A725-6A8E-4C82-8F3D-21B5FB80B95E}" ShortID="884312456">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="36"/>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Table_Chair_Bump_SFX" ID="{131D1A7A-A27E-4839-8928-09DC239975AA}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
@@ -165,12 +144,9 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Seek_SFX_CapturePoint_Trigger" ID="{CB7059E8-B087-49C7-84B8-2DCB4DF9D1FA}">
+						<Event Name="Play_SFX_CapturePoint_Trigger" ID="{CB7059E8-B087-49C7-84B8-2DCB4DF9D1FA}">
 							<ChildrenList>
 								<Action Name="" ID="{680D0AE4-D4F7-4941-ADC2-1CF9F6012A1B}" ShortID="2046720">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="36"/>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_CapturePoint_Trigger" ID="{34863059-6F32-411F-BB00-23ED77950048}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
@@ -179,29 +155,23 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Seek_SFX_Scene_Transition" ID="{C65077D0-2F6C-4C60-8BCD-9C01EE8E7643}">
+						<Event Name="Play_Doll_Position_Arrive_Landing_SFX" ID="{CA6AC162-B3E0-4DC0-AE9F-1818E4CDDFBB}">
 							<ChildrenList>
-								<Action Name="" ID="{2B887D2A-2FE8-4A4E-8256-E457CCB49B8C}" ShortID="281508091">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="36"/>
-									</PropertyList>
+								<Action Name="" ID="{2EFAE3E2-2800-4634-9509-7C235C23EA6F}" ShortID="382082085">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="SFX_Scene_Transition_Close" ID="{1CF0AAA6-2107-4594-92EB-0CFDB082DD87}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+											<ObjectRef Name="Doll_Position_Arrive_Landing_SFX" ID="{7A39E2B2-6C6C-4B88-8CEE-60C69F627FD9}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Seek_SFX_Scene_Transition_Open" ID="{6F0E6690-6EC6-4AB4-B888-4B197B487DA0}">
+						<Event Name="Play_SFX_Scene_Transition" ID="{C65077D0-2F6C-4C60-8BCD-9C01EE8E7643}">
 							<ChildrenList>
-								<Action Name="" ID="{64C9CDCB-10FA-4D7A-A8CE-C9CF2319FECF}" ShortID="940937434">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="36"/>
-									</PropertyList>
+								<Action Name="" ID="{2B887D2A-2FE8-4A4E-8256-E457CCB49B8C}" ShortID="281508091">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="SFX_Scene_Transition_Open" ID="{9C4F62CD-778B-4194-AEBD-6616793DC8FD}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+											<ObjectRef Name="SFX_Scene_Transition_Close" ID="{1CF0AAA6-2107-4594-92EB-0CFDB082DD87}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

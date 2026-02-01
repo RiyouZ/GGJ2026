@@ -17,6 +17,7 @@ namespace AK
         static const AkUniqueID PLAY_CROWN_GLOW_SFX = 1120323365U;
         static const AkUniqueID PLAY_DOLL_MASK_SWITCH_EFFECT_SFX = 1010511585U;
         static const AkUniqueID PLAY_DOLL_MOVE_PREPARE_QUICK_SFX = 756317691U;
+        static const AkUniqueID PLAY_DOLL_POSITION_ARRIVE_LANDING_SFX = 457259217U;
         static const AkUniqueID PLAY_DOLL_SELECT_HIGHLIGHT_SFX = 3522410409U;
         static const AkUniqueID PLAY_DOLL_SKILL_CAST_SFX = 736602215U;
         static const AkUniqueID PLAY_FOXMASK_FIT_SFX = 4227241441U;
@@ -28,13 +29,11 @@ namespace AK
         static const AkUniqueID PLAY_MASK_DOLL_A_CLEAR_DREAM_5 = 2929091768U;
         static const AkUniqueID PLAY_MASK_SPECIAL_SFX = 2708270198U;
         static const AkUniqueID PLAY_MOUSEMASK_FIT_SFX = 3410823607U;
+        static const AkUniqueID PLAY_SFX_CAPTUREPOINT_TRIGGER = 1185070519U;
+        static const AkUniqueID PLAY_SFX_SCENE_TRANSITION = 3372406616U;
         static const AkUniqueID PLAY_SFX_SCENE_TRANSITION_OPEN = 388703331U;
+        static const AkUniqueID PLAY_TABLE_CHAIR_BUMP_SFX = 322227667U;
         static const AkUniqueID PLAY_VICTORY = 2453267296U;
-        static const AkUniqueID SEEK_DOLL_POSITION_ARRIVE_LANDING_SFX = 1622381847U;
-        static const AkUniqueID SEEK_SFX_CAPTUREPOINT_TRIGGER = 2593556793U;
-        static const AkUniqueID SEEK_SFX_SCENE_TRANSITION = 251901810U;
-        static const AkUniqueID SEEK_SFX_SCENE_TRANSITION_OPEN = 2352154637U;
-        static const AkUniqueID SEEK_TABLE_CHAIR_BUMP_SFX = 2259541625U;
         static const AkUniqueID STOP_SFX_SCENE_TRANSITION_CLOSE = 524237271U;
     } // namespace EVENTS
 

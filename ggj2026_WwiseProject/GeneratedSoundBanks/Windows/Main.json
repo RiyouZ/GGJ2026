@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{2417395A-1AF3-41F7-8041-7FE73BE2F6A3}",
     "Language": "SFX",
-    "Hash": "{71071874-0F79-9AEE-015A-9434F3CD9EDB}",
+    "Hash": "{645F295A-4610-9DA8-8F47-EC07524C00F4}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -72,6 +72,14 @@
       "CachePath": "E2/{E2CDCCC5-C591-6882-5942-BDA821B0FFF0}.wem"
      },
      {
+      "Id": "171610600",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_CapturePoint_Trigger.wav",
+      "CachePath": "0C/{0C8FB244-CEA9-CFE8-6440-F84990118D41}.wem"
+     },
+     {
       "Id": "194973527",
       "Language": "SFX",
       "Streaming": "false",
@@ -88,12 +96,28 @@
       "CachePath": "7C/{7C56F5E4-95F0-75BF-29E1-A94376171CB9}.wem"
      },
      {
+      "Id": "419700630",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Table_Chair_Bump_SFX.wav",
+      "CachePath": "BE/{BE8821A5-48C3-F527-6830-25FF3ED652AB}.wem"
+     },
+     {
       "Id": "431965189",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Mask_Doll_A_Clear_Dream_1.wav",
       "CachePath": "D7/{D7D8F597-A9EF-FA4C-EDF0-09D1AD4C879F}.wem"
+     },
+     {
+      "Id": "434314217",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_CapturePoint_Trigger.wav",
+      "CachePath": "7F/{7FE4ABC7-7734-4887-065C-B262E9ACFBFD}.wem"
      },
      {
       "Id": "504314832",
@@ -152,6 +176,22 @@
       "CachePath": "3E/{3E4AA3A5-E599-A225-92B7-9D44BB5CDDC2}.wem"
      },
      {
+      "Id": "658065189",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_CapturePoint_Trigger.wav",
+      "CachePath": "81/{81E00BBD-A523-FDBD-7272-6A25C6DF966A}.wem"
+     },
+     {
+      "Id": "685211774",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Doll_Position_Arrive_Landing_SFX.wav",
+      "CachePath": "87/{8711C4DD-E25A-32EB-F7FC-7664F573F987}.wem"
+     },
+     {
       "Id": "689448774",
       "Language": "SFX",
       "Streaming": "false",
@@ -200,6 +240,14 @@
       "CachePath": "02/{021220C8-6762-293C-966B-F8FE052E462C}.wem"
      },
      {
+      "Id": "753170298",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_CapturePoint_Trigger.wav",
+      "CachePath": "53/{53A7618E-8645-B9EB-2965-08AA9F9BF973}.wem"
+     },
+     {
       "Id": "802017264",
       "Language": "SFX",
       "Streaming": "false",
@@ -232,12 +280,12 @@
       "CachePath": "3E/{3E5064AA-2D72-B023-024A-7DC7516FD1F8}.wem"
      },
      {
-      "Id": "1055231980",
+      "Id": "1003639679",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Victory.wav",
-      "CachePath": "A3/{A38D9E51-C415-1460-2EC7-949B33D608B3}.wem"
+      "ShortName": "通关音乐 FV.wav",
+      "CachePath": "E7/{E710207F-BF45-BCA0-2626-46A21684C387}.wem"
      }
     ],
     "Events": [
@@ -300,6 +348,20 @@
       "MediaRefs": [
        {
         "Id": "523821878"
+       }
+      ]
+     },
+     {
+      "Id": "457259217",
+      "Name": "Play_Doll_Position_Arrive_Landing_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Doll_Position_Arrive_Landing_SFX",
+      "GUID": "{CA6AC162-B3E0-4DC0-AE9F-1818E4CDDFBB}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.0031295",
+      "DurationMax": "6.0031295",
+      "MediaRefs": [
+       {
+        "Id": "685211774"
        }
       ]
      },
@@ -481,6 +543,43 @@
       ]
      },
      {
+      "Id": "1185070519",
+      "Name": "Play_SFX_CapturePoint_Trigger",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_SFX_CapturePoint_Trigger",
+      "GUID": "{CB7059E8-B087-49C7-84B8-2DCB4DF9D1FA}",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "171610600"
+       },
+       {
+        "Id": "434314217"
+       },
+       {
+        "Id": "658065189"
+       },
+       {
+        "Id": "753170298"
+       }
+      ]
+     },
+     {
+      "Id": "3372406616",
+      "Name": "Play_SFX_Scene_Transition",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_SFX_Scene_Transition",
+      "GUID": "{C65077D0-2F6C-4C60-8BCD-9C01EE8E7643}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.7323873",
+      "DurationMax": "1.7323873",
+      "MediaRefs": [
+       {
+        "Id": "859764553"
+       }
+      ]
+     },
+     {
       "Id": "388703331",
       "Name": "Play_SFX_Scene_Transition_Open",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_SFX_Scene_Transition_Open",
@@ -498,6 +597,20 @@
       ]
      },
      {
+      "Id": "322227667",
+      "Name": "Play_Table_Chair_Bump_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Table_Chair_Bump_SFX",
+      "GUID": "{0ECE8BD1-A847-40DE-B22B-DA647B7C943A}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.0031295",
+      "DurationMax": "6.0031295",
+      "MediaRefs": [
+       {
+        "Id": "419700630"
+       }
+      ]
+     },
+     {
       "Id": "2453267296",
       "Name": "Play_Victory",
       "ObjectPath": "\\Events\\Default Work Unit\\Music_Event\\Play_Victory",
@@ -507,59 +620,9 @@
       "DurationMax": "4.615397",
       "MediaRefs": [
        {
-        "Id": "1055231980"
+        "Id": "1003639679"
        }
       ]
-     },
-     {
-      "Id": "1622381847",
-      "Name": "Seek_Doll_Position_Arrive_Landing_SFX",
-      "ObjectPath": "\\Events\\Default Work Unit\\Seek_Event\\Seek_Doll_Position_Arrive_Landing_SFX",
-      "GUID": "{CA6AC162-B3E0-4DC0-AE9F-1818E4CDDFBB}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
-      "Id": "2593556793",
-      "Name": "Seek_SFX_CapturePoint_Trigger",
-      "ObjectPath": "\\Events\\Default Work Unit\\Seek_Event\\Seek_SFX_CapturePoint_Trigger",
-      "GUID": "{CB7059E8-B087-49C7-84B8-2DCB4DF9D1FA}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
-      "Id": "251901810",
-      "Name": "Seek_SFX_Scene_Transition",
-      "ObjectPath": "\\Events\\Default Work Unit\\Seek_Event\\Seek_SFX_Scene_Transition",
-      "GUID": "{C65077D0-2F6C-4C60-8BCD-9C01EE8E7643}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
-      "Id": "2352154637",
-      "Name": "Seek_SFX_Scene_Transition_Open",
-      "ObjectPath": "\\Events\\Default Work Unit\\Seek_Event\\Seek_SFX_Scene_Transition_Open",
-      "GUID": "{6F0E6690-6EC6-4AB4-B888-4B197B487DA0}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
-      "Id": "2259541625",
-      "Name": "Seek_Table_Chair_Bump_SFX",
-      "ObjectPath": "\\Events\\Default Work Unit\\Seek_Event\\Seek_Table_Chair_Bump_SFX",
-      "GUID": "{0ECE8BD1-A847-40DE-B22B-DA647B7C943A}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
      },
      {
       "Id": "524237271",
@@ -578,6 +641,6 @@
     ]
    }
   ],
-  "FileHash": "{29590C03-D879-CF40-4D2D-3014301CE5C2}"
+  "FileHash": "{2184C1C2-C8EB-FBF1-C8FA-A7C44C18462D}"
  }
 }

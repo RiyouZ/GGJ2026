@@ -1,17 +1,15 @@
 Event	ID	Name			Wwise Object Path	Notes
-	251901810	Seek_SFX_Scene_Transition			\Default Work Unit\Seek_Event\Seek_SFX_Scene_Transition	
+	322227667	Play_Table_Chair_Bump_SFX			\Default Work Unit\Play_Event\Play_Table_Chair_Bump_SFX	
 	388703331	Play_SFX_Scene_Transition_Open			\Default Work Unit\Play_Event\Play_SFX_Scene_Transition_Open	
+	457259217	Play_Doll_Position_Arrive_Landing_SFX			\Default Work Unit\Play_Event\Play_Doll_Position_Arrive_Landing_SFX	
 	524237271	Stop_SFX_Scene_Transition_Close			\Default Work Unit\Stop_Event\Stop_SFX_Scene_Transition_Close	
 	736602215	Play_Doll_Skill_Cast_SFX			\Default Work Unit\Play_Event\Play_Doll_Skill_Cast_SFX	
 	756317691	Play_Doll_Move_Prepare_Quick_SFX			\Default Work Unit\Play_Event\Play_Doll_Move_Prepare_Quick_SFX	
 	1010511585	Play_Doll_Mask_Switch_Effect_SFX			\Default Work Unit\Play_Event\Play_Doll_Mask_Switch_Effect_SFX	
 	1120323365	Play_Crown_Glow_SFX			\Default Work Unit\Play_Event\Play_Crown_Glow_SFX	
-	1622381847	Seek_Doll_Position_Arrive_Landing_SFX			\Default Work Unit\Seek_Event\Seek_Doll_Position_Arrive_Landing_SFX	
+	1185070519	Play_SFX_CapturePoint_Trigger			\Default Work Unit\Play_Event\Play_SFX_CapturePoint_Trigger	
 	2119739952	Play_LionMask_Fit_SFX			\Default Work Unit\Play_Event\Play_LionMask_Fit_SFX	
-	2259541625	Seek_Table_Chair_Bump_SFX			\Default Work Unit\Seek_Event\Seek_Table_Chair_Bump_SFX	
-	2352154637	Seek_SFX_Scene_Transition_Open			\Default Work Unit\Seek_Event\Seek_SFX_Scene_Transition_Open	
 	2453267296	Play_Victory			\Default Work Unit\Music_Event\Play_Victory	
-	2593556793	Seek_SFX_CapturePoint_Trigger			\Default Work Unit\Seek_Event\Seek_SFX_CapturePoint_Trigger	
 	2708270198	Play_Mask_Special_SFX			\Default Work Unit\Play_Event\Play_Mask_Special_SFX	
 	2794729210	Play_CatMask_Fit_SFX			\Default Work Unit\Play_Event\Play_CatMask_Fit_SFX	
 	2929091768	Play_Mask_Doll_A_Clear_Dream_5			\Default Work Unit\Music_Event\Play_Mask_Doll_A_Clear_Dream_5	
@@ -19,6 +17,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2929091772	Play_Mask_Doll_A_Clear_Dream_1			\Default Work Unit\Music_Event\Play_Mask_Doll_A_Clear_Dream_1	
 	2929091774	Play_Mask_Doll_A_Clear_Dream_3			\Default Work Unit\Music_Event\Play_Mask_Doll_A_Clear_Dream_3	
 	2929091775	Play_Mask_Doll_A_Clear_Dream_2			\Default Work Unit\Music_Event\Play_Mask_Doll_A_Clear_Dream_2	
+	3372406616	Play_SFX_Scene_Transition			\Default Work Unit\Play_Event\Play_SFX_Scene_Transition	
 	3410823607	Play_MouseMask_Fit_SFX			\Default Work Unit\Play_Event\Play_MouseMask_Fit_SFX	
 	3522410409	Play_Doll_Select_Highlight_SFX			\Default Work Unit\Play_Event\Play_Doll_Select_Highlight_SFX	
 	4227241441	Play_FoxMask_Fit_SFX			\Default Work Unit\Play_Event\Play_FoxMask_Fit_SFX	
@@ -31,9 +30,12 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	146246296	LionMask_Fit_SFX	.cache\19\{19FE8B43-98A0-579D-0698-5913B3C39884}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\LionMask_Fit_SFX\LionMask_Fit_SFX		266252
 	164882528	CatMask_Fit_SFX	.cache\43\{43173D50-FB38-123A-1F77-0CBF31EF85C1}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\CatMask_Fit_SFX\CatMask_Fit_SFX		89656
 	171007355	SFX_Scene_Transition_Open	.cache\E2\{E2CDCCC5-C591-6882-5942-BDA821B0FFF0}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_Scene_Transition\SFX_Scene_Transition_Open		333728
+	171610600	SFX_CapturePoint_Trigger_01	.cache\0C\{0C8FB244-CEA9-CFE8-6440-F84990118D41}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_CapturePoint_Trigger\SFX_CapturePoint_Trigger_01		569228
 	194973527	Mask_Doll_A_Clear_Dream_3	.cache\6F\{6FDD3284-41FE-8F66-4C4D-71F022E6A1AD}.wem		\Containers\Default Work Unit\Music\Mask_Doll_A_Clear_Dream\Mask_Doll_A_Clear_Dream_3		3457636
 	225301153	Mask_Doll_A_Clear_Dream_5	.cache\7C\{7C56F5E4-95F0-75BF-29E1-A94376171CB9}.wem		\Containers\Default Work Unit\Music\Mask_Doll_A_Clear_Dream\Mask_Doll_A_Clear_Dream_5		3751192
+	419700630	Table_Chair_Bump_SFX	.cache\BE\{BE8821A5-48C3-F527-6830-25FF3ED652AB}.wem		\Containers\Default Work Unit\SFX\Bump_SFX\Table_Chair_Bump_SFX		1059048
 	431965189	Mask_Doll_A_Clear_Dream_1	.cache\D7\{D7D8F597-A9EF-FA4C-EDF0-09D1AD4C879F}.wem		\Containers\Default Work Unit\Music\Mask_Doll_A_Clear_Dream\Mask_Doll_A_Clear_Dream_1		3463440
+	434314217	SFX_CapturePoint_Trigger_02	.cache\7F\{7FE4ABC7-7734-4887-065C-B262E9ACFBFD}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_CapturePoint_Trigger\SFX_CapturePoint_Trigger_02		543996
 	504314832	LionMask_Fit_SFX_01	.cache\B0\{B046C52E-0440-D08E-8D39-D5CD73AB2DE2}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\LionMask_Fit_SFX\LionMask_Fit_SFX_01		168036
 	523821878	Doll_Move_Prepare_Quick_SFX	.cache\65\{65F21295-F8FA-7874-0091-2D775CDD88B4}.wem		\Containers\Default Work Unit\SFX\Doll_SFX\Doll_Move_Prepare_Quick_SFX		1059048
 	542803814	FoxMask_Fit_SFX	.cache\DE\{DEC192DC-EE30-20FF-3AC7-6D99CE69E9C1}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\FoxMask_Fit_SFX\FoxMask_Fit_SFX		98656
@@ -41,15 +43,18 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	598852464	MouseMask_Fit_SFX_02	.cache\7A\{7A0955AF-30AA-2762-6C04-98780B44E3D5}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\MouseMask_Fit_SFX\MouseMask_Fit_SFX_02		112968
 	622724053	Mask_Doll_A_Clear_Dream	.cache\20\{205E9ECC-1016-7C90-925C-2DD258B15C84}.wem		\Containers\Default Work Unit\Music\Mask_Doll_A_Clear_Dream\Mask_Doll_A_Clear_Dream		20354004
 	627370399	LionMask_Fit_SFX_02	.cache\3E\{3E4AA3A5-E599-A225-92B7-9D44BB5CDDC2}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\LionMask_Fit_SFX\LionMask_Fit_SFX_02		210516
+	658065189	SFX_CapturePoint_Trigger	.cache\81\{81E00BBD-A523-FDBD-7272-6A25C6DF966A}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_CapturePoint_Trigger\SFX_CapturePoint_Trigger		574836
+	685211774	Doll_Position_Arrive_Landing_SFX	.cache\87\{8711C4DD-E25A-32EB-F7FC-7664F573F987}.wem		\Containers\Default Work Unit\SFX\Doll_SFX\Doll_Position_Arrive_Landing_SFX		1059048
 	689448774	Doll_Skill_Cast_SFX	.cache\EC\{EC136D63-BD26-64AC-1B5E-8E0224AC21F1}.wem		\Containers\Default Work Unit\SFX\Skill_SFX\Doll_Skill_Cast_SFX		1059048
 	691230451	Crown_Glow_SFX	.cache\54\{545C81B5-E76C-9EED-D684-0BBDD2D16E09}.wem		\Containers\Default Work Unit\SFX\Skill_SFX\Crown_Glow_SFX		1059048
 	693602815	CatMask_Fit_SFX_02	.cache\49\{49E95F88-1B85-0BBB-B8E9-635F2B77BEE4}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\CatMask_Fit_SFX\CatMask_Fit_SFX_02		142708
 	713369890	Mask_Doll_A_Clear_Dream_2	.cache\3F\{3F37566E-59C6-401E-E5B9-9DCA35012A81}.wem		\Containers\Default Work Unit\Music\Mask_Doll_A_Clear_Dream\Mask_Doll_A_Clear_Dream_2		3450720
 	714396357	Doll_Mask_Switch_Effect_SFX	.cache\2C\{2C59A7FE-7DC3-1B44-CC9F-BF26C5252402}.wem		\Containers\Default Work Unit\SFX\Doll_SFX\Doll_Mask_Switch_Effect_SFX		1059048
 	736329114	MouseMask_Fit_SFX	.cache\02\{021220C8-6762-293C-966B-F8FE052E462C}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\MouseMask_Fit_SFX\MouseMask_Fit_SFX		56564
+	753170298	SFX_CapturePoint_Trigger_03	.cache\53\{53A7618E-8645-B9EB-2965-08AA9F9BF973}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_CapturePoint_Trigger\SFX_CapturePoint_Trigger_03		625300
 	802017264	Mask_Special_SFX	.cache\90\{90C40522-9813-0DFE-8C36-4156CE32E4DD}.wem		\Containers\Default Work Unit\SFX\Skill_SFX\Mask_Special_SFX		1059048
 	840203186	Mask_Doll_A_Clear_Dream_Loop	.cache\AA\{AA69B3A2-3C15-89B7-356E-6FC0F8050B1C}.wem		\Containers\Default Work Unit\Music\Mask_Doll_A_Clear_Dream\Mask_Doll_A_Clear_Dream_Loop		16279704
 	859764553	SFX_Scene_Transition_Close	.cache\1B\{1BD3A2F5-85A2-ACE8-D45D-990FA1B4E6FC}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_Scene_Transition\SFX_Scene_Transition_Close		305688
 	903092708	CatMask_Fit_SFX_01	.cache\3E\{3E5064AA-2D72-B023-024A-7DC7516FD1F8}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\CatMask_Fit_SFX\CatMask_Fit_SFX_01		155444
-	1055231980	Victory	.cache\A3\{A38D9E51-C415-1460-2EC7-949B33D608B3}.wem		\Containers\Default Work Unit\Music\Victory		814316
+	1003639679	Victory	.cache\E7\{E710207F-BF45-BCA0-2626-46A21684C387}.wem		\Containers\Default Work Unit\Music\Victory		814316
 
