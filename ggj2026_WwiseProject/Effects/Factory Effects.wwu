@@ -482,11 +482,14 @@
 									<ChildrenList>
 										<Effect Name="Born_In_1950" ID="{3B3A31C2-C9A6-430E-A3CF-62963E332052}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
 											<PropertyList>
-												<Property Name="FrequencyBand1" Type="Real32" Value="150"/>
-												<Property Name="FrequencyBand3" Type="Real32" Value="9500"/>
-												<Property Name="GainBand1" Type="Real32" Value="6"/>
-												<Property Name="GainBand3" Type="Real32" Value="12"/>
-												<Property Name="OnOffBand2" Type="bool" Value="False"/>
+												<Property Name="FilterTypeBand3" Type="int32" Value="5"/>
+												<Property Name="FrequencyBand1" Type="Real32" Value="99.21893"/>
+												<Property Name="FrequencyBand2" Type="Real32" Value="1563.778"/>
+												<Property Name="FrequencyBand3" Type="Real32" Value="1748.084"/>
+												<Property Name="GainBand1" Type="Real32" Value="0.7272727"/>
+												<Property Name="GainBand2" Type="Real32" Value="-5.333333"/>
+												<Property Name="GainBand3" Type="Real32" Value="-1.212121"/>
+												<Property Name="OnOffBand3" Type="bool" Value="True"/>
 											</PropertyList>
 										</Effect>
 										<Effect Name="Club_Music_Distant_01" ID="{972799F5-C6E5-4E4F-83E3-95AA307CDFD1}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">

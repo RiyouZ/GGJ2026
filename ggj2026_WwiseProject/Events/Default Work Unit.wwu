@@ -124,10 +124,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
-								<Action Name="" ID="{8A081E99-E361-423E-AC3B-5FB76551F023}" ShortID="320744322">
+								<Action Name="" ID="{4E7C7699-29FF-4F7B-A97D-9188FBB71AFD}" ShortID="747021814">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="3.2"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Mask_Doll_A_Clear_Dream" ID="{CB3EE6F2-E734-45BF-B2CD-BA9794F736C4}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream_Loop" ID="{A57DDAEF-1AAF-4F09-BE37-9C71D20C6C73}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -177,6 +180,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_Mask_Doll_A_Clear_Dream_Loop" ID="{7CF3D30F-20EF-483B-AFE0-3EAEEEEE7A49}">
+							<ChildrenList>
+								<Action Name="" ID="{0F097FCC-2F35-4454-B423-01D58EDD3EC3}" ShortID="938077974">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mask_Doll_A_Clear_Dream_Loop" ID="{A57DDAEF-1AAF-4F09-BE37-9C71D20C6C73}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Stop_Event" ID="{26C058A1-28C4-4C8D-B1BE-B147B34C665A}" ShortID="855048107">
@@ -209,111 +223,6 @@
 				</Folder>
 				<Folder Name="Music_Event" ID="{38EB7920-BB0F-45CC-8929-B46E30214390}" ShortID="1060100795">
 					<ChildrenList>
-						<Event Name="Play_Mask_Doll_A_Clear_Dream_5" ID="{FFC41011-766E-49EC-A101-5850C610C322}">
-							<ChildrenList>
-								<Action Name="" ID="{05873F5D-CE60-4118-A452-5D489A37E0D2}" ShortID="434155442">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Mask_Doll_A_Clear_Dream_5" ID="{0E8A9476-D400-40C3-9F56-99C1CF626D8E}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{9C9A7804-ADAD-4C0C-9827-CADC1C5445BF}" ShortID="1029563587">
-									<PropertyList>
-										<Property Name="Delay" Type="Real64" Value="18.462"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Mask_Doll_A_Clear_Dream_Loop" ID="{A57DDAEF-1AAF-4F09-BE37-9C71D20C6C73}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_Mask_Doll_A_Clear_Dream_1" ID="{18248D71-BB58-4AD2-86E9-8E896323790E}">
-							<ChildrenList>
-								<Action Name="" ID="{A9CF4360-19EC-43C0-8C6F-18C252D3B971}" ShortID="512090344">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Mask_Doll_A_Clear_Dream_1" ID="{5948FDEE-43C3-4FB0-960A-33B3B265C54A}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{4E4D7979-FEC0-41FE-AE19-C644BAF0D78C}" ShortID="1059274056">
-									<PropertyList>
-										<Property Name="Delay" Type="Real64" Value="18.462"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Mask_Doll_A_Clear_Dream_Loop" ID="{A57DDAEF-1AAF-4F09-BE37-9C71D20C6C73}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_Mask_Doll_A_Clear_Dream_2" ID="{2A53B962-BD90-47F9-9506-3282EA162BC5}">
-							<ChildrenList>
-								<Action Name="" ID="{143B9337-7C7B-4208-BD5A-CF0939A019E0}" ShortID="1029736525">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Mask_Doll_A_Clear_Dream_2" ID="{ADAB645D-90D3-496D-874D-63A3B4F66C9F}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{01A18932-0808-4752-8354-4DF77A6A235A}" ShortID="523441688">
-									<PropertyList>
-										<Property Name="Delay" Type="Real64" Value="18.462"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Mask_Doll_A_Clear_Dream_Loop" ID="{A57DDAEF-1AAF-4F09-BE37-9C71D20C6C73}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_Mask_Doll_A_Clear_Dream_3" ID="{BCB57E31-2D98-40B7-88D7-7D6D43464AB9}">
-							<ChildrenList>
-								<Action Name="" ID="{B32C7089-1897-4E4F-90CA-BAC508596CDB}" ShortID="124496128">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Mask_Doll_A_Clear_Dream_3" ID="{482BD481-7E9E-477B-83E8-A3AC28C6AEC0}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{97DA0068-EF68-4F88-B78E-DE89A7004D89}" ShortID="591383072">
-									<PropertyList>
-										<Property Name="Delay" Type="Real64" Value="18.462"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Mask_Doll_A_Clear_Dream_Loop" ID="{A57DDAEF-1AAF-4F09-BE37-9C71D20C6C73}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_Mask_Doll_A_Clear_Dream_4" ID="{84A28A61-DC2F-4343-84AC-018452DB7A33}">
-							<ChildrenList>
-								<Action Name="" ID="{8E6446B4-3425-4732-B68A-FA4F1DE799F8}" ShortID="1071383379">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Mask_Doll_A_Clear_Dream_4" ID="{69D743CC-AF93-439D-AC88-7B7C95638F2D}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{E770C007-C812-4538-A0D6-9ECC69AABB3E}" ShortID="415927102">
-									<PropertyList>
-										<Property Name="Delay" Type="Real64" Value="18.462"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Mask_Doll_A_Clear_Dream_Loop" ID="{A57DDAEF-1AAF-4F09-BE37-9C71D20C6C73}" WorkUnitID="{BCFBBA99-F241-4A15-A0ED-EC1F08A5B160}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="Play_Victory" ID="{8C328B7B-06A4-4F37-9D3D-EA313494AC96}">
 							<ChildrenList>
 								<Action Name="" ID="{CA55C29D-16A8-400B-A984-BB616663775A}" ShortID="611170280">

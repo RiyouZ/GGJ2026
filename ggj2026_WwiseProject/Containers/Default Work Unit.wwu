@@ -24,6 +24,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Table_Chair_Bump_SFX" ID="{131D1A7A-A27E-4839-8928-09DC239975AA}" ShortID="341685655">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
@@ -63,6 +70,14 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Doll_Move_Prepare_Quick_SFX" ID="{306792E1-5D45-4A87-8804-5F4F9B82D2F9}" ShortID="714053699">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
@@ -80,11 +95,30 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<EffectSlot Name="" ID="{45376ED6-F71F-4C54-9941-037D1E17034F}" ShortID="520838782">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+														<ObjectRef Name="Born_In_1950" ID="{3B3A31C2-C9A6-430E-A3CF-62963E332052}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</ObjectList>
+									</ObjectLists>
 									<ActiveSourceList>
 										<ActiveSource Name="Doll_Move_Prepare_Quick_SFX" ID="{0D508F85-8BEE-40BF-B60B-51F6BB14B465}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Doll_Position_Arrive_Landing_SFX" ID="{7A39E2B2-6C6C-4B88-8CEE-60C69F627FD9}" ShortID="296613568">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
@@ -102,11 +136,29 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<EffectSlot Name="" ID="{447D253E-5789-45D2-B61B-B2973DCC5B59}" ShortID="330240719">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+														<ObjectRef Name="Born_In_1950" ID="{3B3A31C2-C9A6-430E-A3CF-62963E332052}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</ObjectList>
+									</ObjectLists>
 									<ActiveSourceList>
 										<ActiveSource Name="Doll_Position_Arrive_Landing_SFX" ID="{054BB8FB-4EBC-4708-973E-8C5C70987581}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Doll_Select_Highlight_SFX" ID="{F8584DB8-3A44-4B68-B6C2-5FC24674E70E}" ShortID="1012479905">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
@@ -131,6 +183,11 @@
 								<Sound Name="Doll_Mask_Switch_Effect_SFX" ID="{22A9D8D6-9A81-470D-9C8A-103DD4E7FF80}" ShortID="780245652">
 									<PropertyList>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-8</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -558,6 +615,14 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Mask_Special_SFX" ID="{4336AD73-0342-4DB2-981D-458EB5CE7484}" ShortID="575025535">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
@@ -575,11 +640,29 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<EffectSlot Name="" ID="{1ECAD70C-ADAC-47CC-ACC1-A973998BA9C5}" ShortID="98561065">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+														<ObjectRef Name="Born_In_1950" ID="{3B3A31C2-C9A6-430E-A3CF-62963E332052}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</ObjectList>
+									</ObjectLists>
 									<ActiveSourceList>
 										<ActiveSource Name="Mask_Special_SFX" ID="{C9E49505-719F-40FB-A542-B8DB1A944BE5}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Doll_Skill_Cast_SFX" ID="{88EEC999-B8AF-460F-ABE5-5FDD12DBE71E}" ShortID="585358753">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
@@ -602,6 +685,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Crown_Glow_SFX" ID="{89856A29-B056-458D-B52A-0701C83BAEBC}" ShortID="53609115">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
@@ -653,6 +743,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<Sound Name="SFX_CapturePoint_Trigger" ID="{C10B762C-9765-49B2-9769-CF4BA2203D1E}" ShortID="23330535">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
@@ -680,6 +777,13 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="SFX_CapturePoint_Trigger_01" ID="{E7F7CACB-F566-40B3-BB4A-0B1F4706BA07}" ShortID="675438557">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
@@ -707,6 +811,13 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="SFX_CapturePoint_Trigger_02" ID="{9169515A-09F7-4630-8F38-C0DFABF10D36}" ShortID="101362374">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
@@ -734,6 +845,13 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="SFX_CapturePoint_Trigger_03" ID="{61EDC048-CC74-498E-A956-F4AF168E6ECA}" ShortID="232899824">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2D812C60-0706-4D19-896A-12A8B3B0750D}"/>
@@ -862,6 +980,11 @@
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="2"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1088,9 +1211,11 @@
 									<ChildrenList>
 										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_Loop" ID="{112329C2-D996-4AB6-A824-6504D4CC0BC0}">
 											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.116087735364786"/>
+												<Property Name="FadeInShape" Type="int16" Value="0"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="4.59741152309629"/>
-												<Property Name="TrimEnd" Type="Real64" Value="96.8854432909768"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.56135777160426"/>
+												<Property Name="TrimEnd" Type="Real64" Value="96.9697614085304"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Mask_Doll_A_Clear_Dream_Loop.wav</AudioFile>
@@ -1189,6 +1314,11 @@
 											</MediaIDList>
 										</AudioFileSource>
 										<AudioFileSource Name="Mask_Doll_A_Clear_Dream_Loop" ID="{E7060634-25DF-4E14-94DD-61037D3EE22A}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="3.90327434728641"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="3.90327434728641"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Mask_Doll_A_Clear_Dream_Loop.wav</AudioFile>
 											<MediaIDList>

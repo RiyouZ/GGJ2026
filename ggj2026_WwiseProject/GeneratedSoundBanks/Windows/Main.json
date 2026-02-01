@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{2417395A-1AF3-41F7-8041-7FE73BE2F6A3}",
     "Language": "SFX",
-    "Hash": "{6E079F35-D13D-C46A-DF2A-03E1E824F7E2}",
+    "Hash": "{CFE49190-7C80-C1A9-EACC-D6E392798066}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -32,14 +32,6 @@
       "CachePath": "B5/{B5A569BF-395E-5ED8-E0DA-BA319E91D92F}.wem"
      },
      {
-      "Id": "104268119",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Mask_Doll_A_Clear_Dream_4.wav",
-      "CachePath": "6B/{6B7290A7-84F6-2921-E712-9E200D5B0F91}.wem"
-     },
-     {
       "Id": "117300668",
       "Language": "SFX",
       "Streaming": "false",
@@ -53,7 +45,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "LionMask_Fit_SFX.wav",
-      "CachePath": "01/{016D2837-8F10-04E1-0520-1B4E61731200}.wem"
+      "CachePath": "61/{61ABD2E6-6E4E-6090-101E-F8B1B8108C36}.wem"
      },
      {
       "Id": "164882528",
@@ -69,7 +61,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_Scene_Transition.wav",
-      "CachePath": "CB/{CBCD44CC-52D2-8613-50A0-C8E23082345B}.wem"
+      "CachePath": "4D/{4DB691A1-D534-42ED-2ACE-E80E67292D53}.wem"
      },
      {
       "Id": "171610600",
@@ -80,36 +72,12 @@
       "CachePath": "0C/{0C8FB244-CEA9-CFE8-6440-F84990118D41}.wem"
      },
      {
-      "Id": "194973527",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Mask_Doll_A_Clear_Dream_3.wav",
-      "CachePath": "6F/{6FDD3284-41FE-8F66-4C4D-71F022E6A1AD}.wem"
-     },
-     {
-      "Id": "225301153",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Mask_Doll_A_Clear_Dream_5.wav",
-      "CachePath": "7C/{7C56F5E4-95F0-75BF-29E1-A94376171CB9}.wem"
-     },
-     {
       "Id": "419700630",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Table_Chair_Bump_SFX.wav",
       "CachePath": "BE/{BE8821A5-48C3-F527-6830-25FF3ED652AB}.wem"
-     },
-     {
-      "Id": "431965189",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Mask_Doll_A_Clear_Dream_1.wav",
-      "CachePath": "D7/{D7D8F597-A9EF-FA4C-EDF0-09D1AD4C879F}.wem"
      },
      {
       "Id": "434314217",
@@ -125,7 +93,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "LionMask_Fit_SFX.wav",
-      "CachePath": "6A/{6A48EAC6-78B3-D74A-F26C-A89DD9E048B5}.wem"
+      "CachePath": "A0/{A062E5AA-503F-4FDD-8BB0-92D78D446141}.wem"
      },
      {
       "Id": "523821878",
@@ -160,20 +128,12 @@
       "CachePath": "7A/{7A0955AF-30AA-2762-6C04-98780B44E3D5}.wem"
      },
      {
-      "Id": "622724053",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Mask_Doll_A_Clear_Dream_Loop.wav",
-      "CachePath": "20/{205E9ECC-1016-7C90-925C-2DD258B15C84}.wem"
-     },
-     {
       "Id": "627370399",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "LionMask_Fit_SFX.wav",
-      "CachePath": "FF/{FF59CBDD-D452-FB94-9721-76DC259B450F}.wem"
+      "CachePath": "4A/{4A48C49D-026C-FF11-C783-440F49BFDF83}.wem"
      },
      {
       "Id": "658065189",
@@ -216,14 +176,6 @@
       "CachePath": "49/{49E95F88-1B85-0BBB-B8E9-635F2B77BEE4}.wem"
      },
      {
-      "Id": "713369890",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Mask_Doll_A_Clear_Dream_2.wav",
-      "CachePath": "3F/{3F37566E-59C6-401E-E5B9-9DCA35012A81}.wem"
-     },
-     {
       "Id": "714396357",
       "Language": "SFX",
       "Streaming": "false",
@@ -261,7 +213,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Mask_Doll_A_Clear_Dream_Loop.wav",
-      "CachePath": "AA/{AA69B3A2-3C15-89B7-356E-6FC0F8050B1C}.wem"
+      "CachePath": "DE/{DEE5699C-D123-528E-2B21-3CD098EE55CF}.wem"
      },
      {
       "Id": "859764553",
@@ -269,7 +221,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_Scene_Transition.wav",
-      "CachePath": "06/{06DD2DF4-63D2-FE31-AF6C-2385CA27E61F}.wem"
+      "CachePath": "8E/{8E78B51E-2FCD-D0F2-35DB-7FDD4990F5E7}.wem"
      },
      {
       "Id": "903092708",
@@ -288,6 +240,18 @@
       "CachePath": "E7/{E710207F-BF45-BCA0-2626-46A21684C387}.wem"
      }
     ],
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "776837744",
+       "Name": "Born_In_1950",
+       "ObjectPath": "\\Effects\\Factory Effects\\Parametric EQ\\Shelving EQ\\Creative EQ\\Born_In_1950",
+       "GUID": "{3B3A31C2-C9A6-430E-A3CF-62963E332052}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      }
+     ]
+    },
     "Events": [
      {
       "Id": "2794729210",
@@ -349,7 +313,14 @@
        {
         "Id": "523821878"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "776837744"
+        }
+       ]
+      }
      },
      {
       "Id": "457259217",
@@ -363,7 +334,14 @@
        {
         "Id": "685211774"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "776837744"
+        }
+       ]
+      }
      },
      {
       "Id": "3522410409",
@@ -414,6 +392,21 @@
       ]
      },
      {
+      "Id": "833230064",
+      "Name": "Play_Level_1",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Level_1",
+      "GUID": "{C96A9799-F8D1-467C-8D5E-8AF3CB20BCAF}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "171007355"
+       },
+       {
+        "Id": "840203186"
+       }
+      ]
+     },
+     {
       "Id": "2119739952",
       "Name": "Play_LionMask_Fit_SFX",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_LionMask_Fit_SFX",
@@ -434,81 +427,6 @@
       ]
      },
      {
-      "Id": "2929091772",
-      "Name": "Play_Mask_Doll_A_Clear_Dream_1",
-      "ObjectPath": "\\Events\\Default Work Unit\\Music_Event\\Play_Mask_Doll_A_Clear_Dream_1",
-      "GUID": "{18248D71-BB58-4AD2-86E9-8E896323790E}",
-      "DurationType": "Infinite",
-      "MediaRefs": [
-       {
-        "Id": "431965189"
-       },
-       {
-        "Id": "840203186"
-       }
-      ]
-     },
-     {
-      "Id": "2929091775",
-      "Name": "Play_Mask_Doll_A_Clear_Dream_2",
-      "ObjectPath": "\\Events\\Default Work Unit\\Music_Event\\Play_Mask_Doll_A_Clear_Dream_2",
-      "GUID": "{2A53B962-BD90-47F9-9506-3282EA162BC5}",
-      "DurationType": "Infinite",
-      "MediaRefs": [
-       {
-        "Id": "713369890"
-       },
-       {
-        "Id": "840203186"
-       }
-      ]
-     },
-     {
-      "Id": "2929091774",
-      "Name": "Play_Mask_Doll_A_Clear_Dream_3",
-      "ObjectPath": "\\Events\\Default Work Unit\\Music_Event\\Play_Mask_Doll_A_Clear_Dream_3",
-      "GUID": "{BCB57E31-2D98-40B7-88D7-7D6D43464AB9}",
-      "DurationType": "Infinite",
-      "MediaRefs": [
-       {
-        "Id": "194973527"
-       },
-       {
-        "Id": "840203186"
-       }
-      ]
-     },
-     {
-      "Id": "2929091769",
-      "Name": "Play_Mask_Doll_A_Clear_Dream_4",
-      "ObjectPath": "\\Events\\Default Work Unit\\Music_Event\\Play_Mask_Doll_A_Clear_Dream_4",
-      "GUID": "{84A28A61-DC2F-4343-84AC-018452DB7A33}",
-      "DurationType": "Infinite",
-      "MediaRefs": [
-       {
-        "Id": "104268119"
-       },
-       {
-        "Id": "840203186"
-       }
-      ]
-     },
-     {
-      "Id": "2929091768",
-      "Name": "Play_Mask_Doll_A_Clear_Dream_5",
-      "ObjectPath": "\\Events\\Default Work Unit\\Music_Event\\Play_Mask_Doll_A_Clear_Dream_5",
-      "GUID": "{FFC41011-766E-49EC-A101-5850C610C322}",
-      "DurationType": "Infinite",
-      "MediaRefs": [
-       {
-        "Id": "225301153"
-       },
-       {
-        "Id": "840203186"
-       }
-      ]
-     },
-     {
       "Id": "2708270198",
       "Name": "Play_Mask_Special_SFX",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Mask_Special_SFX",
@@ -519,6 +437,25 @@
       "MediaRefs": [
        {
         "Id": "802017264"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "776837744"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "637012276",
+      "Name": "Play_Menu_Level_Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Menu_Level_Music",
+      "GUID": "{7CF3D30F-20EF-483B-AFE0-3EAEEEEE7A49}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "840203186"
        }
       ]
      },
@@ -580,23 +517,6 @@
       ]
      },
      {
-      "Id": "388703331",
-      "Name": "Play_SFX_Scene_Transition_Open",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_SFX_Scene_Transition_Open",
-      "GUID": "{C96A9799-F8D1-467C-8D5E-8AF3CB20BCAF}",
-      "DurationType": "OneShot",
-      "DurationMin": "115.384605",
-      "DurationMax": "115.384605",
-      "MediaRefs": [
-       {
-        "Id": "171007355"
-       },
-       {
-        "Id": "622724053"
-       }
-      ]
-     },
-     {
       "Id": "322227667",
       "Name": "Play_Table_Chair_Bump_SFX",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Table_Chair_Bump_SFX",
@@ -625,13 +545,13 @@
       ]
      },
      {
-      "Id": "524237271",
-      "Name": "Stop_SFX_Scene_Transition_Close",
-      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Event\\Stop_SFX_Scene_Transition_Close",
-      "GUID": "{BD823EBE-DBF8-48B6-ADDC-BF7BC6F178FF}",
+      "Id": "3945748993",
+      "Name": "Stop_Menu_Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Event\\Stop_Menu_Music",
+      "GUID": "{B8D1AAAE-E19C-4DEA-94B7-750F9409BB09}",
       "DurationType": "OneShot",
-      "DurationMin": "6.0182652",
-      "DurationMax": "6.0182652",
+      "DurationMin": "4.5182652",
+      "DurationMax": "4.5182652",
       "MediaRefs": [
        {
         "Id": "859764553"
@@ -641,6 +561,6 @@
     ]
    }
   ],
-  "FileHash": "{4B4F7681-E5B4-E003-08DC-BA5C1A61D6F9}"
+  "FileHash": "{1FAE2C9E-742E-9281-649F-96EA5012F25D}"
  }
 }
