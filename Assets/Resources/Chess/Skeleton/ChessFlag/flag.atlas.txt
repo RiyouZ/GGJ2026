@@ -1,0 +1,12 @@
+flag.png
+size:128,512
+filter:Linear,Linear
+pma:true
+flag_cat
+bounds:2,2,94,110
+flag_fox
+bounds:2,114,94,110
+flag_lion
+bounds:2,226,94,110
+flag_mouse
+bounds:2,338,94,110

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Frame.Audio;
 using Frame.Core;
 using Game.GameChess;
+using JetBrains.Annotations;
 using RuGameFramework.Event;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
@@ -16,6 +17,9 @@ namespace Game
 		public const string EVENT_CHESS_MOVE = "EventChessMove";
 
 		public const string EVENT_SCENE_PLAYER_SKILL = "ScenePlayerSkill";
+
+
+		public const string EVENT_GAME_END = "SceneGameEnd";
 		
 		public Tilemap tilemap;
 		public Vector2Int cellSize = new Vector2Int(9, 6);

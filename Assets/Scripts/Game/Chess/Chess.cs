@@ -5,6 +5,7 @@ using RuGameFramework.Event;
 using Spine.Unity;
 using RuGameFramework.AnimeStateMachine;
 using Frame.Audio;
+using Spine;
 
 namespace Game.GameChess {
 	public enum MoveResult 
@@ -27,6 +28,8 @@ namespace Game.GameChess {
 		
 		[Header("当前格子位置（逻辑坐标）")]
 		protected Vector2Int currentPos;
+
+		public const string ANIME_ATTACH_HEAD = "crown";
 
 		public const string ANIME_IDLE = "idle";
 		public const string ANIME_MOVE = "move";
@@ -302,6 +305,12 @@ namespace Game.GameChess {
 
 			_skeletonAnimation = GetComponentInChildren<SkeletonAnimation>();
 
+			if(Faction == Faction.Enemy)
+			{
+				UpdateMaskSkin();
+				return;
+			}
+
 			_skeletonMachine = new SkeletonStateMachine(_skeletonAnimation);
 
 			_skeletonMachine.RegisterState(0, ANIME_IDLE, true);
@@ -366,6 +375,8 @@ namespace Game.GameChess {
 
 			_skeletonMachine.AddTransition(ANIME_IDLE, ANIME_SELECT, () => _isSelected);
 			_skeletonMachine.AddTransition(ANIME_SELECT, ANIME_IDLE, () => !_isSelected);
+
+			_skeletonMachine.AddTransition(ANIME_SELECT, ANIME_MOVE, () => _skeletonMachine.Trigger(ANIME_MOVE));
 
 			_skeletonMachine.AddTransition(ANIME_IDLE, ANIME_SWITCH, () => _skeletonMachine.Trigger(ANIME_SWITCH));
 			_skeletonMachine.AddTransition(ANIME_SWITCH, ANIME_IDLE, () => !_skeletonMachine.Trigger(ANIME_SWITCH));
@@ -433,6 +444,33 @@ namespace Game.GameChess {
 				_skeletonAnimation.Update(0);
 			}
 		}
+
+		public void EquipHat()
+		{
+			var slot = _skeletonAnimation.Skeleton.FindSlot(ANIME_ATTACH_HEAD);
+			if (slot == null)
+			{
+				Debug.Log("Equip Hat Fail");
+				return;
+			}
+
+			slot.Attachment = _skeletonAnimation.Skeleton.GetAttachment(ANIME_ATTACH_HEAD, ANIME_ATTACH_HEAD);
+		}
+
+		public void UnequipHat()
+		{
+			var slot = _skeletonAnimation.Skeleton.FindSlot(ANIME_ATTACH_HEAD);
+			if (slot == null)
+			{
+				Debug.Log("Unequip Hat Fail");
+				return;
+			}
+
+			slot.Attachment = null;
+		}
+
+
+
 	}
 	
 }

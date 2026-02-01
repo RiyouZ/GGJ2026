@@ -103,6 +103,7 @@ namespace Game.Scene
 				_isPlayerActionComplete = false;
 				yield return new WaitUntil(() => _isPlayerActionComplete);
 				
+				GameScene.guideLine.ClearLine();
 				// 阶段3: 棋子移动
 				_currentState = TurnState.ChessMoving;
 				yield return MoveAllChess();
@@ -113,6 +114,8 @@ namespace Game.Scene
 				if (isVictory)
 				{
 					// 游戏胜利，退出循环
+					GameScene.MouseInteractSystem.ClearHighlight();
+					EventManager.InvokeEvent(GameScene.EVENT_GAME_END, null);
 					yield break;
 				}
 				

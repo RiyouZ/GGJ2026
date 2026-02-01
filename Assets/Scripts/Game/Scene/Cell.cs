@@ -2,6 +2,7 @@
 using Game.GameChess;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Tilemaps;
 
 namespace Game
@@ -51,7 +52,8 @@ namespace Game
 		/// </summary>
 		[System.NonSerialized]
 		public int Y;
-		public GameObject flag;
+		public GameObject flagOn;
+		public GameObject flagOff;
 
 		public void Initialize()
 		{
@@ -65,10 +67,21 @@ namespace Game
 		/// <param name="chess">要设置的棋子</param>
 		public void SetChess(Chess chess)
 		{
+			if(chess.Faction == Faction.Friend && _cellType == CellType.Flag)
+			{
+				Chess = chess;
+				flagOn.SetActive(true );
+				flagOff.SetActive(false);
+				return;
+			}
+			
 			Chess = chess;
 			if (chess.Faction == Faction.Enemy)
 			{
 				_cellType = CellType.Flag;
+
+				flagOn.SetActive(false);
+				flagOff.SetActive(true);
 			}
 
 			if (chess.Faction == Faction.Neutral)
@@ -80,6 +93,12 @@ namespace Game
 		public void RemoveChess()
 		{
 			Chess = null;
+
+			if (_cellType == CellType.Flag)
+			{
+				flagOn.SetActive(false);
+				flagOff.SetActive(true);
+			}
 		}
 
 		/// <summary>

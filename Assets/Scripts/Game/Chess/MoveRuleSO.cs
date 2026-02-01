@@ -21,7 +21,6 @@ namespace Game.GameChess
         {
             if (moveStepIndex < 0 || moveStepIndex >= moveDirections.Count)
             {
-                Debug.LogWarning($"[MoveRuleSO] 索引 {moveStepIndex} 超出范围，返回 Vector2Int.zero");
                 return Vector2Int.zero;
             }
 

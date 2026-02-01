@@ -302,7 +302,7 @@ namespace Game
 		/// <summary>
 		/// 清除当前高亮
 		/// </summary>
-		private void ClearHighlight()
+		public void ClearHighlight()
 		{
 			if (_currentHighlightedCells.Count > 0)
 			{
@@ -339,6 +339,7 @@ namespace Game
 			if (chess == null || chess.ChessMask == null) return;
 			
 			chess.ChessMask.IsKing = true;
+			chess.EquipHat();
 			chess.UpdateMaskSkin(); // 更新皮肤显示
 			
 			WwiseAudio.PlayEvent("Play_Doll_Skill_Cast_SFX", chess.gameObject);
@@ -349,8 +350,8 @@ namespace Game
 			if (chess == null || chess.ChessMask == null) return;
 			
 			chess.ChessMask.IsKing = false;
+			chess.UnequipHat();
 			chess.UpdateMaskSkin(); // 更新皮肤显示
-
 		}
 
 		private void OnSkillSuccesss()
