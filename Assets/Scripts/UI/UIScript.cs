@@ -6,13 +6,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using Spine.Unity; // 必须引用
+using Game;
+using Game.Scene; // 必须引用
 
 public class UIScript : MonoBehaviour
 {
-    public GameObject SkillButton;
-    public GameObject NextRoundButton;
-    public GameObject StartButton;
+    public Button SkillButton;
+    public Button NextRoundButton;
+    public Button StartButton;
     public GameObject BeforeGame;
     public GameObject InGame;
 
@@ -22,11 +23,10 @@ public class UIScript : MonoBehaviour
     [Header("把你的按钮拖进来")]
     public Button playButton;
 
-    [Header("填入动画名字")]
-    public string animationName = "GameStart"; // 比如 "start", "animation" 等
-    public string animationName2 = "GameStart"; // 比如 "start", "animation" 等
 
-    private const string EVENT_NAME = "SceneGameEnd";
+    public const string ANIME_START = "start"; // 比如 "start", "animation" 等
+    public const string ANIME_END = "end"; // 比如 "start", "animation" 等
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,31 +35,56 @@ public class UIScript : MonoBehaviour
         {
             playButton.onClick.AddListener(StartGame);
         }
+
+        if( NextRoundButton != null)
+        {
+            NextRoundButton.onClick.AddListener(NextRound);
+        }
+
+        EventManager.AddListener(GameScene.EVENT_ROUND_COMP, (args) => HideNextRoundButton());
+        EventManager.AddListener(GameScene.EVENT_GAME_END, (args) => EndGame());
+
+        EventManager.AddListener(MouseInteractSystem.EVENT_SKILL_CANCEL, (args) => SkillOn());
+        // 监听技能真正应用的事件，避免与技能切换事件混淆
+        EventManager.AddListener(MouseInteractSystem.EVENT_SKILL_APPLIED, (args) => SkillOff());
+
+        WwiseAudio.PlayEvent("Play_Menu_Level_Music", this.gameObject);
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SkillOn()
     {
-        EventManager.AddListener(EVENT_NAME, (args) => EndGame());
+        SkillButton.transform.GetChild(0).gameObject.SetActive(value: false);
+    }
+
+    public void SkillOff()
+    {
+        SkillButton.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void Skill()
     {
-        EventManager.InvokeEvent("ScenePlayerSkill", null);
-        WwiseAudio.PlayEvent("Play_Doll_Skill_Cast_SFX", SkillButton);
+        EventManager.InvokeEvent(GameScene.EVENT_SCENE_PLAYER_SKILL_USED, null);
+        WwiseAudio.PlayEvent("Play_Crown_Glow_SFX", this.gameObject);
     }
     public void NextRound()
     {
-        EventManager.InvokeEvent("TurnPlayerActionComplete", null);
-        WwiseAudio.PlayEvent("Play_Doll_Move_Prepare_Quick_SFX", NextRoundButton);
+        EventManager.InvokeEvent(TurnSystem.EVENT_PLAYER_ACTION_COMPLETE, null);
+        NextRoundButton.transform.GetChild(1).gameObject.SetActive(true);
+    }
+
+    public void HideNextRoundButton()
+    {
+        NextRoundButton.transform.GetChild(1).gameObject.SetActive(false);
     }
 
     public void StartGame()
     {
         EventManager.InvokeEvent("SceneGameStart", null);
-        WwiseAudio.PlayEvent("Play_SFX_Scene_Transition_Open", StartButton);
-        BeforeGame.SetActive(false);
-        Invoke("Waitit", 1.5f);
+        WwiseAudio.PlayEvent("Stop_SFX_Scene_Transition_Close", this.gameObject);
+        WwiseAudio.PlayEvent("Play_Level_1", this.gameObject);
+        BeforeGame.gameObject.SetActive(false);
+        Invoke("Wait", 1.5f);
 
 
         if (spineObject == null) return;
@@ -68,11 +93,11 @@ public class UIScript : MonoBehaviour
         // 参数1 (0): 轨道索引，通常用0
         // 参数2 (animationName): 你的动画名字
         // 参数3 (false): loop，是否循环？开场动画只播一次，所以是 false
-        spineObject.AnimationState.SetAnimation(0, animationName, false);
+        spineObject.AnimationState.SetAnimation(0, ANIME_START, false);
     }
-    public void Waitit() 
-    { 
-        InGame.SetActive(true);
+    public void Wait() 
+    {   
+        InGame.gameObject.SetActive(true);
     }
 
     public void EndGame()
@@ -81,9 +106,10 @@ public class UIScript : MonoBehaviour
         // 参数1 (0): 轨道索引，通常用0
         // 参数2 (animationName): 你的动画名字
         // 参数3 (false): loop，是否循环？开场动画只播一次，所以是 false
-        spineObject.AnimationState.SetAnimation(0, animationName2, false);
-        InGame.SetActive(false);
-        Invoke("QuitGame", 1.5f);
+        spineObject.AnimationState.SetAnimation(0, ANIME_END, false);
+        InGame.gameObject.SetActive(false);
+        WwiseAudio.PlayEvent("Play_SFX_Scene_Transition_Close", this.gameObject);
+        Invoke("QuitGame", 6f);
     }
     public void QuitGame()
     {

@@ -127,6 +127,36 @@ namespace Frame.Audio
 			return success;
 		}
 
+		public static bool SetState(string stateGroupName, string stateName)
+		{
+			if (string.IsNullOrWhiteSpace(stateGroupName))
+			{
+				LogWarning("SetState failed: stateGroupName is null or empty.");
+				return false;
+			}
+
+			if (string.IsNullOrWhiteSpace(stateName))
+			{
+				LogWarning("SetState failed: stateName is null or empty.");
+				return false;
+			}
+
+			if (!EnsureInitialized())
+			{
+				LogWarning($"SetState skipped: Wwise not initialized. group={stateGroupName}, state={stateName}");
+				return false;
+			}
+
+			var result = AkUnitySoundEngine.SetState(stateGroupName, stateName);
+			if (result != AKRESULT.AK_Success)
+			{
+				LogWarning($"SetState failed: group={stateGroupName}, state={stateName}, result={result}");
+				return false;
+			}
+
+			return true;
+		}
+
 		private static bool EnsureInitialized()
 		{
 			if (AkUnitySoundEngine.IsInitialized())

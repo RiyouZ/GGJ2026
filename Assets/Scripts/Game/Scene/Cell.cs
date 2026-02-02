@@ -1,8 +1,10 @@
 
+using Frame.Audio;
 using Game.GameChess;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Tilemaps;
 
 namespace Game
@@ -66,22 +68,13 @@ namespace Game
 		/// </summary>
 		/// <param name="chess">要设置的棋子</param>
 		public void SetChess(Chess chess)
-		{
-			if(chess.Faction == Faction.Friend && _cellType == CellType.Flag)
-			{
-				Chess = chess;
-				flagOn.SetActive(true );
-				flagOff.SetActive(false);
-				return;
-			}
-			
+		{			
 			Chess = chess;
 			if (chess.Faction == Faction.Enemy)
 			{
 				_cellType = CellType.Flag;
 
-				flagOn.SetActive(false);
-				flagOff.SetActive(true);
+				LoseFlag();
 			}
 
 			if (chess.Faction == Faction.Neutral)
@@ -94,6 +87,23 @@ namespace Game
 		{
 			Chess = null;
 
+			if (_cellType == CellType.Flag)
+			{
+				LoseFlag();
+			}
+		}
+
+		public void CaptureFlag()
+		{
+			if(_cellType == CellType.Flag)
+			{
+				flagOn.SetActive(true);
+				flagOff.SetActive(false);
+			}
+		}
+
+		public void LoseFlag()
+		{
 			if (_cellType == CellType.Flag)
 			{
 				flagOn.SetActive(false);

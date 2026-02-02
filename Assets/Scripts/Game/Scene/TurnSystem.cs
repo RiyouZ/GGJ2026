@@ -31,7 +31,7 @@ namespace Game.Scene
 		public event Action OnTurnEnd;
 		
 		/// <summary>玩家操作结束事件</summary>
-		public event Action OnPlayerActionEnd;
+		public Action OnPlayerActionEnd;
 		
 		/// <summary>所有棋子移动完毕事件</summary>
 		public event Action OnAllChessMoved;
@@ -40,7 +40,7 @@ namespace Game.Scene
 		public event Action OnGameVictory;
 		#endregion
 
-		private const string EVENT_PLAYER_ACTION_COMPLETE = "TurnPlayerActionComplete";
+		public const string EVENT_PLAYER_ACTION_COMPLETE = "TurnPlayerActionComplete";
 
 		#region 字段
 		[Header("当前回合状态")]
@@ -103,11 +103,13 @@ namespace Game.Scene
 				_isPlayerActionComplete = false;
 				yield return new WaitUntil(() => _isPlayerActionComplete);
 				
+				OnPlayerActionEnd?.Invoke();
 				GameScene.guideLine.ClearLine();
 				// 阶段3: 棋子移动
 				_currentState = TurnState.ChessMoving;
 				yield return MoveAllChess();
 				
+				EventManager.InvokeEvent(GameScene.EVENT_ROUND_COMP, null);
 				// 阶段4: 胜利判定
 				_currentState = TurnState.VictoryCheck;
 				bool isVictory = CheckVictory();

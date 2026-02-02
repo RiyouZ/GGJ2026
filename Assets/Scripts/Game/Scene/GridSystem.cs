@@ -56,10 +56,6 @@ namespace Game
 			// 设置偏移量为实际的最小坐标
 			_offset = minTilemapPos;
 			
-#if UNITY_EDITOR
-			Debug.Log($"GridSystem offset set to TileMap({_offset.x}, {_offset.y})");
-#endif
-			
 			// 第二遍遍历：计算逻辑坐标并存储
 			if (cellList != null)
 			{

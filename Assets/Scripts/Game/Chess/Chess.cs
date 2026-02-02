@@ -5,6 +5,7 @@ using Spine.Unity;
 using RuGameFramework.AnimeStateMachine;
 using Frame.Audio;
 using Spine;
+using Unity.VisualScripting;
 
 namespace Game.GameChess {
 	public enum MoveResult 
@@ -130,6 +131,7 @@ namespace Game.GameChess {
 		}
 
 		private MoveState _moveState = MoveState.Wait;
+		private Chess _attackTarget = null;
 
 
 		/// <summary>
@@ -157,6 +159,7 @@ namespace Game.GameChess {
 			// 检查越界
 			if (IsOutOfBounds(nextPos)) 
 			{
+				MoveToBlock(nextPos);
 				_moveState = MoveState.MoveEnd;
 				return _moveState;
 			}
@@ -164,6 +167,7 @@ namespace Game.GameChess {
 			// 检查 CanWalk
 			if (!GameScene.GridSystem.CanWalk(nextPos)) 
 			{
+				MoveToBlock(nextPos);
 				_moveState = MoveState.MoveEnd;
 				return _moveState;
 			}
@@ -172,6 +176,7 @@ namespace Game.GameChess {
 			Chess target = GameScene.GetChess(nextPos);
 			if (target != null) 
 			{
+				_attackTarget = null;
 				// 友方不可移动
 				if (target.Faction == this.Faction) 
 				{
@@ -180,20 +185,21 @@ namespace Game.GameChess {
 				}
 				
 				// 比较 level
-				if (ChessMask.CanAttack(target.ChessMask)) 
+				if (CanAttackTarget(target))
 				{
 					// 消灭对方，移动到目标格子
-					target.Die();
+					_attackTarget = target;
 
 					if (_chessMask.IsKing)
 					{
-						EventManager.InvokeEvent(MouseInteractSystem.EVENT_SKLL_SUCCESS, null);
+						_chessMask.IsKing = false;
+						UnequipHat();
+						EventManager.InvokeEvent(MouseInteractSystem.EVENT_SKILL_SUCCESS, null);
 					}
 
-					// 消灭停止移动
-					MoveToPosition(nextPos);
 					// 吃掉后停止
 					_moveState = MoveState.MoveEnd;
+					MoveToPosition(nextPos);
 					return _moveState;
 				} 
 				else 
@@ -218,6 +224,24 @@ namespace Game.GameChess {
 				_moveState = MoveState.MoveComplete;
 				return _moveState;
 			}
+		}
+
+		private bool CanAttackTarget(Chess target)
+		{
+			if (target.ChessMask == null) return false;
+			
+			// 友方不能攻击友方
+			if (target.Faction == this.Faction) 
+			{
+				return false;
+			}
+
+			if (!_chessMask.IsKing)
+			{
+				return _chessMask.CanAttack(target.ChessMask);
+			}
+
+			return this.Level > target.Level;
 		}
 		
 		private bool IsMoveComplete() 
@@ -247,8 +271,16 @@ namespace Game.GameChess {
 			_isMoving = true;
 			NextPos = newPos;
 			_skeletonMachine.InvokeTrigger(ANIME_MOVE);
+			// 要立即计算 所以不能够延迟给anime
 			EventManager.InvokeEvent(GameScene.EVENT_CHESS_MOVE, new ChessMoveArgs(this, currentPos, NextPos));
 			currentPos = NextPos;
+		}
+
+		private void MoveToBlock(Vector2Int blockPos)
+		{
+			_isMoving = true;
+			NextPos = blockPos;
+			_skeletonMachine.InvokeTrigger(ANIME_MOVE);
 		}
 		
 		/// <summary>
@@ -335,6 +367,24 @@ namespace Game.GameChess {
 			_skeletonMachine.RegisterState(0, ANIME_MOVE, false)
 			.AddAnoAnimationEvent("move", (track, e) =>
 			{
+				var cell = GameScene.GetCell(NextPos.x, NextPos.y);
+				if(cell == null || cell.CellType != CellType.Normal && cell.CellType != CellType.Flag)
+				{
+					return;
+				}
+
+				if(_attackTarget != null)
+				{
+					_attackTarget.Die();
+					_attackTarget = null;
+
+					if (cell.CellType == CellType.Flag)
+					{
+						cell.CaptureFlag();
+					}
+						
+				}
+
 				this.transform.position = GameScene.GetCellWorld(currentPos.x, currentPos.y);
 			})
 			.OnAnimationEnd((st, track) => 
@@ -347,19 +397,27 @@ namespace Game.GameChess {
 			})
 			.AddAnoAnimationEvent("stop_SFX", (track, e) =>
 			{
-				var nextCell = GameScene.GetCell(currentPos.x, currentPos.y);
-				if (nextCell != null && nextCell.CellType == CellType.Block)
+				var nextCell = GameScene.GetCell(NextPos.x, NextPos.y);
+
+				if(nextCell == null)
 				{
 					WwiseAudio.PlayEvent("Play_Table_Chair_Bump_SFX", this.gameObject);
+					return;
 				}
-				else if(nextCell != null && nextCell.CellType == CellType.Flag)
+
+				if (nextCell.CellType == CellType.Block)
 				{
-					WwiseAudio.PlayEvent("Play_SFX_CapturePoint_Trigger", this.gameObject);
+					WwiseAudio.PlayEvent("Play_Table_Chair_Bump_SFX", this.gameObject);
+					return;
 				}
-				else if(nextCell != null && nextCell.CellType == CellType.Normal)
+
+				if(nextCell.CellType == CellType.Flag)
 				{
-					WwiseAudio.PlayEvent("Play_Doll_Position_Arrive_Landing_SFX", this.gameObject);
+					WwiseAudio.PlayEvent($"Play_SFX_CapturePoint_Trigger_0{nextCell.Chess.Level + 1}", this.gameObject);
+					return;
 				}
+				
+				WwiseAudio.PlayEvent("Play_Doll_Position_Arrive_Landing_SFX", this.gameObject);
 			});
 			
 			_skeletonMachine.RegisterState(0, ANIME_SELECT, false)
@@ -486,7 +544,7 @@ namespace Game.GameChess {
 				return;
 			}
 
-			if (_maskMap.TryGetValue(this.Level, out string skinName))
+			if (_maskMap.TryGetValue(this._chessMask.Level, out string skinName))
 			{
 				_skeletonAnimation.Skeleton.SetSkin(skinName);
 				_skeletonAnimation.Skeleton.SetSlotsToSetupPose();
@@ -498,6 +556,7 @@ namespace Game.GameChess {
 		public void OnSkill()
 		{
 			_skeletonMachine.InvokeTrigger(ANIME_SKILL);
+			 WwiseAudio.PlayEvent("Play_Doll_Skill_Cast_SFX", this.gameObject);
 		}
 
 		public void EquipHat()

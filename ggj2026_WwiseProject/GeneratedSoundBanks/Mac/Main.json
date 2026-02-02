@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{2417395A-1AF3-41F7-8041-7FE73BE2F6A3}",
     "Language": "SFX",
-    "Hash": "{7853A997-686B-227D-090A-B3E111F9BA9D}",
+    "Hash": "{F2F9FA95-7278-1B00-9A79-BCF155203EC7}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -69,7 +69,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_CapturePoint_Trigger.wav",
-      "CachePath": "3D/{3DA53761-BCB0-F5E3-78A1-B24CF33F88A8}.wem"
+      "CachePath": "A9/{A9B72D9D-798D-1167-2E75-C1D5B2D400AE}.wem"
      },
      {
       "Id": "419700630",
@@ -85,7 +85,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_CapturePoint_Trigger.wav",
-      "CachePath": "A0/{A067B42E-EE17-4D4E-3DF4-F8AD79F2FBFC}.wem"
+      "CachePath": "E1/{E134B09A-EDA3-DF9C-35B2-DB5F679BDECF}.wem"
      },
      {
       "Id": "504314832",
@@ -141,7 +141,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_CapturePoint_Trigger.wav",
-      "CachePath": "22/{226C8184-6C74-490D-ADDC-E34799DD112F}.wem"
+      "CachePath": "A7/{A75476A3-4A14-5324-35F2-AF81853F481A}.wem"
      },
      {
       "Id": "685211774",
@@ -157,7 +157,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Doll_Skill_Cast_SFX.wav",
-      "CachePath": "3F/{3F0A0E24-53B2-9B1D-2814-82ED94A89856}.wem"
+      "CachePath": "0D/{0D113B4B-9A13-4A9C-0731-606F395ED650}.wem"
      },
      {
       "Id": "691230451",
@@ -165,7 +165,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Crown_Glow_SFX.wav",
-      "CachePath": "F9/{F954443E-07F2-BC1D-B170-FB2F781BBF21}.wem"
+      "CachePath": "FD/{FD4B0CDF-6047-D2EE-6D29-1AF682D39BE5}.wem"
      },
      {
       "Id": "693602815",
@@ -197,7 +197,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_CapturePoint_Trigger.wav",
-      "CachePath": "43/{4375391F-1370-493E-5BB1-D44681BE0FEC}.wem"
+      "CachePath": "0B/{0BA22CDD-38A3-F5F2-5810-25D582F84944}.wem"
      },
      {
       "Id": "802017264",
@@ -205,7 +205,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Mask_Special_SFX.wav",
-      "CachePath": "E2/{E2B28BF5-C903-8F97-5456-60D640B0BB01}.wem"
+      "CachePath": "C0/{C0B34D04-183F-AD97-C446-18F3041F209E}.wem"
      },
      {
       "Id": "840203186",
@@ -213,7 +213,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Mask_Doll_A_Clear_Dream_Loop.wav",
-      "CachePath": "7A/{7A1A5C68-5128-444B-77A1-FCDA95B3A118}.wem"
+      "CachePath": "6F/{6FD7D6AA-CE6D-FC2A-F778-EFF54A461A51}.wem"
      },
      {
       "Id": "859764553",
@@ -590,6 +590,6 @@
     ]
    }
   ],
-  "FileHash": "{EC611946-C146-FBD4-4B27-DC46CB5FA119}"
+  "FileHash": "{64962C0F-C339-D812-D103-0EEA3452DAB4}"
  }
 }

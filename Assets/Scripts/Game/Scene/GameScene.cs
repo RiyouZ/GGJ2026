@@ -16,8 +16,9 @@ namespace Game
 	{
 		public const string EVENT_CHESS_MOVE = "EventChessMove";
 
-		public const string EVENT_SCENE_PLAYER_SKILL = "ScenePlayerSkill";
+		public const string EVENT_SCENE_PLAYER_SKILL_USED = "ScenePlayerSkillUsed";
 
+		public const string EVENT_ROUND_COMP = "SceneRoundComplete";
 
 		public const string EVENT_GAME_END = "SceneGameEnd";
 		
@@ -44,7 +45,7 @@ namespace Game
 		void Start()
 		{
 			WwiseAudio.LoadBank("Main");
-			
+
 			InitializeSystems();
 			InitializeListeners();
 
@@ -59,6 +60,12 @@ namespace Game
 				ChessMoveArgs moveArgs = args as ChessMoveArgs;
 				SetChess(moveArgs.Chess, moveArgs.From.x, moveArgs.From.y, moveArgs.To.x, moveArgs.To.y);
 			});
+
+			TurnSystem.OnPlayerActionEnd = () =>
+			{
+				MouseInteractSystem.DeselectChess();
+				guideLine.ClearLine();
+			};
 		}
 
 		void Update()

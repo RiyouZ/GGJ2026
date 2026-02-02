@@ -8,6 +8,7 @@ using JetBrains.Annotations;
 using RuGameFramework.Event;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 namespace Game
@@ -17,7 +18,13 @@ namespace Game
 	/// </summary>
 	public class MouseInteractSystem
 	{
-		public const string EVENT_SKLL_SUCCESS = "SkillSuccess";
+		public const string EVENT_SKILL_SUCCESS = "SkillSuccess";
+
+		public const string EVENT_SKILL_CANCEL = "SkillCancel";
+
+		// 新事件：技能实际应用完成（避免与切换技能的事件混淆）
+		public const string EVENT_SKILL_APPLIED = "SkillApplied";
+
 		private Camera _camera;
 		private GridSystem _gridSystem;
 		private TurnSystem _turnSystem;
@@ -34,6 +41,7 @@ namespace Game
 		// 技能状态
 		private bool _isSkillActive = false;
 		public bool IsSkillActive => _isSkillActive;
+		private Chess _skillSelectedChess;
 
 		private int _skillCount = 1;
 
@@ -55,9 +63,9 @@ namespace Game
 		/// 初始化
 		/// </summary>
 		public void Initialize()
-		{
-			EventManager.AddListener(GameScene.EVENT_SCENE_PLAYER_SKILL, (args) => ToggleSkill());
-			EventManager.AddListener(EVENT_SKLL_SUCCESS, (args) => OnSkillSuccesss());
+		{	
+			EventManager.AddListener(GameScene.EVENT_SCENE_PLAYER_SKILL_USED, (args) => ToggleSkill());
+			EventManager.AddListener(EVENT_SKILL_SUCCESS, (args) => OnSkillSuccesss());
 		}
 
 		/// <summary>
@@ -71,17 +79,15 @@ namespace Game
 				return;
 			}
 
-			// TODO : 热键测试
+			// 指针在 UI 上时忽略交互
+			if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+			{
+				return;
+			}
 
 			if(Input.GetKeyDown(KeyCode.Space))
 			{
 				GameScene.TurnSystem.PlayerActionComplete();
-			}
-			
-			// Q键：给选中的棋子赋予/取消技能
-			if(Input.GetKeyDown(KeyCode.Q))
-			{
-				ToggleSkill();
 			}
 
 			HandleMouseHover();
@@ -105,7 +111,7 @@ namespace Game
 				DeselectChess();
 				return;
 			}
-
+			
 			// 点击已选中的棋子 -> 取消选择
 			if (_selectedChess == clickedChess)
 			{
@@ -129,7 +135,7 @@ namespace Game
 			// 有选中棋子，尝试交换面具（仅友方）
 			if (IsFriendly(_selectedChess, clickedChess))
 			{
-				if (!_selectedChess.ChessMask.IsKing)
+				if (!_selectedChess.ChessMask.IsKing && !clickedChess.ChessMask.IsKing)
 				{
 					SwapMasks(_selectedChess, clickedChess);
 				}
@@ -249,7 +255,7 @@ namespace Game
 		/// <summary>
 		/// 取消选择
 		/// </summary>
-		private void DeselectChess()
+		public void DeselectChess()
 		{
 			if(_selectedChess != null)
 			{
@@ -321,17 +327,19 @@ namespace Game
 		private void ToggleSkill()
 		{
 			if (_selectedChess == null) return;
+			if (_isSkillActive && _skillSelectedChess != null && _selectedChess != _skillSelectedChess) return;
 
 			_isSkillActive = !_isSkillActive;
-			Debug.Log("1");
 			
 			if (_isSkillActive)
 			{
+				_skillSelectedChess = _selectedChess;
 				ApplySkillToChess(_selectedChess);
 			}
 			else
 			{
 				CancelSkillToChess(_selectedChess);
+				_skillSelectedChess = null;
 			}
 		}
 		
@@ -345,6 +353,8 @@ namespace Game
 			chess.ChessMask.IsKing = true;
 			chess.OnSkill();
 			chess.UpdateMaskSkin(); // 更新皮肤显示
+			// 通知技能已应用（UI 或其他系统可监听此事件）
+			EventManager.InvokeEvent(EVENT_SKILL_APPLIED, null);
 		}
 
 		private void CancelSkillToChess(Chess chess)
@@ -354,6 +364,7 @@ namespace Game
 			chess.ChessMask.IsKing = false;
 			chess.UnequipHat();
 			chess.UpdateMaskSkin(); // 更新皮肤显示
+			EventManager.InvokeEvent(EVENT_SKILL_CANCEL, null);
 		}
 
 		private void OnSkillSuccesss()

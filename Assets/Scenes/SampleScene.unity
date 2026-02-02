@@ -678,11 +678,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 7f8f9675371e0ae48b67923fdbf0cad7, type: 2}
     - target: {fileID: 5202850534367389056, guid: b28db26d7bc937c41a00c41ac380a41e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.4
+      value: 5.46
       objectReference: {fileID: 0}
     - target: {fileID: 5202850534367389056, guid: b28db26d7bc937c41a00c41ac380a41e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: -1.66
       objectReference: {fileID: 0}
     - target: {fileID: 5202850534367389056, guid: b28db26d7bc937c41a00c41ac380a41e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -796,7 +796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2669213458380237992, guid: b28db26d7bc937c41a00c41ac380a41e, type: 3}
       propertyPath: _chessMask._level
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2669213458380237992, guid: b28db26d7bc937c41a00c41ac380a41e, type: 3}
       propertyPath: _chessMask._faction
@@ -824,11 +824,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5202850534367389056, guid: b28db26d7bc937c41a00c41ac380a41e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.62
+      value: 7.45
       objectReference: {fileID: 0}
     - target: {fileID: 5202850534367389056, guid: b28db26d7bc937c41a00c41ac380a41e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.63
+      value: -0.61
       objectReference: {fileID: 0}
     - target: {fileID: 5202850534367389056, guid: b28db26d7bc937c41a00c41ac380a41e, type: 3}
       propertyPath: m_LocalPosition.z
