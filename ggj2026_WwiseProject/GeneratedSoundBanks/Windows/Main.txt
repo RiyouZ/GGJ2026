@@ -1,13 +1,13 @@
 Event	ID	Name			Wwise Object Path	Notes
 	322227667	Play_Table_Chair_Bump_SFX			\Default Work Unit\Play_Event\Play_Table_Chair_Bump_SFX	
 	457259217	Play_Doll_Position_Arrive_Landing_SFX			\Default Work Unit\Play_Event\Play_Doll_Position_Arrive_Landing_SFX	
+	524237271	Stop_SFX_Scene_Transition_Close			\Default Work Unit\Stop_Event\Stop_SFX_Scene_Transition_Close	
 	637012276	Play_Menu_Level_Music			\Default Work Unit\Play_Event\Play_Menu_Level_Music	
 	736602215	Play_Doll_Skill_Cast_SFX			\Default Work Unit\Play_Event\Play_Doll_Skill_Cast_SFX	
 	756317691	Play_Doll_Move_Prepare_Quick_SFX			\Default Work Unit\Play_Event\Play_Doll_Move_Prepare_Quick_SFX	
 	833230064	Play_Level_1			\Default Work Unit\Play_Event\Play_Level_1	
 	1010511585	Play_Doll_Mask_Switch_Effect_SFX			\Default Work Unit\Play_Event\Play_Doll_Mask_Switch_Effect_SFX	
 	1120323365	Play_Crown_Glow_SFX			\Default Work Unit\Play_Event\Play_Crown_Glow_SFX	
-	1185070519	Play_SFX_CapturePoint_Trigger			\Default Work Unit\Play_Event\Play_SFX_CapturePoint_Trigger	
 	2119739952	Play_LionMask_Fit_SFX			\Default Work Unit\Play_Event\Play_LionMask_Fit_SFX	
 	2453267296	Play_Victory			\Default Work Unit\Music_Event\Play_Victory	
 	2708270198	Play_Mask_Special_SFX			\Default Work Unit\Play_Event\Play_Mask_Special_SFX	
@@ -15,7 +15,10 @@ Event	ID	Name			Wwise Object Path	Notes
 	3410823607	Play_MouseMask_Fit_SFX			\Default Work Unit\Play_Event\Play_MouseMask_Fit_SFX	
 	3443543745	Play_SFX_Scene_Transition_Close			\Default Work Unit\Play_Event\Play_SFX_Scene_Transition_Close	
 	3522410409	Play_Doll_Select_Highlight_SFX			\Default Work Unit\Play_Event\Play_Doll_Select_Highlight_SFX	
-	3945748993	Stop_Menu_Music			\Default Work Unit\Stop_Event\Stop_Menu_Music	
+	4014052856	Play_SFX_CapturePoint_Trigger_02			\Default Work Unit\Play_Event\Play_SFX_CapturePoint_Trigger_02	
+	4014052857	Play_SFX_CapturePoint_Trigger_03			\Default Work Unit\Play_Event\Play_SFX_CapturePoint_Trigger_03	
+	4014052859	Play_SFX_CapturePoint_Trigger_01			\Default Work Unit\Play_Event\Play_SFX_CapturePoint_Trigger_01	
+	4014052862	Play_SFX_CapturePoint_Trigger_04			\Default Work Unit\Play_Event\Play_SFX_CapturePoint_Trigger_04	
 	4227241441	Play_FoxMask_Fit_SFX			\Default Work Unit\Play_Event\Play_FoxMask_Fit_SFX	
 
 Effect plug-ins	ID	Name	Type				Notes
@@ -28,25 +31,25 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	146246296	LionMask_Fit_SFX	.cache\61\{61ABD2E6-6E4E-6090-101E-F8B1B8108C36}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\LionMask_Fit_SFX\LionMask_Fit_SFX		213824
 	164882528	CatMask_Fit_SFX	.cache\43\{43173D50-FB38-123A-1F77-0CBF31EF85C1}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\CatMask_Fit_SFX\CatMask_Fit_SFX		89656
 	171007355	SFX_Scene_Transition_Open	.cache\4D\{4DB691A1-D534-42ED-2ACE-E80E67292D53}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_Scene_Transition\SFX_Scene_Transition_Open		537552
-	171610600	SFX_CapturePoint_Trigger_01	.cache\0C\{0C8FB244-CEA9-CFE8-6440-F84990118D41}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_CapturePoint_Trigger\SFX_CapturePoint_Trigger_01		569228
+	171610600	SFX_CapturePoint_Trigger_02	.cache\3D\{3DA53761-BCB0-F5E3-78A1-B24CF33F88A8}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_CapturePoint_Trigger\SFX_CapturePoint_Trigger_02		534520
 	419700630	Table_Chair_Bump_SFX	.cache\BE\{BE8821A5-48C3-F527-6830-25FF3ED652AB}.wem		\Containers\Default Work Unit\SFX\Bump_SFX\Table_Chair_Bump_SFX		1059048
-	434314217	SFX_CapturePoint_Trigger_02	.cache\7F\{7FE4ABC7-7734-4887-065C-B262E9ACFBFD}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_CapturePoint_Trigger\SFX_CapturePoint_Trigger_02		543996
+	434314217	SFX_CapturePoint_Trigger_03	.cache\A0\{A067B42E-EE17-4D4E-3DF4-F8AD79F2FBFC}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_CapturePoint_Trigger\SFX_CapturePoint_Trigger_03		506864
 	504314832	LionMask_Fit_SFX_01	.cache\A0\{A062E5AA-503F-4FDD-8BB0-92D78D446141}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\LionMask_Fit_SFX\LionMask_Fit_SFX_01		161552
 	523821878	Doll_Move_Prepare_Quick_SFX	.cache\65\{65F21295-F8FA-7874-0091-2D775CDD88B4}.wem		\Containers\Default Work Unit\SFX\Doll_SFX\Doll_Move_Prepare_Quick_SFX		1059048
 	542803814	FoxMask_Fit_SFX	.cache\DE\{DEC192DC-EE30-20FF-3AC7-6D99CE69E9C1}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\FoxMask_Fit_SFX\FoxMask_Fit_SFX		98656
 	578473524	MouseMask_Fit_SFX_01	.cache\8A\{8A7986C7-762A-4431-8BE3-A88235C46A74}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\MouseMask_Fit_SFX\MouseMask_Fit_SFX_01		48124
 	598852464	MouseMask_Fit_SFX_02	.cache\7A\{7A0955AF-30AA-2762-6C04-98780B44E3D5}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\MouseMask_Fit_SFX\MouseMask_Fit_SFX_02		112968
 	627370399	LionMask_Fit_SFX_02	.cache\4A\{4A48C49D-026C-FF11-C783-440F49BFDF83}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\LionMask_Fit_SFX\LionMask_Fit_SFX_02		207276
-	658065189	SFX_CapturePoint_Trigger	.cache\81\{81E00BBD-A523-FDBD-7272-6A25C6DF966A}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_CapturePoint_Trigger\SFX_CapturePoint_Trigger		574836
+	658065189	SFX_CapturePoint_Trigger_01	.cache\22\{226C8184-6C74-490D-ADDC-E34799DD112F}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_CapturePoint_Trigger\SFX_CapturePoint_Trigger_01		538008
 	685211774	Doll_Position_Arrive_Landing_SFX	.cache\87\{8711C4DD-E25A-32EB-F7FC-7664F573F987}.wem		\Containers\Default Work Unit\SFX\Doll_SFX\Doll_Position_Arrive_Landing_SFX		1059048
-	689448774	Doll_Skill_Cast_SFX	.cache\EC\{EC136D63-BD26-64AC-1B5E-8E0224AC21F1}.wem		\Containers\Default Work Unit\SFX\Skill_SFX\Doll_Skill_Cast_SFX		1059048
-	691230451	Crown_Glow_SFX	.cache\54\{545C81B5-E76C-9EED-D684-0BBDD2D16E09}.wem		\Containers\Default Work Unit\SFX\Skill_SFX\Crown_Glow_SFX		1059048
+	689448774	Doll_Skill_Cast_SFX	.cache\3F\{3F0A0E24-53B2-9B1D-2814-82ED94A89856}.wem		\Containers\Default Work Unit\SFX\Skill_SFX\Doll_Skill_Cast_SFX		214576
+	691230451	Crown_Glow_SFX	.cache\F9\{F954443E-07F2-BC1D-B170-FB2F781BBF21}.wem		\Containers\Default Work Unit\SFX\Skill_SFX\Crown_Glow_SFX		232240
 	693602815	CatMask_Fit_SFX_02	.cache\49\{49E95F88-1B85-0BBB-B8E9-635F2B77BEE4}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\CatMask_Fit_SFX\CatMask_Fit_SFX_02		142708
 	714396357	Doll_Mask_Switch_Effect_SFX	.cache\2C\{2C59A7FE-7DC3-1B44-CC9F-BF26C5252402}.wem		\Containers\Default Work Unit\SFX\Doll_SFX\Doll_Mask_Switch_Effect_SFX		1059048
 	736329114	MouseMask_Fit_SFX	.cache\02\{021220C8-6762-293C-966B-F8FE052E462C}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\MouseMask_Fit_SFX\MouseMask_Fit_SFX		56564
-	753170298	SFX_CapturePoint_Trigger_03	.cache\53\{53A7618E-8645-B9EB-2965-08AA9F9BF973}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_CapturePoint_Trigger\SFX_CapturePoint_Trigger_03		625300
-	802017264	Mask_Special_SFX	.cache\90\{90C40522-9813-0DFE-8C36-4156CE32E4DD}.wem		\Containers\Default Work Unit\SFX\Skill_SFX\Mask_Special_SFX		1059048
-	840203186	Mask_Doll_A_Clear_Dream_Loop	.cache\DE\{DEE5699C-D123-528E-2B21-3CD098EE55CF}.wem		\Containers\Default Work Unit\Music\Mask_Doll_A_Clear_Dream\Mask_Doll_A_Clear_Dream_Loop		16284528
+	753170298	SFX_CapturePoint_Trigger_04	.cache\43\{4375391F-1370-493E-5BB1-D44681BE0FEC}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_CapturePoint_Trigger\SFX_CapturePoint_Trigger_04		591844
+	802017264	Mask_Special_SFX	.cache\E2\{E2B28BF5-C903-8F97-5456-60D640B0BB01}.wem		\Containers\Default Work Unit\SFX\Skill_SFX\Mask_Special_SFX		362612
+	840203186	Mask_Doll_A_Clear_Dream_Loop	.cache\7A\{7A1A5C68-5128-444B-77A1-FCDA95B3A118}.wem		\Containers\Default Work Unit\Music\Mask_Doll_A_Clear_Dream\Mask_Doll_A_Clear_Dream_Loop		16279536
 	859764553	SFX_Scene_Transition_Close	.cache\8E\{8E78B51E-2FCD-D0F2-35DB-7FDD4990F5E7}.wem		\Containers\Default Work Unit\SFX\Scene_SFX\SFX_Scene_Transition\SFX_Scene_Transition_Close		797116
 	903092708	CatMask_Fit_SFX_01	.cache\3E\{3E5064AA-2D72-B023-024A-7DC7516FD1F8}.wem		\Containers\Default Work Unit\SFX\Mask_SFX\CatMask_Fit_SFX\CatMask_Fit_SFX_01		155444
 	1003639679	Victory	.cache\E7\{E710207F-BF45-BCA0-2626-46A21684C387}.wem		\Containers\Default Work Unit\Music\Victory		814316

@@ -26,11 +26,14 @@ namespace AK
         static const AkUniqueID PLAY_MASK_SPECIAL_SFX = 2708270198U;
         static const AkUniqueID PLAY_MENU_LEVEL_MUSIC = 637012276U;
         static const AkUniqueID PLAY_MOUSEMASK_FIT_SFX = 3410823607U;
-        static const AkUniqueID PLAY_SFX_CAPTUREPOINT_TRIGGER = 1185070519U;
+        static const AkUniqueID PLAY_SFX_CAPTUREPOINT_TRIGGER_01 = 4014052859U;
+        static const AkUniqueID PLAY_SFX_CAPTUREPOINT_TRIGGER_02 = 4014052856U;
+        static const AkUniqueID PLAY_SFX_CAPTUREPOINT_TRIGGER_03 = 4014052857U;
+        static const AkUniqueID PLAY_SFX_CAPTUREPOINT_TRIGGER_04 = 4014052862U;
         static const AkUniqueID PLAY_SFX_SCENE_TRANSITION_CLOSE = 3443543745U;
         static const AkUniqueID PLAY_TABLE_CHAIR_BUMP_SFX = 322227667U;
         static const AkUniqueID PLAY_VICTORY = 2453267296U;
-        static const AkUniqueID STOP_MENU_MUSIC = 3945748993U;
+        static const AkUniqueID STOP_SFX_SCENE_TRANSITION_CLOSE = 524237271U;
     } // namespace EVENTS
 
     namespace BANKS

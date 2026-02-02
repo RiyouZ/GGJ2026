@@ -633,6 +633,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Mask_Special_SFX" ID="{C9E49505-719F-40FB-A542-B8DB1A944BE5}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.05508253486366"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Mask_Special_SFX.wav</AudioFile>
 											<MediaIDList>
@@ -673,6 +677,11 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Doll_Skill_Cast_SFX" ID="{CBA3F8F6-221F-4A88-A56E-16743D39E042}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.405294650883027"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.21588419891763"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Doll_Skill_Cast_SFX.wav</AudioFile>
 											<MediaIDList>
@@ -702,6 +711,11 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Crown_Glow_SFX" ID="{5CF2F9E6-DC39-46FD-99CC-F7752D9DC6AF}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.31601581854755"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Crown_Glow_SFX.wav</AudioFile>
 											<MediaIDList>
@@ -742,7 +756,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="SFX_CapturePoint_Trigger" ID="{C10B762C-9765-49B2-9769-CF4BA2203D1E}" ShortID="23330535">
+										<Sound Name="SFX_CapturePoint_Trigger_01" ID="{C10B762C-9765-49B2-9769-CF4BA2203D1E}" ShortID="23330535">
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
@@ -761,8 +775,8 @@
 											<ChildrenList>
 												<AudioFileSource Name="SFX_CapturePoint_Trigger" ID="{19AD5FF5-D11C-4C8A-A781-BE7F24EF848A}">
 													<PropertyList>
-														<Property Name="LoopBegin" Type="Real64" Value="0"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.208765398793648"/>
 														<Property Name="TrimEnd" Type="Real64" Value="3.25815994434112"/>
 													</PropertyList>
 													<Language>SFX</Language>
@@ -776,7 +790,7 @@
 												<ActiveSource Name="SFX_CapturePoint_Trigger" ID="{19AD5FF5-D11C-4C8A-A781-BE7F24EF848A}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="SFX_CapturePoint_Trigger_01" ID="{E7F7CACB-F566-40B3-BB4A-0B1F4706BA07}" ShortID="675438557">
+										<Sound Name="SFX_CapturePoint_Trigger_02" ID="{E7F7CACB-F566-40B3-BB4A-0B1F4706BA07}" ShortID="675438557">
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
@@ -796,7 +810,7 @@
 												<AudioFileSource Name="SFX_CapturePoint_Trigger" ID="{03256536-B4DC-4455-A58C-54D2F025C83A}">
 													<PropertyList>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="5.03822859993862"/>
+														<Property Name="TrimBegin" Type="Real64" Value="5.23498696507098"/>
 														<Property Name="TrimEnd" Type="Real64" Value="8.26460161304986"/>
 													</PropertyList>
 													<Language>SFX</Language>
@@ -810,7 +824,7 @@
 												<ActiveSource Name="SFX_CapturePoint_Trigger" ID="{03256536-B4DC-4455-A58C-54D2F025C83A}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="SFX_CapturePoint_Trigger_02" ID="{9169515A-09F7-4630-8F38-C0DFABF10D36}" ShortID="101362374">
+										<Sound Name="SFX_CapturePoint_Trigger_03" ID="{9169515A-09F7-4630-8F38-C0DFABF10D36}" ShortID="101362374">
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
@@ -830,7 +844,7 @@
 												<AudioFileSource Name="SFX_CapturePoint_Trigger" ID="{E5AD8D78-C9C0-4574-9BDC-4CAE01F00A3A}">
 													<PropertyList>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="10.5373677027107"/>
+														<Property Name="TrimBegin" Type="Real64" Value="10.7478785336785"/>
 														<Property Name="TrimEnd" Type="Real64" Value="13.6206995252875"/>
 													</PropertyList>
 													<Language>SFX</Language>
@@ -844,7 +858,7 @@
 												<ActiveSource Name="SFX_CapturePoint_Trigger" ID="{E5AD8D78-C9C0-4574-9BDC-4CAE01F00A3A}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="SFX_CapturePoint_Trigger_03" ID="{61EDC048-CC74-498E-A956-F4AF168E6ECA}" ShortID="232899824">
+										<Sound Name="SFX_CapturePoint_Trigger_04" ID="{61EDC048-CC74-498E-A956-F4AF168E6ECA}" ShortID="232899824">
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
@@ -864,7 +878,7 @@
 												<AudioFileSource Name="SFX_CapturePoint_Trigger" ID="{062D7DE5-5364-4C31-BB34-861D7D45FBD1}">
 													<PropertyList>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="15.2577269903504"/>
+														<Property Name="TrimBegin" Type="Real64" Value="15.4473917812386"/>
 														<Property Name="TrimEnd" Type="Real64" Value="18.8019693157606"/>
 													</PropertyList>
 													<Language>SFX</Language>
@@ -1215,7 +1229,7 @@
 												<Property Name="FadeInShape" Type="int16" Value="0"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="4.56135777160426"/>
-												<Property Name="TrimEnd" Type="Real64" Value="96.9697614085304"/>
+												<Property Name="TrimEnd" Type="Real64" Value="96.8484355046454"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Mask_Doll_A_Clear_Dream_Loop.wav</AudioFile>

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{2417395A-1AF3-41F7-8041-7FE73BE2F6A3}",
     "Language": "SFX",
-    "Hash": "{CFE49190-7C80-C1A9-EACC-D6E392798066}",
+    "Hash": "{7853A997-686B-227D-090A-B3E111F9BA9D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -69,7 +69,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_CapturePoint_Trigger.wav",
-      "CachePath": "0C/{0C8FB244-CEA9-CFE8-6440-F84990118D41}.wem"
+      "CachePath": "3D/{3DA53761-BCB0-F5E3-78A1-B24CF33F88A8}.wem"
      },
      {
       "Id": "419700630",
@@ -85,7 +85,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_CapturePoint_Trigger.wav",
-      "CachePath": "7F/{7FE4ABC7-7734-4887-065C-B262E9ACFBFD}.wem"
+      "CachePath": "A0/{A067B42E-EE17-4D4E-3DF4-F8AD79F2FBFC}.wem"
      },
      {
       "Id": "504314832",
@@ -141,7 +141,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_CapturePoint_Trigger.wav",
-      "CachePath": "81/{81E00BBD-A523-FDBD-7272-6A25C6DF966A}.wem"
+      "CachePath": "22/{226C8184-6C74-490D-ADDC-E34799DD112F}.wem"
      },
      {
       "Id": "685211774",
@@ -157,7 +157,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Doll_Skill_Cast_SFX.wav",
-      "CachePath": "EC/{EC136D63-BD26-64AC-1B5E-8E0224AC21F1}.wem"
+      "CachePath": "3F/{3F0A0E24-53B2-9B1D-2814-82ED94A89856}.wem"
      },
      {
       "Id": "691230451",
@@ -165,7 +165,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Crown_Glow_SFX.wav",
-      "CachePath": "54/{545C81B5-E76C-9EED-D684-0BBDD2D16E09}.wem"
+      "CachePath": "F9/{F954443E-07F2-BC1D-B170-FB2F781BBF21}.wem"
      },
      {
       "Id": "693602815",
@@ -197,7 +197,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "SFX_CapturePoint_Trigger.wav",
-      "CachePath": "53/{53A7618E-8645-B9EB-2965-08AA9F9BF973}.wem"
+      "CachePath": "43/{4375391F-1370-493E-5BB1-D44681BE0FEC}.wem"
      },
      {
       "Id": "802017264",
@@ -205,7 +205,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Mask_Special_SFX.wav",
-      "CachePath": "90/{90C40522-9813-0DFE-8C36-4156CE32E4DD}.wem"
+      "CachePath": "E2/{E2B28BF5-C903-8F97-5456-60D640B0BB01}.wem"
      },
      {
       "Id": "840203186",
@@ -213,7 +213,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Mask_Doll_A_Clear_Dream_Loop.wav",
-      "CachePath": "DE/{DEE5699C-D123-528E-2B21-3CD098EE55CF}.wem"
+      "CachePath": "7A/{7A1A5C68-5128-444B-77A1-FCDA95B3A118}.wem"
      },
      {
       "Id": "859764553",
@@ -279,8 +279,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Crown_Glow_SFX",
       "GUID": "{00BADD45-FB2C-4707-B407-3A13CC468097}",
       "DurationType": "OneShot",
-      "DurationMin": "6.0031295",
-      "DurationMax": "6.0031295",
+      "DurationMin": "1.3160158",
+      "DurationMax": "1.3160158",
       "MediaRefs": [
        {
         "Id": "691230451"
@@ -363,8 +363,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Doll_Skill_Cast_SFX",
       "GUID": "{F145FBB2-7E0F-4AAA-93C3-F40517ADBB6F}",
       "DurationType": "OneShot",
-      "DurationMin": "6.0031295",
-      "DurationMax": "6.0031295",
+      "DurationMin": "1.2158842",
+      "DurationMax": "1.2158842",
       "MediaRefs": [
        {
         "Id": "689448774"
@@ -432,8 +432,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_Mask_Special_SFX",
       "GUID": "{3D19FDAA-06AF-49B2-973B-2368C13325A9}",
       "DurationType": "OneShot",
-      "DurationMin": "6.0031295",
-      "DurationMax": "6.0031295",
+      "DurationMin": "2.0550826",
+      "DurationMax": "2.0550826",
       "MediaRefs": [
        {
         "Id": "802017264"
@@ -480,23 +480,56 @@
       ]
      },
      {
-      "Id": "1185070519",
-      "Name": "Play_SFX_CapturePoint_Trigger",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_SFX_CapturePoint_Trigger",
-      "GUID": "{CB7059E8-B087-49C7-84B8-2DCB4DF9D1FA}",
+      "Id": "4014052859",
+      "Name": "Play_SFX_CapturePoint_Trigger_01",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_SFX_CapturePoint_Trigger_01",
+      "GUID": "{375F6CAE-E88D-4CE3-AF3E-A1C04FC322E6}",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0",
+      "DurationMin": "3.0493946",
+      "DurationMax": "3.0493946",
+      "MediaRefs": [
+       {
+        "Id": "658065189"
+       }
+      ]
+     },
+     {
+      "Id": "4014052856",
+      "Name": "Play_SFX_CapturePoint_Trigger_02",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_SFX_CapturePoint_Trigger_02",
+      "GUID": "{19E00198-BF0C-4A48-BE12-FA01B8AB3C12}",
+      "DurationType": "OneShot",
+      "DurationMin": "3.0296147",
+      "DurationMax": "3.0296147",
       "MediaRefs": [
        {
         "Id": "171610600"
-       },
+       }
+      ]
+     },
+     {
+      "Id": "4014052857",
+      "Name": "Play_SFX_CapturePoint_Trigger_03",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_SFX_CapturePoint_Trigger_03",
+      "GUID": "{1F9A5CAE-B1B9-42BD-80EC-9B250A962502}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.872821",
+      "DurationMax": "2.872821",
+      "MediaRefs": [
        {
         "Id": "434314217"
-       },
-       {
-        "Id": "658065189"
-       },
+       }
+      ]
+     },
+     {
+      "Id": "4014052862",
+      "Name": "Play_SFX_CapturePoint_Trigger_04",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Event\\Play_SFX_CapturePoint_Trigger_04",
+      "GUID": "{38CED30D-8602-4C09-9946-5DC42900A3D5}",
+      "DurationType": "OneShot",
+      "DurationMin": "3.3545775",
+      "DurationMax": "3.3545775",
+      "MediaRefs": [
        {
         "Id": "753170298"
        }
@@ -545,22 +578,18 @@
       ]
      },
      {
-      "Id": "3945748993",
-      "Name": "Stop_Menu_Music",
-      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Event\\Stop_Menu_Music",
-      "GUID": "{B8D1AAAE-E19C-4DEA-94B7-750F9409BB09}",
+      "Id": "524237271",
+      "Name": "Stop_SFX_Scene_Transition_Close",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Event\\Stop_SFX_Scene_Transition_Close",
+      "GUID": "{BD823EBE-DBF8-48B6-ADDC-BF7BC6F178FF}",
+      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "4.5182652",
-      "DurationMax": "4.5182652",
-      "MediaRefs": [
-       {
-        "Id": "859764553"
-       }
-      ]
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ]
    }
   ],
-  "FileHash": "{1FAE2C9E-742E-9281-649F-96EA5012F25D}"
+  "FileHash": "{F1387B49-6FDC-3AE8-1943-8A59FE1AE122}"
  }
 }
